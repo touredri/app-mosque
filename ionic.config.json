@@ -1,0 +1,7 @@
+{
+  "name": "dine_sira",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
