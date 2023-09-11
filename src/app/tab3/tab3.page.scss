@@ -1,0 +1,57 @@
+/* Style for the calendar header */
+.calendar-header {
+  text-align: center;
+  font-size: 24px;
+  padding: 16px;
+}
+
+/* Style for the calendar navigation buttons */
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+/* Style for the previous and next month buttons */
+.calendar-controls ion-button {
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+/* Style for the calendar grid */
+.calendar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+/* Style for each calendar week */
+.calendar-week {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+}
+
+/* Style for each calendar day cell */
+.calendar-day {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style for the selected day */
+.calendar-day.selected {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Hover effect for day cells */
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}

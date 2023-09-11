@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  border-radius: 50%;
+}
+
+button {
+  margin-right: 2%;
+}
+
+.logo {
+  width: 20%;
+  height: 20%;
+  margin-left: 1%;
+}
