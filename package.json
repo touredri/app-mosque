@@ -33,8 +33,6 @@
     "@ionic-native/core": "^5.36.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/lab": "^3.2.15",
-    "angular-audio-player": "^0.1.0",
-    "angular-hijri-gregorian-datepicker": "^0.0.7",
     "firebase": "^9.16.0",
     "install": "^0.13.0",
     "ionicons": "^7.0.0",
