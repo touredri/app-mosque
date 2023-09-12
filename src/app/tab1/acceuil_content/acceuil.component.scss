@@ -1,0 +1,178 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+.top .Dhuhr{
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .prayer-list {
+    display: flex;
+    overflow: auto; /* Permet de faire défiler horizontalement */
+    gap: 10px; /* Espacement entre les boutons */
+  }
+  
+  .prayer-button {
+    // background-color: #007bff; /* Couleur de fond du bouton */
+    color: black; /* Couleur du texte */
+    border: none; /* Supprime la bordure du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px 10px; /* Espacement intérieur */
+    margin: 10px 0;
+    cursor: pointer; /* Curseur de la main au survol */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s ease; /* Animation de transition de couleur de fond */
+  
+    /* Style au survol */
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    .prayer-list::after {
+        content: ''; /* Ajout d'un élément vide pour le pseudo-élément */
+        position: absolute; /* Position absolue par rapport à .prayer-list */
+        background-color: #007bff; /* Couleur de fond du cercle */
+        width: 10px; /* Largeur du cercle */
+        height: 10px; /* Hauteur du cercle */
+        border-radius: 50%; /* Transforme en cercle */
+        top: 50%; /* Position verticale au milieu */
+        transform: translateY(-50%); /* Déplace vers le milieu verticalement */
+        right: calc(50% - 5px); /* Position horizontale au milieu */
+        z-index: 1; /* Pour que le cercle soit au-dessus des boutons */
+      }
+  }
+
+.blue-dot{
+    width: 2%;
+    height: 2%;
+    position: absolute;
+    background-color: #0074d9;
+    top: 90px;
+    left: 0;
+    right: 20px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.image{
+    width: 100%;
+    position: relative;
+
+}
+
+img{
+    width: 90%;
+    height: 140px;
+    border-radius: 5%;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.texte{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: #f1f1f1;
+    line-height: 0.5;
+
+}
+
+h3{
+    font-weight: bold;
+    left: 15%;
+}
+
+h2{
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.image-list-container {
+    overflow-x: auto;
+    max-width: 100%; 
+    white-space: nowrap; 
+  }
+  
+  .image-list {
+    padding: 10px;
+    display: inline-block; 
+  }
+  
+  .image-item {
+    margin-right: 20px; 
+    display: inline-block; 
+    width: 50%; 
+    font-size: 16px; 
+    vertical-align: top; 
+  }
+  
+  .image-item img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+  }
+
+.card_content {
+  background-image: url("../../../assets/Heure.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  position: relative;
+}
+
+.luffy h1{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -50px;
+  font-size: 20px;
+  font-weight: bol;
+}
+.texte h2{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  bottom: 40px;
+  right: 20px;
+  font-size: 20px;
+}
+.texte h3{
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40px;
+  top: 7%;
+  left: -1%;
+
+}
+.pap{
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+  

@@ -1,0 +1,41 @@
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="prevMonth()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="calendar-header">
+      {{ currentMonthName }} {{ currentYear }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nextMonth()">
+        <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-content>
+    <div class="calendar-grid">
+      <div class="calendar-header">
+        <div class="calendar-day-name">Sun</div>
+        <div class="calendar-day-name">Mon</div>
+        <div class="calendar-day-name">Tue</div>
+        <div class="calendar-day-name">Wed</div>
+        <div class="calendar-day-name">Thu</div>
+        <div class="calendar-day-name">Fri</div>
+        <div class="calendar-day-name">Sat</div>
+      </div>
+      <div *ngFor="let week of hijriDates" class="calendar-week">
+        <ng-container *ngFor="let day of week">
+          <div class="calendar-day">
+            <div class="day-number">
+              {{ day.format('iD') }}
+            </div>
+            
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ion-content>
+  
