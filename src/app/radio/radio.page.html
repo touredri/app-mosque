@@ -1,0 +1,39 @@
+  <div class="header">
+      <ion-back-button defaultHref="/tabs/autres"></ion-back-button>
+      <h1>FM</h1>
+      <img src="../../assets/🦆 icon _radio_.png" alt="">
+  </div>
+  
+
+<ion-content>
+  <!-- <div class="list-radios">
+    <ion-item *ngFor="let radio of radios" class="flex justify-betwen item-center px-2">
+      <img src="../../assets/🦆 icon _radio_.png" alt="radio">
+      <div class="flex flex-col ">
+                  {{radio.nom}}
+                  {{radio.lieu}}
+      
+      </div>
+      <div class="frequence">
+      {{radio.frequence}}
+    </div>
+    </ion-item>
+  </div> -->
+  <ion-list>
+    <ion-item *ngFor="let radio of radios">
+      <ion-avatar slot="start">
+        <img alt="radio info" src="../../assets/🦆 icon _radio_.png" />
+      </ion-avatar>
+      <ion-label lines="none">
+        {{radio.nom}} <br>
+        {{radio.lieu}}
+      </ion-label>
+      <ion-label  class="font-size: 30px" style="margin-left: 10px; "> <!-- Ajoutez une marge à gauche -->
+        {{radio.frequence}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+  
+
+</ion-content>
