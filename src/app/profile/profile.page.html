@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <div class="entete">
+    <ion-buttons slot="start">
+      <ion-back-button class="button" defaultHref="/accueil"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Profil de l'utilisateur</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="icon" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="container1">
+      <img src="../../../assets/fond.png" alt="Ma première photo">
+    </div>
+  </div>
+
+ <div class="user">
+  <div class="profile">
+    <img src="../../../assets/profile1.jpg" alt="UserProfile">
+  </div>
+ </div>
+    <div class="container3">
+      <div class="nameuser">
+        <div class="titre">
+          <h2>Ibrahima Sogoré</h2>
+        </div>
+        <div class="up">
+          <input type="button" value="Modifier profil">
+        </div>
+      </div>
+      <div class="evalue">
+        <div class="icon">
+          <div class="icon1">
+            <i class="ri-edit-box-line"></i>
+            <p>Evaluer l'application</p>
+          </div>
+        </div>
+        <div class="icon">
+          <div class="icon1">
+            <i class="ri-share-forward-line"></i>
+            <p>Partager Dinɛ Sira</p>
+          </div>
+        </div>
+        <div class="icon">
+          <div class="icon2">
+            <i class="ri-information-line"></i>
+            <p>A propos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logout">
+      <div class="icon-user">
+        <i class="ri-logout-box-line"></i>
+        <input type="button" value="Se déconnecter">
+      </div>
+  </div>
+</ion-content>
