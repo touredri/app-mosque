@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'preches',
     loadChildren: () => import('./preches/preches.module').then( m => m.PrechesPageModule)
   },
+  {
+    path: 'radio',
+    loadChildren: () => import('../radio/radio.module').then( m => m.RadioPageModule)
+  },
 ];
 
 @NgModule({
