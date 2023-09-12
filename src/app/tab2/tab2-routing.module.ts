@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'ajouter-mosque',
     loadChildren: () => import('./ajouter-mosque/ajouter-mosque.module').then( m => m.AjouterMosquePageModule)
   },
+  {
+    path: 'detail-mosque',
+    loadChildren: () => import('./detail-mosque/detail-mosque.module').then( m => m.DetailMosquePageModule)
+  },
 ];
 
 @NgModule({
