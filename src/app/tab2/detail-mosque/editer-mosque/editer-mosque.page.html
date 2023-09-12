@@ -1,0 +1,99 @@
+<ion-header  class="flex flex-row items-center justify-between px-2">
+    <ion-back-button defaultHref="tabs/tab2"></ion-back-button> 
+    <span>Enregistrer</span>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="head">
+    <img src="../../../assets/mosque1.png" alt="mosque_image">
+    
+    <div class="container">
+      <div class="row">
+        <button ion-button color="primary" outline>changer photo</button>
+      </div>
+    </div>
+    <div class="form group row">
+      <div class="col-xs-3">
+        <ion-input label="Nom de mosquee" label-placement="floating" fill="outline" placeholder="Nom de mosquee"></ion-input>
+      </div>
+      <div class="col-xs-3">
+        <ion-input label="Nom de iman" label-placement="floating" fill="outline" placeholder="Nom de iman"></ion-input>
+      </div>
+      <div class="col-xs-3">
+        <ion-input label="Telephone" label-placement="floating" fill="outline" placeholder="Telephone de mosquee"></ion-input>
+      </div>
+      <div class="col-xs-3">
+        <ion-input label="Quartier" label-placement="floating" fill="outline" placeholder="Quartier de la mosque"></ion-input>
+      </div>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </div>
+  
+    <div class="container2">
+      <div class="row2">
+        <span class="priere">Programme de priere</span>
+        <div class="text">
+          <span>Priere</span>
+          <span>Iqama</span>
+          <span>Alarme</span>
+        </div>
+        <div class="text">
+          <span>Duhr </span>
+          <span>
+            <input type="time" id="appt" name="appt">
+          </span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Asr </span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Magrib</span>
+          <span class="Magrib"><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Isha </span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container2">
+      <div class="row2">
+        <span class="priere">Programme de tabsir</span>
+        <div class="text">
+          <span>Jour</span>
+          <span>Heure</span>
+          <span>Alarme</span>
+        </div>
+        <div class="text">
+          <span>Lundi</span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Mardi</span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Jeudi</span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+        <div class="text">
+          <span>Samedi</span>
+          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="appt"></span>
+        </div>
+      </div>
+    </div>
+    <div class="btn">
+      <ion-button id="open-loading">Modifier</ion-button>
+      <ion-loading trigger="open-loading" message="Enregistrement..." duration="2000"></ion-loading>
+    </div>
+  </div>
+</ion-content>

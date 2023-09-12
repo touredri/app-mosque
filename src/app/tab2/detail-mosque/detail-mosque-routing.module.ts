@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: DetailMosquePage
-  }
+  },
+  {
+    path: 'editer-mosque',
+    loadChildren: () => import('./editer-mosque/editer-mosque.module').then( m => m.EditerMosquePageModule)
+  },
+
 ];
 
 @NgModule({
