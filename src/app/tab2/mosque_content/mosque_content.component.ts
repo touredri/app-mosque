@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonicModule, NavController } from '@ionic/angular';
 
 @Component({
@@ -7,7 +8,7 @@ import { IonicModule, NavController } from '@ionic/angular';
   templateUrl: './mosque_content.component.html',
   styleUrls: ['./mosque_content.component.scss'],
   standalone : true,
-  imports: [CommonModule, IonicModule]
+  imports: [CommonModule, IonicModule, RouterLink]
 })
 export class MosqueComponent  implements OnInit {
   constructor(private navCtrl: NavController) { }

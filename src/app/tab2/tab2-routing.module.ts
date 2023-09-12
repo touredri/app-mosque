@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
-  }
+  },
+  {
+    path: 'ajouter-mosque',
+    loadChildren: () => import('./ajouter-mosque/ajouter-mosque.module').then( m => m.AjouterMosquePageModule)
+  },
 ];
 
 @NgModule({
