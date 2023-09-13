@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: PrechesPage
-  }
+  },
+  {
+    path: 'modifier-preche',
+    loadChildren: () => import('./modifier-preche/modifier-preche.module').then( m => m.ModifierPrechePageModule)
+  },
+    
 ];
 
 @NgModule({
