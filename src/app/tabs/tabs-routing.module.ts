@@ -20,14 +20,14 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'autres',
+        loadChildren: () => import('../autres/autres.module').then(m => m.AutresPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
       },
-      // {
-      //   path: 'autres',
-      //   //loadChildren: () => import('../autres/autres.module').then(m => m.AutresPageModule)
-      // },
     ]
   },
   {

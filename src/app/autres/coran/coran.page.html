@@ -1,0 +1,29 @@
+<ion-header class="relative">
+  <img src="../../assets/Rectangle12.png" alt="coran" class="w-full" />
+  <div class="absolute top-3 left-2 border border-white rounded-full bg-white">
+    <ion-back-button defaultHref="tabs/autres"></ion-back-button>
+  </div>
+</ion-header>
+<div class="w-full flex items-center justify-around px-1">
+  <button class="border border-blue-700 rounded-md p-2">Sourates</button>
+  <button class="border border-blue-700 rounded-md p-2">
+    Recitations Audio
+  </button>
+</div>
+
+<div class="coranList overflow-y-scroll h-full">
+  <ion-item *ngFor="let sourate of sourates" [routerLink]="['sourate', sourate.number]" (click)="onItemClick(sourate.number)" class="fex">
+    <div class="flex w-full justify-between items-center px-2">
+      <div class="flex flex-row items-center gap-2 srt">
+        <p class="border px-1 text-center h-1/2 rounded-full">
+          {{ sourate.number }}
+        </p>
+        <div class="flex flex-col gap-4 py-2">
+          <h2>{{ sourate.name }}</h2>
+          <p>{{ sourate.englishName }}</p>
+        </div>
+      </div>
+      <p>{{ nombreAyahs(sourate.ayahs) }} versets</p>
+    </div>
+  </ion-item>
+</div>

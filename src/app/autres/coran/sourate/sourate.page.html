@@ -1,0 +1,27 @@
+<ion-header  class=" w-full flex items-center gap-2 z-10">
+  <div [routerLink]="['../../']" class="border border-blue-500 p-2 ">
+  <ion-icon name="arrow-back-outline"></ion-icon>
+</div>
+
+  <div class="">{{sourate?.englishName}}</div>
+</ion-header>
+
+<ion-content >
+    <ion-item *ngFor="let ayah of sourate?.ayahs" class="flex flex-wrap justify-end pt-2">
+      <div class="flex flex-row gap-1 justify-between items-center">
+        <p class="text-lg border bg-gray-100 p-1 rounded-full">{{ayah?.numberInSurah}}</p>
+        <p class="text-xl">{{ayah?.text}}</p>
+      </div>
+    </ion-item>
+</ion-content>
+<div class="w-full relative bottom-0 flex justify-center">
+  <ion-button (click)="playPreviousAudio()" expand="block" fill="clear" shape="round">
+    <ion-icon name="play-back-outline"></ion-icon>
+  </ion-button>
+  <ion-button (click)="playAudio()">
+    {{ isPlaying ? 'Pause' : 'Play' }}
+  </ion-button>
+  <ion-button (click)="playNextAudio()" expand="block" fill="clear" shape="round">
+    <ion-icon name="play-forward-outline"></ion-icon>
+  </ion-button>
+</div>
