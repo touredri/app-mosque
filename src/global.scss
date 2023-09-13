@@ -28,3 +28,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slides-wrapper {
+ display: flex;
+ width: 100%;
+}

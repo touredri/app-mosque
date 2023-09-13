@@ -1,0 +1,113 @@
+.carousel-container {
+    // width: 100vw;
+    // height: 20vh;
+    // margin: 16px auto;
+    padding: 0px;
+}
+
+:host ::ng-deep{
+    .image-container {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+    }
+
+    .igx-carousel {
+        max-width: 100%;
+        width: unset;
+    }
+
+    .igx-nav-dot {
+        background: black;
+        box-shadow: none;
+        width: 15px;
+        height: 15px;
+    }
+
+    .igx-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: unset;
+    }
+
+    .igx-slide img {
+        object-fit: fill;
+        max-width: 90%;
+    }
+}
+
+.image-list-container {
+    overflow-x: auto; /* Activation du défilement horizontal */
+    max-width: 100%; /* Ajustez la largeur maximale selon vos besoins */
+    white-space: nowrap; /* Empêche le retour à la ligne des éléments */
+  }
+
+  h2{
+    font-size: 20px;
+    margin: 0px  15px;
+  }
+
+  .prayer-list {
+    display: flex;
+    overflow: auto; /* Permet de faire défiler horizontalement */
+    gap: 10px; /* Espacement entre les boutons */
+  }
+  
+  .prayer-button {
+    // background-color: #007bff; /* Couleur de fond du bouton */
+    color: black; /* Couleur du texte */
+    border: none; /* Supprime la bordure du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px 10px; /* Espacement intérieur */
+    margin: 10px 0;
+    cursor: pointer; /* Curseur de la main au survol */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s ease; /* Animation de transition de couleur de fond */
+  
+    /* Style au survol */
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    .prayer-list::after {
+        content: ''; /* Ajout d'un élément vide pour le pseudo-élément */
+        position: absolute; /* Position absolue par rapport à .prayer-list */
+        background-color: #007bff; /* Couleur de fond du cercle */
+        width: 10px; /* Largeur du cercle */
+        height: 10px; /* Hauteur du cercle */
+        border-radius: 50%; /* Transforme en cercle */
+        top: 50%; /* Position verticale au milieu */
+        transform: translateY(-50%); /* Déplace vers le milieu verticalement */
+        right: calc(50% - 5px); /* Position horizontale au milieu */
+        z-index: 1; /* Pour que le cercle soit au-dessus des boutons */
+      }
+  }
+
+  
+.image{
+    width: 100%;
+    position: relative;
+
+}
+
+img{
+    width: 90%;
+    height: 240px;
+    border-radius: 5%;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.texte{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: #f1f1f1;
+    line-height: 0.5;
+
+}

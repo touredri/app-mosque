@@ -1,3 +1,4 @@
+
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { HeaderComponent } from 'header/header.component';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 
+
 @NgModule({
   imports: [
     IonicModule,
@@ -15,8 +17,9 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     FormsModule,
     Tab3PageRoutingModule,
     HijriCalendarComponent,
-    HeaderComponent
+    HeaderComponent,
+   
   ],
-  declarations: [Tab3Page]
+  declarations: [Tab3Page,]
 })
 export class Tab3PageModule {}

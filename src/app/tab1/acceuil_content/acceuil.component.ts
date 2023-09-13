@@ -1,4 +1,7 @@
+//import { CommonModule } from '@angular/common';
 import { Component, OnInit, } from '@angular/core';
+//import { HammerModule } from '@angular/platform-browser';
+//import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-acceuil',
@@ -9,8 +12,17 @@ import { Component, OnInit, } from '@angular/core';
 export class AcceuilComponent  implements OnInit {
   
 
+
+
+
   constructor() { }
 
   ngOnInit() {}
+
+//   public slides = [
+//     { src: '../assets/280px-Great_Mosque_of_Djenné_1.jpg' },
+//     { src: '../assets/280px-Great_Mosque_of_Djenné_1.jpg' },
+//     { src: '../assets/280px-Great_Mosque_of_Djenné_1.jpg' }
+// ];
 
 }
