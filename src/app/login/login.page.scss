@@ -7,16 +7,26 @@
   align-items: center; 
   background: url("../../assets/login.png") no-repeat center center/cover;
 }
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+}
 
 .content{
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .title h2{
   text-align: center;
   color: #fefefe;
   font-size: 45px;
+  margin-bottom: 20px;
 }
 
 input::placeholder{
@@ -62,13 +72,11 @@ input::placeholder{
 }
 
 .input1 input:focus{
-  outline: none; /* Supprimez la bordure de focus par défaut */
-  border: 1px solid transparent; /* Rendez la bordure transparente */
+  outline: none;
 }
 
 .input2 input:focus{
-  outline: none; /* Supprimez la bordure de focus par défaut */
-  border: 1px solid transparent; /* Rendez la bordure transparente */
+  outline: none;
 }
 
 .input2 input {

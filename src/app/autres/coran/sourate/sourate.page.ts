@@ -39,7 +39,6 @@ export class SouratePage implements OnInit {
       this.sourate = data.surahs.find((s: any) => s.number ==surahNumber);
       this.sourate.ayahs.forEach((a: any) => {
         this.ayahs.push(a.audioSecondary[0]);
-        // console.log(a.audioSecondary[0])
       });
     });
     }

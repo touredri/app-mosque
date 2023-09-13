@@ -1,5 +1,6 @@
 <ion-content>
   <div class="container">
+    <div class="overlay"></div>
       <div class="content">
           <div class="title">
               <h2>Connexion</h2>
@@ -10,7 +11,7 @@
                   <div class="icon-container">
                     <ion-icon class="text-white" name="mail-outline"></ion-icon>
                   </div>
-                  <input type="email" placeholder="Email" name="eamil"  [(ngModel)]="user.email" required>
+                  <input type="email" placeholder="Email" name="email"  [(ngModel)]="user.email" required>
               </div>
              <div class="input2">
               <div class="icon-container">
@@ -18,7 +19,7 @@
               </div>
               <input type="password" placeholder="Mot de passe" name="password" [(ngModel)]="user.password" required>
              </div>
-              <p><a>Mot de passe oublié?</a></p>
+              <p><a class="mot_passe_oublie">Mot de passe oublié?</a></p>
               <button type="submit">Se connecter</button>
             </div>
           </form>
