@@ -1,27 +1,16 @@
-import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, NavController } from '@ionic/angular';
-import { Tab2PageRoutingModule } from '../tab2-routing.module';
-import { RouterLink } from '@angular/router';
+import { Geolocation } from '@capacitor/geolocation';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
-import { HttpClient } from '@angular/common/http';
-import { Geolocation } from '@capacitor/geolocation';
-
-
 
 @Component({
-  selector: 'app-mosque-content',
-  templateUrl: './mosque_content.component.html',
-  styleUrls: ['./mosque_content.component.scss'],
-  standalone : true,
-  imports: [CommonModule, IonicModule, RouterLink]
+  selector: 'app-map',
+  templateUrl: './map.page.html',
+  styleUrls: ['./map.page.scss'],
 })
+export class MapPage implements OnInit {
 
-
-export class MosqueComponent  implements OnInit {
-
- 
   map: L.Map | any;
   
   latitude!: number;
@@ -71,7 +60,7 @@ export class MosqueComponent  implements OnInit {
 
 
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('mapID').setView([this.latitude,this.longitude],10)
+    this.map = L.map('mapID').setView([this.latitude,this.longitude],40)
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: "OSM"
     }).addTo(this.map);

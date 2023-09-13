@@ -1,6 +1,9 @@
+<ion-header  class="flex flex-row items-center justify-between px-2">
+  <ion-back-button defaultHref="tabs/tab2"></ion-back-button> 
+</ion-header>
 <ion-content [fullscreen]="true">
   <div class="head">
-    <img src="../../../assets/mosque1.png" alt="">
+    <img src="../../../assets/mosque.jpg" alt="">
     <div class="container">
       <div class="row">
         <span class="mosque">Al Mardjib IBRAHIM <a href="#" [routerLink]="['editer-mosque']">Editer</a> </span>
@@ -9,7 +12,7 @@
         <span><i id="icon1" class="bi bi-geo-alt-fill"></i>  Magnambougou, Bamako</span>
         <span class="icon">
           <i id="icon" class="bi bi-telephone-fill"></i>
-          <i id="icon" class="bi bi-geo-alt-fill"></i>
+          <i id="icon" [routerLink]="['map']" class="bi bi-geo-alt-fill"></i>
           <i id="icon" class="bi bi-heart-fill"></i>
           <i id="icon" class="bi bi-bell-fill"></i>
         </span>
