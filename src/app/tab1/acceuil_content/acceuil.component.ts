@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { PriereService } from 'src/app/service/priere.service';
 
 @Component({
   selector: 'app-acceuil',
@@ -10,10 +11,14 @@ import { IonicModule } from '@ionic/angular';
   imports: [CommonModule, IonicModule]
 })
 export class AcceuilComponent  implements OnInit {
-  
+  prieres: any
+  constructor(private priereservice: PriereService) { }
 
-  constructor() { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.priereservice.getPriereData().subscribe((data:any) =>{
+      this.prieres= data;
+      console.log(data);
+    });
+  }
 
 }
