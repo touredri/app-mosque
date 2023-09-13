@@ -21,7 +21,6 @@ import { Geolocation } from '@capacitor/geolocation';
 
 export class MosqueComponent  implements OnInit {
 
- 
   map: L.Map | any;
   
   latitude!: number;
@@ -71,9 +70,9 @@ export class MosqueComponent  implements OnInit {
 
 
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('mapID').setView([this.latitude,this.longitude],10)
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: "OSM"
+    this.map = L.map('mapID').setView([this.latitude,this.longitude],40)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+ 
     }).addTo(this.map);
     console.log(this.latitude);
     

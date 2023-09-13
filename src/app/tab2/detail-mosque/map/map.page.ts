@@ -60,7 +60,7 @@ export class MapPage implements OnInit {
 
 
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('mapID').setView([this.latitude,this.longitude],40)
+    this.map = L.map('map').setView([this.latitude,this.longitude],80)
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: "OSM"
     }).addTo(this.map);

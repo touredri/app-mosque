@@ -1,34 +1,34 @@
+<ion-header  class="flex flex-row items-center justify-between px-2">
+  <ion-back-button defaultHref="tabs/tab2"></ion-back-button> 
+</ion-header>
 <ion-content [fullscreen]="true">
   <div class="head overflow-auto flex flex-col justify-center">
-    <div class="menu">
-      <ion-icon name="arrow-back" [routerLink]="['../']"></ion-icon>
-      <a href="#" id="open-loading">Enregistrer</a>
-      <ion-loading trigger="open-loading" message="Enregistrement..." duration="1000"></ion-loading>
-    
-    </div>
     <img src="../../../assets/mosque1.png" alt="">
-    
+
+    <!-- //FORMULAIRE -->
+
+  <form (ngSubmit)="ajoutMosque">
     <div class="container">
       <div class="row">
-        <button ion-button color="primary" outline>changer photo</button>
+        <input  type="file" placeholder="photo"/>
       </div>
     </div>
     <div class="form group row">
       <div class="col-xs-3">
-        <ion-input label="Nom de mosquee" label-placement="floating" fill="outline" placeholder="Nom de mosquee"></ion-input>
+        <ion-input label="Nom de mosquee" label-placement="floating" fill="outline" placeholder="Nom de mosquee" name="nom" [(ngModel)]="nom"></ion-input>
       </div>
       <div class="col-xs-3">
-        <ion-input label="Nom de iman" label-placement="floating" fill="outline" placeholder="Nom de iman"></ion-input>
+        <ion-input label="Nom de iman" label-placement="floating" fill="outline" name="imam" [(ngModel)]="imam" placeholder="Nom de iman" ></ion-input>
       </div>
       <div class="col-xs-3">
-        <ion-input label="Telephone" label-placement="floating" fill="outline" placeholder="Telephone de mosquee"></ion-input>
+        <ion-input label="Telephone" label-placement="floating" fill="outline" name="numero" [(ngModel)]="numero" placeholder="Telephone de mosquee"></ion-input>
       </div>
       <div class="col-xs-3">
-        <ion-input label="Quartier" label-placement="floating" fill="outline" placeholder="Quartier de la mosque"></ion-input>
+        <ion-input label="Quartier" label-placement="floating" fill="outline" name="quartier" [(ngModel)]="quartier" placeholder="Quartier de la mosque"></ion-input>
       </div>
       <div class="col-xs-3">
-        <ion-input label="Lagititude" label-placement="floating" fill="outline" placeholder="Lagititude de la mosque"></ion-input>
-        <ion-input label="Longitude" label-placement="floating" fill="outline" placeholder="Longitude de la mosque"></ion-input>
+        <ion-input label="Lagititude" label-placement="floating" fill="outline" name="latitude" [(ngModel)]="latitude" placeholder="Latitude de la mosque"></ion-input>
+        <ion-input label="Longitude" label-placement="floating" fill="outline" name="longitude" [(ngModel)]="longitude" placeholder="Longitude de la mosque"></ion-input>
       </div>
       <!-- <ion-datetime-button datetime="datetime" id="datetime"></ion-datetime-button> -->
     </div>
@@ -39,30 +39,32 @@
         <div class="text">
           <span>Priere</span>
           <span>Iqama</span>
-          <span>Alarme</span>
+        </div>
+        <div class="text">
+          <span>Fadj </span>
+          <span><input type="time" name="fadjr" id="appt" name="appt"></span>
         </div>
         <div class="text">
           <span>Duhr </span>
-          <span>
-            <input type="time" id="appt" name="appt">
-          </span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" name="duhr" id="appt" ></span>
         </div>
         <div class="text">
           <span>Asr </span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" name="asr" id="appt" ></span>
         </div>
         <div class="text">
           <span>Magrib</span>
-          <span class="Magrib"><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" name="magrib" id="appt" ></span>
         </div>
         <div class="text">
           <span>Isha </span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" name="isha" id="appt" ></span>
         </div>
+        <div class="text">
+          <span>Djuma </span>
+          <span><input type="time" name="djuma" id="appt" ></span>
+        </div>
+
       </div>
     </div>
 
@@ -72,34 +74,42 @@
         <div class="text">
           <span>Jour</span>
           <span>Heure</span>
-          <span>Alarme</span>
         </div>
         <div class="text">
           <span>Lundi</span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="lundi" [(ngModel)]="lundi"></span>
         </div>
         <div class="text">
           <span>Mardi</span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="mardi" [(ngModel)]="mardi"></span>
+        </div>
+        <div class="text">
+          <span>Mercredi</span>
+          <span><input type="time" id="appt" name="mercredi" [(ngModel)]="mercredi"></span>
         </div>
         <div class="text">
           <span>Jeudi</span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="jeudi" [(ngModel)]="jeudi"></span>
+        </div>
+        <div class="text">
+          <span>Vendredi</span>
+          <span><input type="time" id="appt" name="vendredi" [(ngModel)]="vendredi"></span>
         </div>
         <div class="text">
           <span>Samedi</span>
-          <span><input type="time" id="appt" name="appt"></span>
-          <span><input type="time" id="appt" name="appt"></span>
+          <span><input type="time" id="appt" name="samedi" [(ngModel)]="samedi"></span>
+        </div>
+        <div class="text">
+          <span>Dimanche</span>
+          <span><input type="time" id="appt" name="dimanche" [(ngModel)]="dimamche"></span>
         </div>
       </div>
     </div>
     <div class="btn">
-      <ion-button id="open-loading">Enregistrer</ion-button>
-      <ion-loading trigger="open-loading" message="Enregistrement..." duration="1000"></ion-loading>
+      <button class="btn btn-primary" type="button">Enregistrer</button>
     </div>
-  </div>
+  </form>
+
+</div>
 </ion-content>
 

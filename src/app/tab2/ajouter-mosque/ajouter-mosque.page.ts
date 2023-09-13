@@ -12,4 +12,8 @@ export class AjouterMosquePage implements OnInit {
   ngOnInit() {
   }
 
+  ajoutMosque(){
+    
+  }
+
 }
