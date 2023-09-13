@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-radio',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadioPage implements OnInit {
   radios!: any 
-   
-  constructor() {
+  formRadios!: FormGroup
+
+  constructor(private formBuilder:FormBuilder) {
     
    }
 
   ngOnInit() {
+   this.formRadios= this.formBuilder.group({
+      nom:[null],
+      frequence:[null],
+      fluxAudio:[null],
+      logo : [null],
+    })
+
+
     this.radios = [
       {
         nom: 'Dambé',

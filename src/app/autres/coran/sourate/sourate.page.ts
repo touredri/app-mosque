@@ -39,7 +39,6 @@ export class SouratePage implements OnInit {
       this.sourate = data.surahs.find((s: any) => s.number ==surahNumber);
       this.sourate.ayahs.forEach((a: any) => {
         this.ayahs.push(a.audioSecondary[0]);
-        // console.log(a.audioSecondary[0])
       });
     });
     }
@@ -66,6 +65,17 @@ export class SouratePage implements OnInit {
       // Tous les audios ont été lus, réinitialisez l'index
       this.currentAudioIndex = 0;
       this.isPlaying = false;
+    }
+  };
+
+  playPreviousAudio() {
+    this.currentAudioIndex--;
+    if (this.currentAudioIndex >= 0) {
+      this.playAudio();
+    } else {
+      // Si vous êtes au début de la liste, revenez à la fin
+      this.currentAudioIndex = this.ayahs.length - 1;
+      this.playAudio();
     }
   }
 }

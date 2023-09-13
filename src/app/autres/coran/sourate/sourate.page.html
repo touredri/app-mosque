@@ -15,7 +15,13 @@
     </ion-item>
 </ion-content>
 <div class="w-full relative bottom-0 flex justify-center">
+  <ion-button (click)="playPreviousAudio()" expand="block" fill="clear" shape="round">
+    <ion-icon name="play-back-outline"></ion-icon>
+  </ion-button>
   <ion-button (click)="playAudio()">
     {{ isPlaying ? 'Pause' : 'Play' }}
-  </ion-button>  
+  </ion-button>
+  <ion-button (click)="playNextAudio()" expand="block" fill="clear" shape="round">
+    <ion-icon name="play-forward-outline"></ion-icon>
+  </ion-button>
 </div>

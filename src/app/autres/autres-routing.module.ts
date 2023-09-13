@@ -13,8 +13,12 @@ const routes: Routes = [
     loadChildren: () => import('./coran/coran.module').then( m => m.CoranPageModule)
   },
   {
+    path: 'preches',
+    loadChildren: () => import('./preches/preches.module').then( m => m.PrechesPageModule)
+  },
+  {
     path: 'radio',
-    loadChildren: () => import('../radio/radio.module').then( m => m.RadioPageModule)
+    loadChildren: () => import('./radio/radio.module').then( m => m.RadioPageModule)
   },
 ];
 

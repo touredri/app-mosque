@@ -1,0 +1,93 @@
+<ion-header  class="flex flex-row items-center justify-between px-2">
+  <ion-back-button defaultHref="tabs/tab2"></ion-back-button> 
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="head">
+    <img src="../../../assets/mosque.jpg" alt="">
+    <div class="container">
+      <div class="row">
+        <span class="mosque">Al Mardjib IBRAHIM <a href="#" [routerLink]="['editer-mosque']">Editer</a> </span>
+        <span class="iman">Iman Solid Koita</span>
+        <span><i id="icon1" class="bi bi-telephone-fill"></i>  +223 83 52 28 56</span>
+        <span><i id="icon1" class="bi bi-geo-alt-fill"></i>  Magnambougou, Bamako</span>
+        <span class="icon">
+          <i id="icon" class="bi bi-telephone-fill"></i>
+          <i id="icon" [routerLink]="['map']" class="bi bi-geo-alt-fill"></i>
+          <i id="icon" class="bi bi-heart-fill"></i>
+          <i id="icon" class="bi bi-bell-fill"></i>
+        </span>
+      </div>
+    </div>
+  
+    <div class="container2">
+      <div class="row2">
+        <span class="priere">Programme de priere</span>
+        <div class="text">
+          <span>Priere</span>
+          <span>Iqama</span>
+          <span>Alarme</span>
+        </div>
+        <div class="text">
+          <span>Fajr</span>
+          <span>05:30</span>
+          <span>05:30</span>
+        </div>
+        <div class="text">
+          <span>Dhuhr</span>
+          <span>13:00</span>
+          <span>12:30</span>
+        </div>
+        <div class="text">
+          <span>Asr</span>
+          <span>16:00</span>
+          <span>15:30</span>
+        </div>
+        <div class="text">
+          <span>Maghrib</span>
+          <span>19:00</span>
+          <span>18:30</span>
+        </div>
+        <div class="text">
+          <span>Isha</span>
+          <span>20:00</span>
+          <span>19:30</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container2">
+      <div class="row2">
+        <span class="priere">Programme de tabsir</span>
+        <div class="text">
+          <span>Jour</span>
+          <span>Heure</span>
+          <span>Alarme</span>
+        </div>
+        <div class="text">
+          <span>Lundi</span>
+          <span>15:30</span>
+          <span>14:30</span>
+        </div>
+        <div class="text">
+          <span>Mercredi</span>
+          <span>13:00</span>
+          <span>12:30</span>
+        </div>
+        <div class="text">
+          <span>Vendredi</span>
+          <span>16:00</span>
+          <span>15:30</span>
+        </div>
+        <div class="text">
+          <span>Samedi</span>
+          <span>19:00</span>
+          <span>18:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="btn">
+      <ion-button id="open-loading">FAIRE UN DON</ion-button>
+      <ion-loading trigger="open-loading" message="Enregistrement..." duration="2000"></ion-loading>
+    </div>
+  </div>
+</ion-content>
