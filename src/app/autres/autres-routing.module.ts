@@ -12,6 +12,14 @@ const routes: Routes = [
     path: 'coran',
     loadChildren: () => import('./coran/coran.module').then( m => m.CoranPageModule)
   },
+  {
+    path: 'preches',
+    loadChildren: () => import('./preches/preches.module').then( m => m.PrechesPageModule)
+  },
+  {
+    path: 'radio',
+    loadChildren: () => import('./radio/radio.module').then( m => m.RadioPageModule)
+  },
 ];
 
 @NgModule({

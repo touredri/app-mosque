@@ -1,0 +1,54 @@
+.header{
+    text-align: left;
+    background-color: aliceblue;
+
+}
+.header h1{
+    text-align: left;
+    color: black;
+}
+
+.header h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    padding-left: 10px;
+}
+.header img{
+    position: relative;
+    left: 75%;
+
+    
+}
+.list-radios img{
+    margin-top: 20px;
+}
+.icone{
+    position: absolute;
+}
+.flex flex-col{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+.detailtext{
+    flex: 1;
+    margin: 5px;
+    margin-top: 15px !important;
+    width: calc(50% - 10px);
+    font-size: 10%;
+    bottom: 10%;  
+}
+.frequence{
+    position: absolute;
+    top: 0;
+    right: 1%;
+}
+.taille-frequence {
+    font-size: 20px; 
+  }
+  
+  .taille-nom {
+    font-size: 20px;
+  }
+  

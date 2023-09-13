@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container flex flex-col justify-center item-center">
 
   <div class="prayer-list">
     <button class="prayer-button">Fajr</button>
@@ -10,17 +10,21 @@
   </div>
 
 
-<div>
-  <div class="image">
-    <img src="../../../assets/280px-Great_Mosque_of_Djenné_1.jpg" alt="img">
-  </div>
-  <div class="texte">
-    <p>Dhuhr</p>
-    <h3>13:00</h3>
-    <p>Prochaine priere : Asr</p>
-    <p>16h</p>
-  </div>
+<div class="card_container h-[160px] flex justify-center item-center w-full ">
+    <div class="w-full flex justify-center item-center">
+        <div class="card_content bg-black w-[95%] principal">
+          <div class="pap"></div>
+        <div class="texte">
+          <h2>Dhuhr</h2>
+          <h3>13:00</h3>
+          <div class="flex w-full justify-between prochaine luffy">
+            <h1>Prochaine priere: Asr  16:00</h1>
+          </div>
+        </div>
+        </div>
+    </div>
 </div>
+
   <h2> Annonces</h2>
   <!-- <div class="carousel-container">
     <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000" [gesturesSupport]="false">
@@ -55,10 +59,10 @@
     <div class="image-item">
       <img src="../assets/280px-Great_Mosque_of_Djenné_1.jpg" alt="Image 6">
     </div>
-    <!-- Ajoutez les autres images ici -->
+
   </div>
 
 </div>
-</div>
 
+</div>
 
