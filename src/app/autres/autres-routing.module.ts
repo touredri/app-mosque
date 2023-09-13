@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'radio',
-    loadChildren: () => import('../radio/radio.module').then( m => m.RadioPageModule)
+    loadChildren: () => import('./radio/radio.module').then( m => m.RadioPageModule)
   },
 ];
 

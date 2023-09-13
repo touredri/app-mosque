@@ -13,7 +13,7 @@ import { RadioPage } from './radio.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RadioPageRoutingModule
+    RadioPageRoutingModule,
   ],
   declarations: [RadioPage]
 })
