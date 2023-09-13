@@ -8,7 +8,7 @@
     color:#fefefe;
 }
 .entete{
-    background-color: #3498db;
+    background-color:rgba(52, 152, 219, 0.80);
     display: flex;
     justify-content: space-around;
 }
@@ -18,9 +18,9 @@
     display: flex;
     width: 100%;
 }
-.container1 img{
+.image{
     width: 100%;
-    height: auto;
+    height: 150px
 }
 
 .profile {
@@ -71,11 +71,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    bottom: 20px;
 }
 .titre h2{
-  padding-bottom: 5px;
-  font-size: 20px;
-  font-weight: bold;
+    position: relative;
+    bottom: 1px;
+    font-size: 20px;
 }
 .up{
     display: flex;
@@ -84,16 +86,16 @@
     background-color: #3498db;
     width: 200px;
     height: 25px;
-    margin-top: 20px;
+    position: relative;
     border-radius: 10px;
     &:hover{
         background-color: green;
     }
 }
 .up h2{
-    padding-bottom: 5px;
+    position: relative;
+    bottom: 1px;
     font-size: 20px;
-    font-weight: bold;
     color: #fefefe;
 }
 .evalue{
@@ -116,18 +118,15 @@
     background-color: #3498db;
     width: 289px;
     height: 33px;
-    margin-top: 20px;
+    position: relative;
 }
-.icon1 i{
-    font-size: 24px;
-    color: #fefefe;
-    margin-left: -40px;
-}
+
 .icon1 p{
     display: flex;
     justify-content: center;
-    margin-left: 5px;
+    position: relative;
     color: #fefefe;
+    left: 5px;
 }
 .icon2{
     display: flex;
@@ -137,26 +136,42 @@
     background-color: #3498db;
     width: 289px;
     height: 33px;
-    margin-top: 20px;
+    position: relative;
 }
-.icon2 i{
+.p3{
     font-size: 24px;
     color: #fefefe;
-    margin-left: -156px;
+    position: relative;
+    right: 60px;
+    bottom: 1px;
 }
+.p2{
+    font-size: 24px;
+    color: #fefefe;
+    position: relative;
+    right: 10px;
+    bottom: 1px;
+}
+.p1{
+    font-size: 24px;
+    color: #fefefe;
+    position: relative;
+    bottom: 1px;
+}
+
 .icon2 p{
     display: flex;
     justify-content: center;
-    margin-left: 5px;
+    position: relative;
     color: #fefefe;
+    right: 50px;
 }
 .logout{
+    position: relative;
+    left: 25%;
+    top: 100px;
     width: 170px;
     height: 33px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,9 +195,6 @@
     display: block;
 }
 .icon-user input{
-    // display: flex;
-    // justify-content: content;
-    // align-items: center;
     display: block;
     background-color: none;
     width: 125px;
@@ -200,4 +212,43 @@
     font-size: 20px;
     font-weight: bold;
 }
+.evalue{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+    gap: 20px;
+}
 
+.ajout{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    background-color: #3498db;
+    border-radius: 10px;
+    &:hover{
+        background-color: green;
+        transform: scale(1.2);
+
+    }
+}
+.add{
+    position: relative;
+    right: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: #fdfefe;
+}
+.ajout input{
+    color: #fdfefe;
+    font-size: 20px;
+}
+.texte{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
