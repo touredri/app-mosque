@@ -2,7 +2,9 @@
   <div class="head overflow-auto flex flex-col justify-center">
     <div class="menu">
       <ion-icon name="arrow-back" [routerLink]="['../']"></ion-icon>
-      <a href="#">Enregistrer</a>
+      <a href="#" id="open-loading">Enregistrer</a>
+      <ion-loading trigger="open-loading" message="Enregistrement..." duration="1000"></ion-loading>
+    
     </div>
     <img src="../../../assets/mosque1.png" alt="">
     
@@ -24,7 +26,11 @@
       <div class="col-xs-3">
         <ion-input label="Quartier" label-placement="floating" fill="outline" placeholder="Quartier de la mosque"></ion-input>
       </div>
-      <ion-datetime-button datetime="datetime" id="datetime"></ion-datetime-button>
+      <div class="col-xs-3">
+        <ion-input label="Lagititude" label-placement="floating" fill="outline" placeholder="Lagititude de la mosque"></ion-input>
+        <ion-input label="Longitude" label-placement="floating" fill="outline" placeholder="Longitude de la mosque"></ion-input>
+      </div>
+      <!-- <ion-datetime-button datetime="datetime" id="datetime"></ion-datetime-button> -->
     </div>
 
     <div class="container2">
@@ -92,7 +98,7 @@
     </div>
     <div class="btn">
       <ion-button id="open-loading">Enregistrer</ion-button>
-      <ion-loading trigger="open-loading" message="Enregistrement..." duration="2000"></ion-loading>
+      <ion-loading trigger="open-loading" message="Enregistrement..." duration="1000"></ion-loading>
     </div>
   </div>
 </ion-content>
