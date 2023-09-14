@@ -33,3 +33,11 @@
 .mot_passe_oublie {
   color: white;
 }
+
+.igx-carousel-indicators, .igx-carousel-indicators--top, .igx-carousel-indicators--bottom {
+  display: none;
+}
+
+.igx-carousel-indicators--bottom {
+  display: none;
+}

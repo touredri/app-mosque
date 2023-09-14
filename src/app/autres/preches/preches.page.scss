@@ -106,3 +106,32 @@ h5{
   top: 2px;
   color: white;
 }
+
+//====================================================== players div =====================================================
+#container {
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  color: white;
+  font-size: 16px;
+  margin: 2px 0px;
+}
+ion-range {
+  padding: 0px 10px;
+  --bar-height: 3px;
+}
+p {
+  color: #b7b6b6;
+  font-size: 13px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+#audio {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // display: block;
+}

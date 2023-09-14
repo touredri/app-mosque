@@ -8,6 +8,7 @@ import {
 	IgxCarouselModule,
 	IgxSliderModule
  } from "igniteui-angular";
+
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 @NgModule({
@@ -18,8 +19,10 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     Tab1PageRoutingModule,
     HeaderComponent,
     IgxCarouselModule,
-    IgxSliderModule
+	  IgxSliderModule
+    
+   
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page,],
 })
 export class Tab1PageModule {}

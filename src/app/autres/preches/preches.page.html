@@ -1,78 +1,56 @@
-<img alt="Mosquee doree" class="h-[12Opx]" src="../../assets/vue-celebre-mosquee-sheikh-zayed-abu-dhabi-par-nuit-emirats-arabes-unis.jpg" />
+
+<img alt="Mosquee doree" src="../../assets/vue-celebre-mosquee-sheikh-zayed-abu-dhabi-par-nuit-emirats-arabes-unis.jpg" />
 <ion-buttons slot="start" class="return">
   <ion-back-button defaultHref="tabs/autres"></ion-back-button>
 </ion-buttons>
 <ion-card class="cardSelect">
   <ion-card-header>
     <ion-card-title>Prêches
-      <ion-button [routerLink]="['modifier-preche']" size="small" fill="solid" style="margin-bottom: 10px;" class="bg-white">Modifier</ion-button></ion-card-title>
+      <ion-button [routerLink]="['prechesMod']" size="small" fill="solid" style="margin-bottom: 10px;">Modifier</ion-button></ion-card-title>
     <ion-card-subtitle>
+      
       <ion-list class="firstCardSelect">
       <ion-item>
-        <ion-select aria-label="Imams" interface="popover" placeholder="Choisir Imam" class="placeholder:font-bold">
+        <ion-select [(ngModel)]="selectedImam" (ionChange)="filterPreches()" aria-label="Imams" interface="popover" placeholder="Choisir Imam">
           <ion-select-option value="Mahi Ouattara">Mahi Ouattara</ion-select-option>
           <ion-select-option value="Abdoulaye Koita">Abdoulaye Koita</ion-select-option>
           <ion-select-option value="Ousmane C Haidara">Ousmane C Haidara</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
-    <!-- 2 div -->
-    <ion-list class="selectMargin">
-      <ion-item>
-        <ion-select
-          interface="popover"
-          toggleIcon="add"
-          expandedIcon="remove"
-          aria-label="fruit"
-          placeholder="Prêches"
-        >
-          <ion-select-option value="tafsir">Tafsir</ion-select-option>
-          <ion-select-option value="sermon">Sermon</ion-select-option>
-          <ion-select-option value="autre">Autre</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
+
   </ion-card-subtitle>
   </ion-card-header>
 
-  <!-- <ion-card-content>
-    Mohamed Mahi Ouattara, Chevalier de l’Ordre national et imam de la “Mosquée Arrahmane de Sebenikoro”, connu pour son franc-parler.  
-  </ion-card-content> -->
+  
 </ion-card>
 
 <div style="top: 40%; position: fixed; width: 100%; ">
 
  <!-- <hr>  -->
-<ion-list lines="none" class="audios">
+<ion-list *ngIf="filteredPreches.length > 0"  class="audios h-screen relative">
   <div class="titleAudio"><span><ion-icon name="musical-note"></ion-icon> Audios</span></div>
-  <ion-item>
-    <ion-label>01 - Prêches Mahi Ouattara</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>02 - Prêches Mahi Ouattara</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>03 - Prêches Mahi Ouattara</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>04 - Prêches Mahi Ouattara</ion-label>
-  </ion-item>
+  <div *ngFor="let preche of filteredPreches" class="relative">
+  <ion-label (click)="show()">{{ preche.id }} - Prêche de {{ preche.name }}</ion-label>
+    <div  style="z-index: 1; position: absolute; top: 90%;     top: 1527%;"> <audio controls class="hidden" id="audio" >
+      <source [src]="preche.audioUrl" type="audio/mpeg">
+      Votre navigateur ne prend pas en charge l'élément audio.
+    </audio></div>
+    </div>
 </ion-list>
 </div>
-<!-- <div class="cardAudio">
-  <h5>02 - Prêches Mahi Ouattara</h5>
-  <ion-range min="0" max="100" value="40" mode="md" color="light"></ion-range>
-  <div class="flex-box">
-    <ion-button class="audioButton" fill="clear" color="light">
-      <ion-icon slot="icon-only" name="play-skip-back"></ion-icon>
-    </ion-button>
 
-    <ion-button class="audioButton2" fill="clear" color="light">
-      <ion-icon slot="icon-only" name="play"></ion-icon>
-    </ion-button>
 
-    <ion-button class="audioButton3" fill="clear" color="light">
-      <ion-icon slot="icon-only" name="play-skip-forward"></ion-icon>
-    </ion-button>
-  </div>
-</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+

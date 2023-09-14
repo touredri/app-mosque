@@ -1,0 +1,82 @@
+
+<img alt="Mosquee doree" src="../../assets/vue-celebre-mosquee-sheikh-zayed-abu-dhabi-par-nuit-emirats-arabes-unis.jpg" />
+<ion-buttons slot="start" class="return">
+  <ion-back-button defaultHref="tabs/autres/preches"></ion-back-button>
+</ion-buttons>
+<ion-card class="cardSelect">
+  <ion-card-header>
+    <ion-card-title [routerLink]="['../../preches']">Prêches   <ion-button  size="small" fill="solid">Enregistrer</ion-button></ion-card-title>
+    <ion-card-subtitle>
+      <ion-list class="firstCardSelect">
+      <ion-item>
+        <ion-select aria-label="Imams" interface="popover" placeholder="Choisir Imam">
+          <ion-select-option value="Mahi Ouattara">Mahi Ouattara</ion-select-option>
+          <ion-select-option value="Abdoulaye Koita">Abdoulaye Koita</ion-select-option>
+          <ion-select-option value="Ousmane C Haidara">Ousmane C Haidara</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <!-- 2 div -->
+    <ion-list class="selectMargin">
+      <ion-item>
+        <ion-select
+          interface="popover"
+          toggleIcon="add"
+          expandedIcon="remove"
+          
+          placeholder="Prêches"
+        >
+          <ion-select-option value="tafsir">Tafsir</ion-select-option>
+          <ion-select-option value="sermon">Sermon</ion-select-option>
+          <ion-select-option value="autre">Autre</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card-subtitle>
+  </ion-card-header>
+
+  <!-- <ion-card-content>
+    Mohamed Mahi Ouattara, Chevalier de l’Ordre national et imam de la “Mosquée Arrahmane de Sebenikoro”, connu pour son franc-parler.  
+  </ion-card-content> -->
+</ion-card>
+<div style="top: 40%; position: fixed; width: 100%;">
+
+ <!-- <hr>  -->
+<ion-list lines="none" class="audios">
+  <div class="titleAudio"><span><ion-icon name="musical-note"></ion-icon> Audios</span></div>
+  <ion-item>
+    <ion-label>01 - Prêches Mahi Ouattara <ion-icon style="margin-left: 30%;" name="trash-outline" color="danger"></ion-icon>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>02 - Prêches Mahi Ouattara <ion-icon style="margin-left: 30%;" name="trash-outline" color="danger"></ion-icon></ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>03 - Prêches Mahi Ouattara <ion-icon style="margin-left: 30%;" name="trash-outline" color="danger"></ion-icon></ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>04 - Prêches Mahi Ouattara <ion-icon style="margin-left: 30%;" name="trash-outline" color="danger"></ion-icon></ion-label>
+  </ion-item>
+</ion-list>
+</div>
+<!-- <div class="cardAudio">
+  <h5>02 - Prêches Mahi Ouattara</h5>
+  <div><ion-icon name="play"></ion-icon></div>
+</div> -->
+<div class="cardAudio">
+  <h5>02 - Prêches Mahi Ouattara</h5>
+  <ion-range min="0" max="100" value="40" mode="md" color="light"></ion-range>
+  <div class="flex-box">
+    <ion-button class="audioButton" fill="clear" color="light">
+      <ion-icon slot="icon-only" name="play-skip-back"></ion-icon>
+    </ion-button>
+
+    <ion-button class="audioButton" fill="clear" color="light">
+      <ion-icon slot="icon-only" name="play"></ion-icon>
+    </ion-button>
+
+    <ion-button class="audioButton" fill="clear" color="light">
+      <ion-icon slot="icon-only" name="play-skip-forward"></ion-icon>
+    </ion-button>
+  </div>
+</div>
