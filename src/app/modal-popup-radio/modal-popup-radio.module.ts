@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProfilePageRoutingModule } from './profile-routing.module';
+import { ModalPopupRadioPageRoutingModule } from './modal-popup-radio-routing.module';
 
-import { ProfilePage } from './profile.page';
+import { ModalPopupRadioPage } from './modal-popup-radio.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule,
+    ModalPopupRadioPageRoutingModule
   ],
-  declarations: [ProfilePage]
+  declarations: [ModalPopupRadioPage]
 })
-export class ProfilePageModule {}
+export class ModalPopupRadioPageModule {}

@@ -31,20 +31,21 @@ export class RadioService{
         return this.mesRadios
     }
 
-    onAdd(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,emplacement?:string ,langue?:string, description?: string }) {
-        const radio: Radio = {
-            ...formValue,
-            id: this.mesRadios[this.mesRadios.length - 1].id + 1
-        }
-        this.mesRadios.push(radio)
-    }
+    // onAdd(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,emplacement?:string ,langue?:string, description?: string }) {
+    //     const radio: Radio = {
+    //         ...formValue,
+    //         id: this.mesRadios[this.mesRadios.length - 1].id + 1
+    //     }
+    //     this.mesRadios.push(radio)
+    // }
 
-    onAddRadio(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,emplacement?:string ,langue?:string, description?: string }) {
-        return this.listRadio.push({
-            formValue,
-            id: this.mesRadios[this.mesRadios.length -1].id + 1
-        })
-    }
+    // onAddRadio(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,}) {
+    //     const radio:Radio={
+    //         ...formValue,
+    //         id: this.mesRadios[this.mesRadios.length -1].id + 1
+    //     }
+    //      this.listRadio.push(radio)
+    // }
 
     // getRadio(id:number){
     //     this.radio= this.firestore.object('/radio/' + id)
@@ -55,23 +56,23 @@ export class RadioService{
         this.listRadio = this.firestore.list('/radio')
     }
 
-    editRadios(id:any ,radio:Radio){
-        return this.radio.update({
-            id: radio.id,
-            nom: radio.nom,
-            frequence: radio.frequence,
-            fluxAudio: radio.fluxAudio,
-            logo:radio.logo,
-            description : radio.description,
-            emplacement : radio.emplacement,
-            langue : radio.langue
+    // editRadios(id:any ,radio:Radio){
+    //     return this.radio.update({
+    //         id: radio.id,
+    //         nom: radio.nom,
+    //         frequence: radio.frequence,
+    //         fluxAudio: radio.fluxAudio,
+    //         logo:radio.logo,
+    //         description : radio.description,
+    //         emplacement : radio.emplacement,
+    //         langue : radio.langue
         
-        })
-    }
+    //     })
+    // }
 
 
-    deleteRadio(id:number){
-        this.radio = this.firestore.object('/radio/'+ id)
-        this.radio.remove()
-    }
+    // deleteRadio(id:number){
+    //     this.radio = this.firestore.object('/radio/'+ id)
+    //     this.radio.remove()
+    // }
 }

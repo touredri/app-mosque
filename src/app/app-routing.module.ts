@@ -28,7 +28,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
-  
+  {
+    path: 'modal-popup-radio',
+    loadChildren: () => import('./modal-popup-radio/modal-popup-radio.module').then( m => m.ModalPopupRadioPageModule)
+  }, 
 ];
 
 @NgModule({

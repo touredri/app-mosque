@@ -51,4 +51,18 @@
   .taille-nom {
     font-size: 20px;
   }
-  
+  .Ajouter{
+    border-radius: 10px;
+    background-color: rgb(120, 117, 177);
+    width: 80px;
+    height: 35px;
+    &:hover{
+    background-color: rgb(197, 33, 123);
+    }
+  }
+  #container{
+    padding: 10px;
+  }
+  ion-content{
+    height: 45px;
+  }

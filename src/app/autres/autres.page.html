@@ -5,19 +5,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="conteneur grid grid-cols-2 justify-center gap- items-center  mt-3 px-3">
-    <div class="coran w-20">
-      <ion-button [routerLink]="['coran']">
+  <div class="conteneur">
+    <div class="coran">
+      <button [routerLink]="['coran']">
         <img src="../../assets/LE CORAN.jpg" alt="Le Coran" class="w-full">
-      </ion-button><p class="ml-2">Coran</p>
+      </button>
+      <p class="ml-2">Coran</p>
     </div>
-    <div class="tafsir w-20">
-      <ion-button [routerLink]="['preches']"type="button">
+    <div class="tafsir">
+      <button [routerLink]="['preches']"type="button">
         <img src="../../assets/Rectangle 30.png" alt="Image du coran representant le tafsir" class="w-full">
-      </ion-button>
+      </button>
       <p class="ml-2">Tafsir/Preche</p>
     </div>
-    <div class="emission w-20"><ion-button [routerLink]="['radio']"><img src="../../assets/image 2.png" alt="radio" class="w-full"></ion-button><p class="ml-2">Emission</p>
+    <div class="emission">
+      <button [routerLink]="['radio']">
+        <img src="../../assets/image 2.png" alt="radio" class="w-full">
+      </button>
+      <p class="ml-2">Emission</p>
+    </div>
+    <div class="calendrier">
+      <button [routerLink]="['radio']">
+        <img src="../../assets/hijri calendar.jpg" alt="radio" class="w-full">
+      </button>
+      <p class="ml-2">Calendrier Musulmane</p>
     </div>
   </div>
 </ion-content>
