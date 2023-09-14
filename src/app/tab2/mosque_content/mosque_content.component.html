@@ -1,31 +1,41 @@
 <div class="container">
-  <div class="flex p-3 justify-between items-center">
-    <h2 class="font-bold">Favoris</h2>
-    <div class="relative flex items-center bg-gray-100 rounded-md pl-1"><ion-icon 
-      class=" h-5 w-5 text-gray-600" name="search"></ion-icon><input type="search" placeholder="Chercher une Mosquée"
-      class="border-blue-200 rounded-md outline-none
-      p-2 bg-gray-100 "
-    /></div>
+  <div class="head">
+    <ion-searchbar placeholder="Rechercher une mosquée"></ion-searchbar>
   </div>
-
-  <div class="trait">
+  <div class="body">
+    <div class="favories">
+      <h3>Favoris</h3>
+      <div class="trait"></div>
       <div class="image-container">
         <div class="image-list">
             <img src="../assets/premium_photo-1678563876224-dbb520ffef17.jpeg" alt="Image 1" [routerLink]="['detail-mosque']" class="cursor-pointer">
-            <img src="../assets/premium_photo-1678563876224-dbb520ffef17.jpeg" alt="Image 2">
-            <img src="../assets/premium_photo-1678563876224-dbb520ffef17.jpeg" alt="Image 3">
-            <img src="../assets/Un-Saoudien-fonce-en-voiture-sur-la-grande-mosquee-de-La-Mecque.jpg" alt="Image 4">
-  </div>
-
+            <img src="../../../assets/mosque.jpg" alt="">
+            <img src="../../../assets/mosque.jpg" alt="">
+            <img src="../../../assets/mosque.jpg" alt="">
+        </div>
+      </div>
+      <div class="trait"></div>
+      <ion-label>Toutes les mosquees</ion-label>
+      <ion-icon name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
     </div>
 
-    <div class="add-image">
-        
-        <button type="button" class="add-button" [routerLink]="['ajouter-mosque']">Ajouter une Mosquée</button>
-    </div> <br>
-  </div>
-  <div class="map" style="height: 450px; width: 100%;">
-  </div>
+    <ion-card color="light" *ngFor="let mosque of mosquees" [routerLink]="['detail-mosque', mosque.info.id]">
+      <ion-card-header>
+        <img [src]="mosque.image" alt="">
+        <ion-card-title>
+          <p>{{ mosque.info.nom }}</p>
+          <p>{{ mosque.info.imam }}</p>
+          <p>{{ mosque.info.quartier }}</p>
+        </ion-card-title>
+      </ion-card-header>
+      <!-- D'autres informations sur la mosquée si nécessaire -->
+    </ion-card>
+    
+    
 
+    
+
+   
+  </div>
 </div>
 

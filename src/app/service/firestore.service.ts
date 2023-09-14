@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Mosque } from '../models/mosque.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { ImageService } from './image.service';
 import { Observable, firstValueFrom } from 'rxjs';
 
@@ -33,8 +33,8 @@ export class FirestoreService {
   }
 
   // Récupérer toutes les mosquées
-  getMosquees() {
-    return this.firestore.collection('mosquees').snapshotChanges();
+  getMosquees():Observable<any[]>{
+    return this.firestore.collection('mosquees').valueChanges();
   }
 
   async getAndSaveMosqueesLocally() {
@@ -42,9 +42,11 @@ export class FirestoreService {
     const firestoreMosquees = await firstValueFrom(
       this.firestore.collection('mosquees').valueChanges()
     ) as Mosque[];
+    
 
     // Parcourez les données pour télécharger les images et mettre à jour les URLs
     for (const mosque of firestoreMosquees) {
+      //console.log(mosque);
       const imageUrl = mosque.image; // Obtenez l'URL distant de l'image
       const localFileName = `mosque_image_${mosque.info.nom}.jpg`; // Générez un nom de fichier local unique
 

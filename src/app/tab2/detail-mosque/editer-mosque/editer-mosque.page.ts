@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from 'src/app/service/firestore.service';
 
 @Component({
   selector: 'app-editer-mosque',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditerMosquePage implements OnInit {
 
-  constructor() { }
+  mosquees: any[] = [];
+
+  constructor(
+    private dataService: FirestoreService
+  ) { }
 
   ngOnInit() {
+    // Utilisez la méthode getMosquees du service pour récupérer les données
+    this.dataService.getMosquees().subscribe((data) => {
+      this.mosquees = data;
+      console.log(this.mosquees);
+      
+    });
   }
 
 }

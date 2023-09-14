@@ -1,5 +1,6 @@
 export interface Mosque {
   info: {
+    id: number;
     nom: string;
     quartier: string;
     imam: string;

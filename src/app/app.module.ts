@@ -18,9 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS, NgxAngularMaterialHijriAdapterService } from 'ngx-angular-material-hijri-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-
-import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,7 +41,6 @@ import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DAT
     provide: DateAdapter,
     useClass: NgxAngularMaterialHijriAdapterService,
   },
-  // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
   { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
   // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
   { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },],

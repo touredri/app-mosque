@@ -28,6 +28,7 @@ export class AjouterMosquePage implements OnInit {
   maghrib: string;
   isha: string;
   djuma: string;
+  id: number;
 
   constructor(private firestoreService: FirestoreService) {}
 
@@ -35,10 +36,14 @@ export class AjouterMosquePage implements OnInit {
     if (!this.selectedImage) {
       console.error("Aucune image sélectionnée.");
       // return;
-    }
+    };
+    this.firestoreService.getMosquees().subscribe((data) => {
+      this.id = data.length + 1
+    })
     // Créez un objet Mosque avec les données du formulaire
     const nouvelleMosque: Mosque = {
       info: {
+        id: this.id,
         nom: this.nom,
         quartier: this.quartier,
         imam: this.imam,
