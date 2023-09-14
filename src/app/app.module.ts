@@ -15,20 +15,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
-
-<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-@NgModule({
-  declarations: [AppComponent,],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
-=======
- 
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { HammerModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
@@ -36,9 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    FormsModule
-  ],
->>>>>>> 309ea39b0be96ef7eaddcba7cdb657a564869b20
+    FormsModule,
+    IonicStorageModule.forRoot(),
+    HammerModule,
+    BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -5,56 +5,55 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-<div class="prayer-list">
-    <button class="prayer-button">Fajr</button>
-    <button class="prayer-button">Sunrise</button>
-    <button class="prayer-button">Dhurh</button>
-    <button class="prayer-button">Asr</button>
-    <button class="prayer-button">Maghrib</button>
-    <button class="prayer-button">Isha</button>
-  </div>
-  <!-- <app-acceuil></app-acceuil> -->
 
-  <div>
-    <div class="image">
-      <img src="../../../assets/280px-Great_Mosque_of_Djenné_1.jpg" alt="img">
+    <div class="prayer-list">
+      <button class="prayer-button">Fajr</button>
+      <button class="prayer-button">Sunrise</button>
+      <button class="prayer-button">Dhurh</button>
+      <button class="prayer-button">Asr</button>
+      <button class="prayer-button">Maghrib</button>
+      <button class="prayer-button">Isha</button>
     </div>
-    <div class="texte">
-      <p>Dhuhr</p>
-      <h3>13:00</h3>
-      <p>Prochaine priere : Asr</p>
-      <p>16h</p>
-    </div>
+  
+  
+  <div class="card_container h-[160px] flex justify-center item-center w-full ">
+      <div class="w-full flex justify-center item-center">
+          <div class="card_content bg-black w-[95%] principal">
+            <div class="pap"></div>
+          <div class="texte">
+            <h2>Dhuhr</h2>
+            <h3>13:00</h3>
+            <div class="flex w-full justify-between prochaine luffy">
+              <h1>Prochaine priere: Asr  16:00</h1>
+            </div>
+          </div>
+          </div>
+      </div>
   </div>
+  
     <h2> Annonces</h2>
+      
+  
+    <div class="carousel-container">
+      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
+          <igx-slide *ngFor="let slide of slides;">
+              <div class="image-container">
+                  <img [src]="slide.src">
+              </div>
+          </igx-slide>
+      </igx-carousel>
+    </div>
 
-  <div class="carousel-container">
-    <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
-        <igx-slide *ngFor="let slide of slides;">
-            <div class="image-container">
-                <img [src]="slide.src">
-                <p>gfggg</p>
-            </div>
-        </igx-slide>
-    </igx-carousel>
-  </div>
-
-  <h2> Mosquée à proximité</h2>
-
-  <div class="carousel-container">
-    <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="3000" [gesturesSupport]="false">
-        <igx-slide *ngFor="let slide of mosquee;">
-            <div class="image-container">
-                <img [src]="slide.src">
-            </div>
-        </igx-slide>
-    </igx-carousel>
-  </div>
+    <h2> Mosquée à proximité</h2>
+    <div class="carousel-container">
+      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="3000" [gesturesSupport]="false">
+          <igx-slide *ngFor="let slide of mosquee;">
+              <div class="image-container">
+                  <img [src]="slide.src">
+              </div>
+          </igx-slide>
+      </igx-carousel>
+    </div>
 
 </ion-content>
