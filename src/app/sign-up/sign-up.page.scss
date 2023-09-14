@@ -7,22 +7,48 @@
   align-items: center; 
   background: url("../../assets/signup.jpg") no-repeat center center / cover;
 }
+.button{
+  color:#fefefe;
+}
+.entete{
+  background-image: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position:absolute;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+}
 
 .content{
   justify-content: center;
   align-items: center;
+  z-index: 1;
+}
+.i1{
+  color: #fefefe;
+  font-size: 24px;
 }
 
 .title h2{
   text-align: center;
   color: #fefefe;
   font-size: 45px;
+  position: relative;
+  bottom: 12px;
 }
 
 input::placeholder{
   color:rgba(23, 32, 42, 0.40);
-  text-align:left;
-
+  left: 5px;
+  position: relative;
 }
 
 .input-container {
@@ -62,13 +88,11 @@ input::placeholder{
 }
 
 .input1 input:focus{
-  outline: none; /* Supprimez la bordure de focus par défaut */
-  border: 1px solid transparent; /* Rendez la bordure transparente */
+  outline: none; 
 }
 
 .input2 input:focus{
-  outline: none; /* Supprimez la bordure de focus par défaut */
-  border: 1px solid transparent; /* Rendez la bordure transparente */
+  outline: none;
 }
 
 .input2 input {
