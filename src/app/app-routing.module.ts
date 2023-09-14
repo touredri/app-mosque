@@ -25,12 +25,20 @@ const routes: Routes = [
     loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
   {
+    path: 'sign-up/:id',
+    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'modal-popup-radio',
     loadChildren: () => import('./modal-popup-radio/modal-popup-radio.module').then( m => m.ModalPopupRadioPageModule)
+  },
+  {
+    path: 'annonce',
+    loadChildren: () => import('./annonce/annonce.module').then( m => m.AnnoncePageModule)
   }, 
 ];
 

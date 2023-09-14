@@ -5,9 +5,6 @@
     </ion-buttons>
     <ion-title class="title">Profil de l'utilisateur</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon class="icon" name="settings"></ion-icon>
-      </ion-button>
     </ion-buttons>
   </div>
 </ion-header>
@@ -15,13 +12,16 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <div class="container1">
-      <img src="../../../assets/fond.png" alt="Ma première photo">
+      <img class="image" src="../../assets/fond.png" alt="Ma première photo">
     </div>
+  </div>
+  <div class="iconadd">
+    <button [routerLink]="['/sign-up', { id: '1' }]"> <ion-icon class="bb1" name="person-add-outline"></ion-icon></button>
   </div>
 
  <div class="user">
   <div class="profile">
-    <img src="../../../assets/profile1.jpg" alt="UserProfile">
+    <img src="../../assets/profile1.jpg" alt="UserProfile">
   </div>
  </div>
     <div class="container3">
@@ -32,24 +32,28 @@
         <div class="up">
           <input type="button" value="Modifier profil">
         </div>
+        <div class="ajout">
+            <ion-icon class="add" name="add-circle-outline"></ion-icon>
+          <input routerLink="/annonce" type="button" value="Ajouter annonce">
+        </div>
       </div>
       <div class="evalue">
         <div class="icon">
           <div class="icon1">
-            <ion-icon name="create-outline"></ion-icon>
-            <p>Evaluer l'application</p>
+            <ion-icon class="p1" name="create-outline"></ion-icon>
+            <p class="texte" >Evaluer l'application</p>
           </div>
         </div>
         <div class="icon">
           <div class="icon1">
-            <ion-icon name="arrow-undo-outline"></ion-icon>
-            <p>Partager Dinɛ Sira</p>
+            <ion-icon class="p2" name="arrow-undo-outline"></ion-icon>
+            <p class="texte">Partager Dinɛ Sira</p>
           </div>
         </div>
         <div class="icon">
           <div class="icon2">
-            <ion-icon name="alert-circle-outline"></ion-icon>
-            <p>A propos</p>
+            <ion-icon class="p3" name="alert-circle-outline"></ion-icon>
+            <p class="texte">A propos</p>
           </div>
         </div>
       </div>
@@ -58,6 +62,8 @@
       <div class="icon-user">
         <i class="ri-logout-box-line"></i>
         <input [routerLink]="['/login']" type="button" value="Se déconnecter">
+        <ion-icon class="p4" name="log-out-outline"></ion-icon>
+        <input type="button" value="Se déconnecter">
       </div>
   </div>
 </ion-content>
