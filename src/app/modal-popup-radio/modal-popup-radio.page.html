@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ajout de station Radio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <!-- Model Title : {{ model_title }} -->
+      </ion-col>
+    </ion-row>
+    <form (ngSubmit)="onSubmit()">
+
+      <label for="nom" >Nom</label>
+      <input type="text" name="nom" id="nom"  [(ngModel)]="radio.nom" required>
+      <label for="frequence" >Frequence</label>
+      <input type="number" name="frequence" id="frequence"  [(ngModel)]="radio.frequence" required>
+      <label for="fluxAudio" >Flux Audio</label>
+      <input type="text" name="fluxAudio" id="fluxAudio"  [(ngModel)]="radio.fluxAudio" required>
+      <label for="logo">Emplacement</label>
+      <input type="text"   id="emplacement" [(ngModel)]="radio.emplacement" name="emplacement" >
+      
+      <ion-row>
+        <ion-col text-center>
+          <button class="Fermer" (click)="closeModel()">Fermer</button>
+          <button class="sub" type="submit">Submit</button>
+        </ion-col>
+      </ion-row>
+  </form>
+    
+  </ion-grid>
+</ion-content>

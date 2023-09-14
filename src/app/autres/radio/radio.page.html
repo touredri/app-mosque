@@ -4,17 +4,24 @@
       <img src="../../assets/icon _radio_.png" alt="">
   </div>
   
+  
 
 <ion-content>
 
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <button class="Ajouter" (click)="openIonModal()">Ajouter +</button>
+    </div>
+  </ion-content>
+
   <ion-list>
-    <ion-item *ngFor="let radio of radios">
+    <ion-item *ngFor="let radio of listeRadio">
       <ion-avatar slot="start">
         <img alt="radio info" src="../../assets/icon _radio_.png" />
       </ion-avatar>
       <ion-label lines="none">
         {{radio.nom}} <br>
-        {{radio.lieu}}
+        {{radio.emplacement}}
       </ion-label>
       <ion-label  class="font-size: 30px" style="margin-left: 10px; "> <!-- Ajoutez une marge à gauche -->
         {{radio.frequence}}

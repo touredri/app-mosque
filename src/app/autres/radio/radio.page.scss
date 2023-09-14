@@ -10,12 +10,10 @@ ion-back-button{
     color: black;
     margin-top: 0%;
     margin-bottom: auto;
-   
-
 }
 .header h1{
-     text-align: left;
-     color: black;
+  text-align: left;
+  color: black;
     
 }
 
@@ -63,6 +61,18 @@ ion-back-button{
   .taille-nom {
     font-size: 20px;
   }
-  
-
-  
+  .Ajouter{
+    border-radius: 10px;
+    background-color: rgb(120, 117, 177);
+    width: 80px;
+    height: 35px;
+    &:hover{
+    background-color: rgb(197, 33, 123);
+    }
+  }
+  #container{
+    padding: 10px;
+  }
+  ion-content{
+    height: 45px;
+  }
