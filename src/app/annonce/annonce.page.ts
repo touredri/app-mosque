@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnoncePage implements OnInit {
 
+  annonce = {
+    titre: '',
+    description: '',
+    date: '',
+  };
   constructor() { }
 
-  ngOnInit() {
-  }
+  ajouterAnnonce() {
+    // Ici, vous pouvez traiter les données du formulaire, les envoyer à un service, etc.
+    console.log(this.annonce);
+    // Réinitialisez le formulaire après l'ajout si nécessaire
+    this.annonce = {
+      titre: '',
+      description: '',
+      date: '',
+    };
+  };
+  
+  ngOnInit() {}
 
 }

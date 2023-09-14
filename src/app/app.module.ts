@@ -16,7 +16,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 
- 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,

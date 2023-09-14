@@ -1,3 +1,26 @@
 .entete{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+    color: #fefefe;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+.bounce{
+    background-color: #3498DB;
+    border-radius: 10px;
+    width: 40%;
+    color: #fefefe;
 }

@@ -33,6 +33,7 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
+    "ionic": "^4.1.2",
     "ionicons": "^7.0.0",
     "moment": "2.29.4",
     "moment-hijri": "^2.1.2",

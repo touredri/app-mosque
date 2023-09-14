@@ -1,12 +1,31 @@
 <ion-header [translucent]="true">
   <div class="entete">
     <ion-buttons slot="start">
-      <ion-back-button class="button" defaultHref="/annonce"></ion-back-button>
+      <ion-back-button class="button" defaultHref="/profile"></ion-back-button>
     </ion-buttons>
     <ion-title class="title">Ajout de l'annonce</ion-title>
   </div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+  <div class="container">
+    <form (ngSubmit)="ajouterAnnonce()" class="container">
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="annonce.titre" label="Titre de l'annonce" labelPlacement="floating" placeholder="Entrer le titre"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-input [(ngModel)]="annonce.description" label="Description" labelPlacement="floating" placeholder="Entrer la description"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-input [(ngModel)]="annonce.date" label="Date" labelPlacement="floating" type="date" placeholder="Entrer la date"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+   </div> 
+   <div class="bb">
+      <button class="bounce" type="submit">Ajouter l'annonce</button>
+    </div> 
 </ion-content>

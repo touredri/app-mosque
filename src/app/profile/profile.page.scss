@@ -115,7 +115,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #3498db;
     width: 289px;
     height: 33px;
     position: relative;
@@ -125,7 +124,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    color: #fefefe;
+    color:black;
     left: 5px;
 }
 .icon2{
@@ -133,37 +132,40 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #3498db;
     width: 289px;
     height: 33px;
     position: relative;
 }
 .p3{
     font-size: 24px;
-    color: #fefefe;
+    color:#3498db;
     position: relative;
     right: 60px;
     bottom: 1px;
 }
 .p2{
     font-size: 24px;
-    color: #fefefe;
+    color: #3498db;
     position: relative;
     right: 10px;
     bottom: 1px;
 }
 .p1{
     font-size: 24px;
-    color: #fefefe;
+    color: #3498db;
     position: relative;
     bottom: 1px;
+}
+.p4{
+    font-size: 20px;
+    color: #fdfefe;
 }
 
 .icon2 p{
     display: flex;
     justify-content: center;
     position: relative;
-    color: #fefefe;
+    color:black;
     right: 50px;
 }
 .logout{
@@ -179,8 +181,6 @@
     background-color: #3498db;
     &:hover{
         background-color: red;
-        width: 180px;
-        height: 40px;
     }
 }
 
@@ -232,13 +232,11 @@
     border-radius: 10px;
     &:hover{
         background-color: green;
-        transform: scale(1.2);
-
     }
 }
 .add{
     position: relative;
-    right: 10px;
+    right: 5px;
     font-size: 20px;
     border-radius: 10px;
     color: #fdfefe;
