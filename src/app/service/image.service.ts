@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
