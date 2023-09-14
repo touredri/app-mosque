@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'radio',
     loadChildren: () => import('./radio/radio.module').then( m => m.RadioPageModule)
   },
+  {
+    path: 'calendrier',
+    loadChildren: () => import('./calendrier/calendrier.module').then( m => m.CalendrierPageModule)
+  },
 ];
 
 @NgModule({

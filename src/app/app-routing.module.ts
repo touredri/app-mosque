@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: 'annonce',
     loadChildren: () => import('./annonce/annonce.module').then( m => m.AnnoncePageModule)
-  }, 
+  },
+  {
+    path: 'calendrier',
+    loadChildren: () => import('./autres/calendrier/calendrier.module').then( m => m.CalendrierPageModule)
+  },
 ];
 
 @NgModule({
