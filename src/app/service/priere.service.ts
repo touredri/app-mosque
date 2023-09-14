@@ -29,7 +29,7 @@ export class PriereService {
     return this.getPriereData().pipe(
       map((data: any[]) => {
         const todayPriereTime = data.find((date: any) => {
-          return date.date && date.date.readable === currentDateStr;
+          return date.priere.readable === currentDateStr;
         });
         if (!todayPriereTime) {
           console.log("no success")
