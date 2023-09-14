@@ -27,10 +27,10 @@ export class Tab1Page  implements OnInit {
       src: '../../assets/280px-Great_Mosque_of_Djenné_1.jpg'
     },
     {
-      src: 'https://www.infragistics.com/angular-demos-lob/assets/images/carousel/slider-image-chart.png'
+      src: '../../assets/Mosquee_mmm.jpg'
     },
     {
-      src: 'https://www.infragistics.com/angular-demos-lob/assets/images/carousel/ignite-ui-angular-charts.png'
+      src: '../../assets/Mundata.jpg'
     }
 ];
 

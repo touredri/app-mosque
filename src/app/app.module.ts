@@ -1,3 +1,4 @@
+import { IonicStorageModule } from '@ionic/storage-angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -16,8 +17,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { IonicStorageModule } from '@ionic/storage-angular';
 import { HammerModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [AppComponent],

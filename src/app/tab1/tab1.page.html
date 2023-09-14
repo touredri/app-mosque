@@ -17,7 +17,7 @@
     </div>
   
   
-  <div class="card_container h-[160px] flex justify-center item-center w-full ">
+    <div class="card_container h-[160px] flex justify-center item-center w-full ">
       <div class="w-full flex justify-center item-center">
           <div class="card_content bg-black w-[95%] principal">
             <div class="pap"></div>
@@ -35,9 +35,9 @@
     <h2> Annonces</h2>
       
   
-    <div class="carousel-container">
-      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
-          <igx-slide *ngFor="let slide of slides;">
+    <div >
+      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="5000">
+          <igx-slide style="height: 210px;" *ngFor="let slide of slides;">
               <div class="image-container">
                   <img [src]="slide.src">
               </div>
@@ -47,7 +47,7 @@
 
     <h2> Mosquée à proximité</h2>
     <div class="carousel-container">
-      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="3000" [gesturesSupport]="false">
+      <igx-carousel #carousel [navigation]="false" [pause]="true" animationType="slide"  [gesturesSupport]="true">
           <igx-slide *ngFor="let slide of mosquee;">
               <div class="image-container">
                   <img [src]="slide.src">
