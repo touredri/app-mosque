@@ -195,6 +195,7 @@ ion-searchbar{
 .trait{
   border-top: 1px solid #d3d5d6;
   border-bottom: 1px solid #d3d5d6;
+  margin-bottom: 2%;
 }
 
 .image{
@@ -206,10 +207,17 @@ ion-searchbar{
 
 ion-icon{
   position: absolute;
-  top: 14.5%;
-  right:5%;
+  right: 5%;
   color: #007BFF;
   font-size: 200%;
+}
+
+ion-icon{
+  // margin-top: 1%;
+}
+
+ion-label{
+  // margin-top: 2%;
 }
 
 ion-card-header{

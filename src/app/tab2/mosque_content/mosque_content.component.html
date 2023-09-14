@@ -5,7 +5,6 @@
   <div class="body">
     <div class="favories">
       <h3>Favoris</h3>
-      <ion-icon name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
       <div class="trait"></div>
       <div class="image-container">
         <div class="image-list">
@@ -16,47 +15,24 @@
         </div>
       </div>
       <div class="trait"></div>
+      <ion-label>Toutes les mosquees</ion-label>
+      <ion-icon name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
     </div>
 
-    <ion-card color="light" [routerLink]="['ajouter-mosque']" >
+    <ion-card color="light" *ngFor="let mosque of mosquees" [routerLink]="['detail-mosque', mosque.info.id]">
       <ion-card-header>
-        <img src="../../../assets/mosque.jpg" alt="">
-        <ion-card-title> <p>listMosque.nom</p> <p>Abdoulaye</p> <p>Lafiabougou</p> </ion-card-title>
-        <ion-card-subtitle>ttt</ion-card-subtitle>
+        <img [src]="mosque.image" alt="">
+        <ion-card-title>
+          <p>{{ mosque.info.nom }}</p>
+          <p>{{ mosque.info.imam }}</p>
+          <p>{{ mosque.info.quartier }}</p>
+        </ion-card-title>
       </ion-card-header>
+      <!-- D'autres informations sur la mosquée si nécessaire -->
     </ion-card>
+    
+    
 
-    <ion-card color="light">
-      <ion-card-header>
-        <img src="../../../assets/mosque.jpg" alt="">
-        <ion-card-title> <p>AL KOUSRAT</p> <p>Abdoulaye KOITA</p> <p>Lafiabougou</p> </ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card color="light">
-      <ion-card-header>
-        <img src="../../../assets/mosque.jpg" alt="">
-        <ion-card-title> <p>AL KOUSRAT</p> <p>Abdoulaye KOITA</p> <p>Lafiabougou</p> </ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card color="light">
-      <ion-card-header>
-        <img src="../../../assets/mosque.jpg" alt="">
-        <ion-card-title> <p>AL KOUSRAT</p> <p>Abdoulaye KOITA</p> <p>Lafiabougou</p> </ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card color="light">
-      <ion-card-header>
-        <img src="../../../assets/mosque.jpg" alt="">
-        <ion-card-title> <p>AL KOUSRAT</p> <p>Abdoulaye KOITA</p> <p>Lafiabougou</p> </ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
     
 
    

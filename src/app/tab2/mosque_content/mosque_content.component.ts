@@ -22,21 +22,18 @@ import { FirestoreService } from 'src/app/service/firestore.service';
 
 export class MosqueComponent  implements OnInit {
 
-  data: any;
-  listMosque: any;
+  mosquees: any[] = [];
 
-  constructor(
-    private firebase: FirestoreService
-    ) {}
+  constructor(private dataService: FirestoreService) {}
 
-  ngOnInit(): void {
-    this.data = this.firebase.getMosquees(),
-    this.data.subscribe((mosque: any)=>{
-      this.listMosque = mosque;
-    })
-    console.log(this.listMosque);
-    
+  ngOnInit() {
+    // Utilisez la méthode getMosquees du service pour récupérer les données
+    this.dataService.getMosquees().subscribe((data) => {
+      this.mosquees = data;
+      console.log(this.mosquees);
+      
+    });
   }
-
-
 }
+
+

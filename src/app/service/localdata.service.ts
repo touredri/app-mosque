@@ -9,14 +9,14 @@ export class LocalDataService {
 
   async getLocalMosquees() {
     // Vérifiez si les données locales existent
-    const localData = await this.storage.get('mosquees');
+    // const localData = await this.storage.get('mosquees');
 
-    if (localData) {
-      // Si les données locales existent, les récupérer et les convertir en objet
-      return JSON.parse(localData);
-    } else {
-      // Gérez le cas où il n'y a pas de données locales disponibles
-      return null;
-    }
+    // if (localData) {
+    //   // Si les données locales existent, les récupérer et les convertir en objet
+    //   return JSON.parse(localData);
+    // } else {
+    //   // Gérez le cas où il n'y a pas de données locales disponibles
+    //   return null;
+    // }
   }
 }

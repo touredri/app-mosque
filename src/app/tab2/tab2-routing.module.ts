@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./ajouter-mosque/ajouter-mosque.module').then( m => m.AjouterMosquePageModule)
   },
   {
-    path: 'detail-mosque',
+    path: 'detail-mosque/:id',
     loadChildren: () => import('./detail-mosque/detail-mosque.module').then( m => m.DetailMosquePageModule)
   },
 ];

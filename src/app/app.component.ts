@@ -17,11 +17,11 @@ export class AppComponent implements OnInit{
     ) {}
 
   ngOnInit(): void {
-    this.data = this.firebase.getAndSaveMosqueesLocally(),
-    console.log(this.data);
+    // this.data = this.firebase.getAndSaveMosqueesLocally(),
+    // console.log(this.data);
     
-    this.localData.getLocalMosquees(),
-    console.log(this.data);
+    // this.localData.getLocalMosquees(),
+    // console.log(this.data);
     
   }
 
