@@ -9,6 +9,9 @@
     right: 10px;
     font-size: 25px;
     color: #3498db;
+    &:hover{
+        transform: scale(1.2);
+    }
 }
 .button{
     border-radius: 2rem;
@@ -139,6 +142,18 @@
     position: relative;
     color:black;
     left: 5px;
+    line-height: 1.2em;
+    color: #0000;
+    text-shadow: 
+      0 0 #000, 
+      0 1.2em #1095c1;
+    overflow: hidden;
+    transition: .3s;
+    &:hover{
+        text-shadow: 
+        0 -1.2em #000, 
+        0 0 #1095c1;
+    }
 }
 .icon2{
     display: flex;
@@ -148,7 +163,10 @@
     width: 289px;
     height: 33px;
     position: relative;
+    
 }
+
+
 .p3{
     font-size: 24px;
     color:#3498db;
@@ -180,10 +198,23 @@
     position: relative;
     color:black;
     right: 50px;
+    cursor: pointer;
+    line-height: 1.2em;
+    color: #0000;
+    text-shadow: 
+      0 0 #000, 
+      0 1.2em #1095c1;
+    overflow: hidden;
+    transition: .3s;
+    &:hover{
+        text-shadow: 
+        0 -1.2em #000, 
+        0 0 #1095c1;
+    }
 }
 .logout{
     position: relative;
-    left: 25%;
+    left: 30%;
     top: 100px;
     width: 170px;
     height: 33px;
@@ -261,5 +292,5 @@
 .texte{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; 
 }
