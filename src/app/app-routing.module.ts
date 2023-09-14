@@ -41,8 +41,12 @@ const routes: Routes = [
     loadChildren: () => import('./annonce/annonce.module').then( m => m.AnnoncePageModule)
   },
   {
-    path: 'calendrier',
-    loadChildren: () => import('./autres/calendrier/calendrier.module').then( m => m.CalendrierPageModule)
+    path: 'donate',
+    loadChildren: () => import('./donate/donate.module').then( m => m.DonatePageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   },
 ];
 

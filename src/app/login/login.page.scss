@@ -7,6 +7,7 @@
   align-items: center; 
   background: url("../../assets/login.png") no-repeat center center/cover;
 }
+
 .overlay{
   position: absolute;
   top: 0;
@@ -15,23 +16,30 @@
   right: 0;
   background: rgba(0,0,0,0.6);
 }
-
 .content{
   justify-content: center;
   align-items: center;
   z-index: 1;
+  z-index: 1;
+}
+.i1{
+  color: #fefefe;
+  font-size: 24px;
 }
 
 .title h2{
   text-align: center;
   color: #fefefe;
   font-size: 45px;
-  margin-bottom: 20px;
+  position: relative;
+  bottom: 10px;
 }
 
 input::placeholder{
   color:rgba(23, 32, 42, 0.40);
-  text-align:left;
+  left: 5px;
+  position: relative;
+
 
 }
 
@@ -72,7 +80,7 @@ input::placeholder{
 }
 
 .input1 input:focus{
-  outline: none;
+  outline: none; 
 }
 
 .input2 input:focus{
@@ -115,6 +123,8 @@ a{
   align-items: center;
   border-radius: 50%;
   background-color: #3498db;
+  position: relative;
+  bottom: 10px;
 }
 
 .google .logo i{
@@ -164,4 +174,25 @@ button{
 .paragraphe a{
   color: #3498db;
   border-bottom: solid 2px #fefefe;
+}
+.bom{
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  position: relative;
+  top: 50px;
+  left: 30px;
+  color: #fefefe;
+  font-weight: bold;
+}
+.pop{
+  position: relative;
+  bottom: 4px;
+  left: 2px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.ttp{
+  position: relative;
+  font-size: 25px;
 }

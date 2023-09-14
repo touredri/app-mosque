@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <div class="head">
+    <ion-buttons class="icone" slot="start">
+      <ion-back-button class="button" defaultHref="/accueil"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Donation</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="principal">
+    <div class="guindo">
+      <div class="img">
+        <img src="../../assets/donate.png" alt="Photo de donation">
+      </div>
+    </div>
+    <form (ngSubmit)="Ajouterdonate()">
+      <div class="c1">
+        <div class="sii">
+          <div class="titre">
+            <i class="ri-file-text-line"></i>
+          </div>
+          <input [(ngModel)]="donate.titre" name="titre"  class="name"  type="text" placeholder="Titre de la donation" required>
+        </div>
+        <div class="sii">
+          <div class="titre">
+            <i class="ri-wallet-3-line"></i>
+          </div>
+          <input [(ngModel)]="donate.montant" name="montant" class="montant" type="number" placeholder="Montant de la donation" required>
+        </div>
+        <div class="sii">
+          <div class="titre">
+            <i class="ri-calendar-2-fill"></i>
+          </div>
+          <input [(ngModel)]="donate.date" name="date" class="date" type="date" placeholder="Date de la donation" required>
+        </div>
+        <div class="boo">
+          <input type="submit" value="Effectuer le don">
+        </div>
+      </div>
+    </form>
+   
+  </div>
+</ion-content>
