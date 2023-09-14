@@ -14,6 +14,7 @@ export class AnnoncePage implements OnInit {
   };
   constructor(private annonceAdd: AngularFirestore) { }
   ajouterAnnonce() {
+    console.log("ok");
     this.annonceAdd.collection('annonces').add({
       titre: this.annonce.titre,
       description: this.annonce.description,
