@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +22,8 @@ export class SignUpPage implements OnInit {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private route: ActivatedRoute
   ) {}
 
   async register() {
@@ -34,12 +36,16 @@ export class SignUpPage implements OnInit {
       if (result.user) {
         // L'enregistrement s'est bien passé
         console.log('Utilisateur enregistré avec succès:', result.user);
-
+        const isAdmin = this.route.snapshot.paramMap.get('id');
+        if(isAdmin) {
+          this.user.admin = true
+        }
         // Enregistrez également le nom et le prénom dans Firestore
         this.firestore.collection('utilisateurs').add({
           nom: this.user.nom,
           prenom: this.user.prenom,
           email: this.user.email,
+          admin: this.user.admin
         });
 
         // Effacez les champs du formulaire après l'enregistrement
