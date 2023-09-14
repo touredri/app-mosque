@@ -1,11 +1,22 @@
 .header{
-    text-align: left;
+    display: flex;
     background-color: aliceblue;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+ion-back-button{
+    color: black;
+    margin-top: 0%;
+    margin-bottom: auto;
+   
 
 }
 .header h1{
-    text-align: left;
-    color: black;
+     text-align: left;
+     color: black;
+    
 }
 
 .header h1{
@@ -15,17 +26,18 @@
     padding-left: 10px;
 }
 .header img{
-    position: relative;
-    left: 75%;
+    // position: relative;
+    // left: 75%;
+    margin-left: auto;
 
     
 }
 .list-radios img{
-    margin-top: 20px;
+    margin-top: auto;
 }
-.icone{
-    position: absolute;
-}
+// .icone{
+//     position: absolute;
+// }
 .flex flex-col{
     display: flex;
     flex-wrap: wrap;
@@ -51,4 +63,6 @@
   .taille-nom {
     font-size: 20px;
   }
+  
+
   
