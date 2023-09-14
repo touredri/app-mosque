@@ -15,13 +15,7 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     CommonModule,
     FormsModule,
     Tab3PageRoutingModule,
-<<<<<<< HEAD
-    HijriCalendarComponent,
-    HeaderComponent,
-   
-=======
     HeaderComponent
->>>>>>> 309ea39b0be96ef7eaddcba7cdb657a564869b20
   ],
   declarations: [Tab3Page,]
 })

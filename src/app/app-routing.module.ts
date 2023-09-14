@@ -8,9 +8,6 @@ const routes: Routes = [
     pathMatch:'full'
   },
   
-<<<<<<< HEAD
-
-=======
   {
     path:'',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
@@ -32,7 +29,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   
->>>>>>> 309ea39b0be96ef7eaddcba7cdb657a564869b20
 ];
 
 @NgModule({

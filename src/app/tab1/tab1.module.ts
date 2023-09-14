@@ -4,10 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { HeaderComponent } from 'header/header.component';
-import { 
-	IgxCarouselModule,
 
- } from "igniteui-angular";
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 @NgModule({
@@ -17,8 +14,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     Tab1PageRoutingModule,
     HeaderComponent,
-    IgxCarouselModule,
-	  IgxSliderModule
+    
    
   ],
   declarations: [Tab1Page,],
