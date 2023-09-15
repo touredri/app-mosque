@@ -34,9 +34,9 @@ export class Tab1Page  implements OnInit {
           nom: this.data[3].info.nom
         },
         {
-          id: this.data[4].info.id,
-          src: this.data[4].image,
-          nom: this.data[4].info.nom 
+          id: this.data[0].info.id,
+          src: this.data[0].image,
+          nom: this.data[0].info.nom 
         }
       
       ]

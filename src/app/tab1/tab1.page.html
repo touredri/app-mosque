@@ -54,7 +54,7 @@
       <igx-carousel #carousel [navigation]="false" [pause]="true" animationType="slide"  [gesturesSupport]="true">
           <igx-slide *ngFor="let slide of mosquee;">
               <div class="image-container" class="relative" >
-                  <img [src]="slide.src">
+                  <img [src]="slide.src" alt="mosque">
                   <h1 class="absolute text-white left-2 bottom-2 font-bold border-blue-700 p-3 rounded-md ">{{slide.nom}}</h1>
               </div>
           </igx-slide>

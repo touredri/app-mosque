@@ -61,24 +61,24 @@
         <div class="text">
           <span>Jour</span>
           <span>Heure</span>
-          <span class="hidden">Alarme</span>
+          <span>Alarme</span>
         </div>
-        <div class="text">
+        <div class="text" *ngIf="mosques.tabsir.lundi !== ''">
           <span>Lundi</span>
           <span>{{mosques.tabsir.lundi}}</span>
           <span>15:00</span>
         </div>
-        <div class="text">
+        <div class="text" *ngIf="mosques.tabsir.mercredi !== ''">
           <span>Mercredi</span>
           <span>{{mosques.tabsir.mercredi}}</span>
           <span>12:30</span>
         </div>
-        <div class="text">
+        <div class="text" *ngIf="mosques.tabsir.dimanche !== ''">
           <span>Vendredi</span>
           <span>{{mosques.tabsir.vendredi}}</span>
           <span>15:30</span>
         </div>
-        <div class="text">
+        <div class="text" *ngIf="mosques.tabsir.samedi !== ''" >
           <span>Samedi</span>
           <span>{{mosques.tabsir.samedi}}</span>
           <span>18:30</span>
