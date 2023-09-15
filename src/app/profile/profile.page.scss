@@ -214,6 +214,7 @@
 }
 .logout{
     position: relative;
+    width: 100%;
     left: 30%;
     top: 100px;
     width: 170px;
@@ -224,7 +225,7 @@
     border-radius: 10px;
     background-color: #3498db;
     &:hover{
-        background-color: red;
+        background-color: rgba(255, 0, 0, 0.671);
     }
 }
 

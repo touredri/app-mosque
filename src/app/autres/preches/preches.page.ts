@@ -9,7 +9,7 @@ export class PrechesPage implements OnInit {
 
            // Liste des prêches audio
            prechesAudio: PrecheAudio[] = [
-            { id: 1, name: 'Mahi Ouattara', imam: 'Mahi Ouattara', type: 'Tafsir', audioUrl: '../../../../assets/songs/imam_Mahi_Ouattara_😂_😂_😂(256k).mp3', volume: 6, isPlaying : false },
+            { id: 1, name: 'Mahi Ouattara', imam: 'Mahi Ouattara', type: 'Tafsir', audioUrl: '../../../../assets/songs/imam_Mahi_Ouattara.mp3', volume: 6, isPlaying : false },
             { id: 2, name: 'Mahi Ouatt', imam: 'Mahi Ouattara', type: 'Sermon', audioUrl: '../../../../assets/songs/imam_mahi_Ouattara_sur_la_mort(256k).mp3', volume : 6, isPlaying : false },
             { id: 3, name: 'Koita', imam: 'Abdoulaye Koita', type: 'Tafsir', audioUrl: '../../../../assets/songs/Mahi Ouat.mp3', volume : 6, isPlaying : false },
             { id: 4, name: 'Haidara', imam: 'Ousmane C Haidara', type: 'Tafsir', audioUrl: '../../../../assets/songs/Haidara Bani.mp3', volume : 6, isPlaying : false },

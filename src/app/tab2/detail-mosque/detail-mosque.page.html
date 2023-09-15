@@ -3,10 +3,10 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <div class="head">
-    <img src="../../../assets/mosque.jpg" alt="">
+    <img [src]="mosques.image" alt="">
     <div class="container">
       <div class="row">
-        <span class="mosque">{{mosques.info.nom}} <a href="#" [routerLink]="['editer-mosque']">Editer</a> </span>
+        <span class="mosque">{{mosques.info.nom}} <a href="#" [routerLink]="['editer-mosque', mosques.info.id]">Editer</a> </span>
         <span class="iman">{{mosques.info.imam}}</span>
         <span><i id="icon1" class="bi bi-telephone-fill"></i> {{mosques.info.numero}} </span>
         <span><i id="icon1" class="bi bi-geo-alt-fill"></i>{{mosques.info.quartier}}</span>
@@ -61,33 +61,33 @@
         <div class="text">
           <span>Jour</span>
           <span>Heure</span>
-          <span>Alarme</span>
+          <span class="hidden">Alarme</span>
         </div>
         <div class="text">
           <span>Lundi</span>
-          <span>15:30</span>
-          <span>14:30</span>
+          <span>{{mosques.tabsir.lundi}}</span>
+          <span>15:00</span>
         </div>
         <div class="text">
           <span>Mercredi</span>
-          <span>13:00</span>
+          <span>{{mosques.tabsir.mercredi}}</span>
           <span>12:30</span>
         </div>
         <div class="text">
           <span>Vendredi</span>
-          <span>16:00</span>
+          <span>{{mosques.tabsir.vendredi}}</span>
           <span>15:30</span>
         </div>
         <div class="text">
           <span>Samedi</span>
-          <span>19:00</span>
+          <span>{{mosques.tabsir.samedi}}</span>
           <span>18:30</span>
         </div>
       </div>
     </div>
-    <div class="btn">
+    <!-- <div class="btn">
       <ion-button id="open-loading">FAIRE UN DON</ion-button>
       <ion-loading trigger="open-loading" message="Enregistrement..." duration="2000"></ion-loading>
-    </div>
+    </div> -->
   </div>
 </ion-content>

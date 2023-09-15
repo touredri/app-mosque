@@ -62,8 +62,16 @@ export class FirestoreService {
   }
   // Récupérer une mosquée par ID
   getMosqueeById(id: string) {
-    return this.firestore.collection('mosquees').doc(id).valueChanges();
-  }
+    this.firestore
+    .collection('mosquees', (ref) => ref.where('info.id', '==', parseInt(id, 10)))
+    .valueChanges()
+    .subscribe((mosquess: any) => {
+      if (mosquess.length > 0) {
+        // Si des documents correspondent, prenez le premier
+        return mosquess[0];
+        // console.log(this.mosques.info.nom)
+      } 
+      });  }
 
   // Mettre à jour une mosquée
   mettreAJourMosquee(id: string, mosquee: Mosque, nouvelleImage: File) {

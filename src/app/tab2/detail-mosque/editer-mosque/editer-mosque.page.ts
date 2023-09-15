@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FirestoreService } from 'src/app/service/firestore.service';
 
 @Component({
@@ -8,19 +9,17 @@ import { FirestoreService } from 'src/app/service/firestore.service';
 })
 export class EditerMosquePage implements OnInit {
 
-  mosquees: any[] = [];
+  mosquees: any;
+  id: any;
 
   constructor(
-    private dataService: FirestoreService
+    private dataService: FirestoreService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
     // Utilisez la méthode getMosquees du service pour récupérer les données
-    this.dataService.getMosquees().subscribe((data) => {
-      this.mosquees = data;
-      console.log(this.mosquees);
-      
-    });
+    this.mosquees = this.dataService.getMosqueeById(this.id)
   }
-
 }

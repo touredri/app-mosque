@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PriereService } from '../service/priere.service';
 import { AuthService } from '../service/auth.service';
+import { FirestoreService } from '../service/firestore.service';
 
 @Component({
   selector: 'app-tab1',
@@ -9,17 +10,40 @@ import { AuthService } from '../service/auth.service';
 })
 export class Tab1Page  implements OnInit {
   priere: any;
-  time: any
+  time: any;
+  data: any;
+  public mosquee: any[] = [];
+
   constructor(
     private priereService: PriereService,
-    private authService: AuthService
+    private authService: AuthService,
+    private firebase: FirestoreService
   ) {}
   ngOnInit(): void {
-    this.time = this.priereService.getTodayPriereTime();
-    this.time.subscribe((data: any) => {
-      console.log(data); 
+    this.firebase.getMosquees().subscribe((data: any) => {
+      this.data = data;
+     // console.log(this.data)
+      this.mosquee = [
+        {
+          id: this.data[1].info.id,
+          src: this.data[1].image,
+          nom: this.data[1].info.nom  },
+        {
+          id: this.data[3].info.id,
+          src: this.data[3].image,
+          nom: this.data[3].info.nom
+        },
+        {
+          id: this.data[4].info.id,
+          src: this.data[4].image,
+          nom: this.data[4].info.nom 
+        }
+      
+      ]
+      this.time = this.priereService.getTodayPriereTime();
+        console.log(this.time); 
+      console.log(this.authService.getIsLoggedIn());
     });
-     console.log(this.authService.getIsLoggedIn())
 }
 
   public slides = [
@@ -30,19 +54,8 @@ export class Tab1Page  implements OnInit {
       src: '../../assets/Mosquee_mmm.jpg'
     },
     {
-      src: '../../assets/Mundata.jpg'
+      src: '../../assets/coran-braille.jpg'
     }
 ];
 
-public mosquee = [
-  {
-    src: '../../assets/280px-Great_Mosque_of_Djenné_1.jpg'
-  },
-  {
-    src: 'https://www.infragistics.com/angular-demos-lob/assets/images/carousel/slider-image-chart.png'
-  },
-  {
-    src: 'https://www.infragistics.com/angular-demos-lob/assets/images/carousel/ignite-ui-angular-charts.png'
-  }
-];
 }
