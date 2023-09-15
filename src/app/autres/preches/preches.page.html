@@ -25,14 +25,14 @@
   
 </ion-card>
 
+<!-- <hr>  -->
 <div style="top: 40%; position: fixed; width: 100%; ">
 
- <!-- <hr>  -->
 <ion-list *ngIf="filteredPreches.length > 0"  class="audios h-screen relative">
   <div class="titleAudio"><span><ion-icon name="musical-note"></ion-icon> Audios</span></div>
-  <div *ngFor="let preche of filteredPreches" class="relative">
+  <div *ngFor="let preche of filteredPreches" class="relative" style="display: flex;">
   <ion-label (click)="show()">{{ preche.id }} - Prêche de {{ preche.name }}</ion-label>
-    <div  style="z-index: 1; position: absolute; top: 90%;     top: 1527%;"> <audio controls class="hidden" id="audio" >
+    <div  style="z-index: 1; position: absolute;     top: 46vh; width: 100vw;"> <audio controls class="hidden" id="audio" >
       <source [src]="preche.audioUrl" type="audio/mpeg">
       Votre navigateur ne prend pas en charge l'élément audio.
     </audio></div>
