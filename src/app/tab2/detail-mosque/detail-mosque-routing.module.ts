@@ -9,7 +9,7 @@ const routes: Routes = [
     component: DetailMosquePage
   },
   {
-    path: 'editer-mosque/;id',
+    path: 'editer-mosque/:id',
     loadChildren: () => import('./editer-mosque/editer-mosque.module').then( m => m.EditerMosquePageModule)
   },
   {

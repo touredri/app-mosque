@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <div class="logout w-full">
+    <div class="logout w-full" (click)="onLogout()">
       <div class="icon-user w-4/5">
         <i class="ri-logout-box-line"></i>
         <input [routerLink]="['/login']" type="button" value="Se déconnecter">

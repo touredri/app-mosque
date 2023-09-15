@@ -38,15 +38,23 @@ export class LoginPage implements OnInit {
         // garder la session
         this.authService.setIsLoggedIn(true);
 
+        // garder  le user
+        this.authService.setUser(result.user);
+
         // Effacez les champs du formulaire après la connexion
         this.user = {
           email: '',
           password: '',
         };
       }
+      document.getElementById('error')?.classList.add('hidden');
     } catch (error) {
       console.error('Erreur lors de la connexion de l\'utilisateur :', error);
+      document.getElementById('error')?.classList.remove('hidden');
     }
+  }
+  onPasser() {
+    this.authService.setIsLoggedIn(false);
   }
   ngOnInit() {
   }

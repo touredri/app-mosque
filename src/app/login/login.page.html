@@ -22,6 +22,7 @@
               <p><a class="mot_passe_oublie">Mot de passe oublié?</a></p>
               <button type="submit">Se connecter</button>
             </div>
+            <div id="error" class="text-white hidden"> Mot de passe ou email incorect</div>
           </form>
           <div class="barre_container">
               <div class="barre1"></div>
@@ -37,8 +38,8 @@
               <p>Pas de compte?<a routerLink="/sign-up">Inscription</a></p>
           </div>
           <div class="bom">
-            <button class="Skip" routerLink="/tabs/tab1">
-              <p>Passer</p>
+            <button class="Skip" routerLink="/tabs/tab1" (click)="onPasser()">
+              <p class="font-normal">Passer</p>
             <ion-icon name="play-skip-forward-outline"></ion-icon>
             </button>
           </div>

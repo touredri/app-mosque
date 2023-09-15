@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sign-up.page.scss'],
 })
 export class SignUpPage implements OnInit {
-
+  errorMessage: any
   ngOnInit() {
   }
   user = {
@@ -25,7 +26,8 @@ export class SignUpPage implements OnInit {
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   async register() {
@@ -50,6 +52,13 @@ export class SignUpPage implements OnInit {
           admin: this.user.admin,
         });
 
+        // garder la session
+        this.authService.setIsLoggedIn(true);
+
+        // garder  le user
+        this.authService.setUser(result.user);
+        
+
         // Effacez les champs du formulaire après l'enregistrement
         this.user = {
           nom: '',
@@ -64,6 +73,7 @@ export class SignUpPage implements OnInit {
       }
     } catch (error) {
       console.error('Erreur lors de l\'enregistrement de l\'utilisateur :', error);
+      this.errorMessage = "Erreur lors de l\'enregistrement de l\'utilisateur :" + error;
     }
   }
 }

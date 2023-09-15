@@ -45,6 +45,9 @@
           <button type="submit">S'inscrire</button>
         </div>
       </form>
+      <div *ngIf="errorMessage">
+        <div class="text-red">{{errorMessage}}</div>
+      </div>
     </div>
   </div>
 </ion-content>
