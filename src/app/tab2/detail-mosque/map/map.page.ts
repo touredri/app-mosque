@@ -22,7 +22,7 @@ export class MapPage implements OnInit {
   ionViewDidEnter(){
 
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('map').setView([12.6307143, -8.0270483],15)
+    this.map = L.map('map').setView([12.6307143, -8.0270483],30)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     

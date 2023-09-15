@@ -11,7 +11,10 @@ export class AuthService {
   private userSubject = new BehaviorSubject<any>(null);
   user$ = this.userSubject.asObservable();
 
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    
+    ) {
     this.afAuth.authState.subscribe((user) => {
       this.isLoggedInSubject.next(!!user); // Vérifie si l'utilisateur est connecté
       this.userSubject.next(user);
@@ -28,6 +31,10 @@ export class AuthService {
 
   setUser(user: any) {
     this.userSubject.next(user);
+  }
+
+  getUserById(id: string) {
+
   }
 
   getIsLoggedIn() {

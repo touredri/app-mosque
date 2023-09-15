@@ -7,13 +7,16 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-
+  user: any;
+  isConnect: boolean;
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit() {
-
+    this.user = this.authService.getUser();
+    this.isConnect = this.authService.getIsLoggedIn();
+    console.log(this.user.uid)
   }
   onLogout() {
     this.authService.setIsLoggedIn(false);

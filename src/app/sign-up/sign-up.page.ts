@@ -37,6 +37,10 @@ export class SignUpPage implements OnInit {
         this.user.password
       );
 
+      // Récupérez l'UID de l'utilisateur
+      // const uid = result.user.uid;
+
+
       if (result.user) {
         // L'enregistrement s'est bien passé
         console.log('Utilisateur enregistré avec succès:', result.user);
