@@ -24,7 +24,7 @@ export class Tab1Page  implements OnInit {
 
   public slides = [
     {
-      src: '../../assets/280px-Great_Mosque_of_Djenné_1.jpg'
+      src: '../../assets/mosque.jpg'
     },
     {
       src: 'https://www.infragistics.com/angular-demos-lob/assets/images/carousel/slider-image-chart.png'
