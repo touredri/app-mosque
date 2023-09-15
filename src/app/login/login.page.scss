@@ -177,8 +177,8 @@ button{
 }
 .bom{
   display: flex;
-  justify-content: flex-end;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 50px;
   left: 30px;
@@ -195,4 +195,9 @@ button{
 .ttp{
   position: relative;
   font-size: 25px;
+}
+.Skip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

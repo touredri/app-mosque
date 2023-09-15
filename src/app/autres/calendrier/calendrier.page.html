@@ -1,14 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>calendrier</ion-title>
+    <ion-back-button defaultHref="/tabs/autres" text="retour"> Calendrier</ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calendrier</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <mat-calendar></mat-calendar>
+  <!-- <mat-calendar></mat-calendar> -->
+  <ion-datetime></ion-datetime>
+
+  <!-- Isac -->
+  <ion-list>
+    <ion-item *ngFor="let date of dateImportant ">
+      <ion-label lines="none" style="margin-right: 50px; width: 100%;  " >
+        {{date.nom}} <br>
+      </ion-label>
+      <ion-label  class="font-size: 30px" style=" margin-right: 0%; padding-right: 0%; "> <!-- Ajoutez une marge à gauche -->
+        {{date.date}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
