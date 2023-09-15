@@ -11,76 +11,36 @@ import 'leaflet-routing-machine';
 })
 export class MapPage implements OnInit {
 
-  map: L.Map | any;
-  
-  latitude!: number;
-  longitude!: number;
+  map: L.Map | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {
-    // this.ionViewDidEnter();
-
-     // COORDONNE DE LA MOSQUEE A RECHERCHER
-  
-
-  //   Geolocation.getCurrentPosition().then((result : any) =>{
-  //     this.latitude = result.coords.latitude;
-  //     this.longitude = result.coords.longitude;
-  //     console.log(result.coords.latitude+''+result.coords.longitude);
-
-  //     this.map = L.map('mapID').setView([12.64221,-7.99849],10)
-  //     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //     })
-
-  //     L.Routing.control({
-  //       waypoints: [
-  //         L.latLng(this.latitude!, this.longitude!),
-  //         L.latLng(12.6186, -8.0120)
-  //       ]
-  //     })
-  // })
-          Geolocation.getCurrentPosition().then((result : any) =>{
-          this.latitude = result.coords.latitude;
-          this.longitude = result.coords.longitude;
-          console.log(this.longitude+'  '+this.latitude);
-          });
-
+    
   }
-
+  
   ionViewDidEnter(){
 
-      // mapPosition() {
-      //   // Geolocation.getCurrentPosition().then((result : any) =>{
-      //   //   this.latitude = result.coords.latitude;
-      //   //   this.longitude = result.coords.longitude;
-      //   //   console.log(this.longitude+'  '+this.latitude);
-      //   //   });
-      // }
-
-
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('map').setView([this.latitude,this.longitude],80)
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: "OSM"
-    }).addTo(this.map);
-    console.log(this.latitude);
+    this.map = L.map('map').setView([12.6307143, -8.0270483],15)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     
+    }).addTo(this.map);
+
     L.Routing.control({
       waypoints: [
-        L.latLng(this.latitude,this.longitude),       
-        L.latLng(12.63441, -8.02650)
+        L.latLng(12.6307143, -8.0270483),
+        L.latLng(12.6313593,-8.0273106)
       ]
     }).addTo(this.map);
 
-    // AJOUTER UN MARKET A this.latitudetude
-    const markPoint = L.marker([12.63441, -8.02650]);
+    
+    // AJOUTER UN MARKET A LA MOSQUEE
+    const markPoint = L.marker([12.6313593,-8.0273106]);
     markPoint.bindPopup('<p>Mosquee de YOUCOUBA</p>')
     this.map.addLayer(markPoint);
 
-      
-   
+    
   }
-
-
-}
+  }
