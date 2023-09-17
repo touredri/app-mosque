@@ -30,16 +30,17 @@ export class LoginPage implements OnInit {
 
       if (result.user) {
         // La connexion s'est bien passée
-        console.log('Utilisateur connecté avec succès:', result.user);
+        // console.log('Utilisateur connecté avec succès:', result.user);
 
-        // Redirigez l'utilisateur vers la page d'accueil ou une autre page privée
-        this.router.navigate(['/tabs/tab1']);
 
         // garder la session
         this.authService.setIsLoggedIn(true);
 
         // garder  le user
         this.authService.setUser(result.user);
+        
+        // Redirigez l'utilisateur vers la page d'accueil ou une autre page privée
+        this.router.navigate(['/tabs/tab1']);
 
         // Effacez les champs du formulaire après la connexion
         this.user = {
@@ -53,9 +54,15 @@ export class LoginPage implements OnInit {
       document.getElementById('error')?.classList.remove('hidden');
     }
   }
+
   onPasser() {
     this.authService.setIsLoggedIn(false);
   }
+
+  onGoogleSignIn() {
+    this.authService.signInWithGoogle();
+  }
+
   ngOnInit() {
   }
 

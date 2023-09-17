@@ -46,8 +46,15 @@
         </div>
       </form>
       <div *ngIf="errorMessage">
-        <div class="text-red">{{errorMessage}}</div>
+        <div class="text-red-500">{{errorMessage}}</div>
       </div>
+    </div>
+  </div>
+  <div id="pop-up" class="pop-up hidden absolute z-10 top-0 w-full h-full justify-center items-center">
+    <div class="w-2/3 h-[40%] rounded-md flex flex-col justify-center items-center bg-white relative left-[20%] top-[15%]">
+      <h2 class="font-medium">👍👍 Compte creer avec succes</h2>
+      <p>Veuillez confirmer votre address email!!</p>
+      <p><a [routerLink]="['/login']"><span style="color:blue;">Se connectez maintenant !</span></a></p>
     </div>
   </div>
 </ion-content>

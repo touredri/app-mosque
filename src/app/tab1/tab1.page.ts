@@ -40,8 +40,8 @@ export class Tab1Page  implements OnInit {
         }
       
       ]
-      this.time = this.priereService.getTodayPriereTime();
-        console.log(this.time); 
+      // this.time = this.priereService.getTodayPriereTime();
+      //   console.log(this.time); 
       console.log(this.authService.getIsLoggedIn());
     });
 }

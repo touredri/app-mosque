@@ -64,7 +64,7 @@ export class SouratePage implements OnInit {
     } else {
       // Tous les audios ont été lus, réinitialisez l'index
       this.currentAudioIndex = 0;
-      this.isPlaying = false;
+      this.isPlaying = true
     }
   };
 

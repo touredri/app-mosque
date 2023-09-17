@@ -28,7 +28,7 @@ export class SignUpPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
-  ) {}
+  ) { }
 
   async register() {
     try {
@@ -37,31 +37,25 @@ export class SignUpPage implements OnInit {
         this.user.password
       );
 
-      // Récupérez l'UID de l'utilisateur
-      // const uid = result.user.uid;
-
-
       if (result.user) {
         // L'enregistrement s'est bien passé
-        console.log('Utilisateur enregistré avec succès:', result.user);
         const isAdmin = this.route.snapshot.paramMap.get('id');
-        if(isAdmin) {
+        if (isAdmin) {
           this.user.admin = true
         }
+        // Récupérez l'UID de l'utilisateur
+        const uid = result.user.uid;
+
+        // Envoyer un e-mail de vérification à l'utilisateur
+        await result.user.sendEmailVerification();
+
         // Enregistrez également le nom et le prénom dans Firestore
-        this.firestore.collection('utilisateurs').add({
+        this.firestore.collection('utilisateurs').doc(uid).set({
           nom: this.user.nom,
           prenom: this.user.prenom,
           email: this.user.email,
           admin: this.user.admin,
         });
-
-        // garder la session
-        this.authService.setIsLoggedIn(true);
-
-        // garder  le user
-        this.authService.setUser(result.user);
-        
 
         // Effacez les champs du formulaire après l'enregistrement
         this.user = {
@@ -72,8 +66,7 @@ export class SignUpPage implements OnInit {
           admin: false,
         };
 
-        // Redirigez l'utilisateur vers la page de connexion
-        this.router.navigate(['/login']);
+        document.getElementById('pop-up')?.classList.remove('hidden')
       }
     } catch (error) {
       console.error('Erreur lors de l\'enregistrement de l\'utilisateur :', error);
