@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { FirestoreService } from '../service/firestore.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  currentUser: any;
   user = {
     email: '',
     password: '',
@@ -18,7 +20,9 @@ export class LoginPage implements OnInit {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private firestore: FirestoreService,
+    private localStorage: Storage,
     ) {}
 
   async login() {
@@ -30,15 +34,11 @@ export class LoginPage implements OnInit {
 
       if (result.user) {
         // La connexion s'est bien passée
-        // console.log('Utilisateur connecté avec succès:', result.user);
+        const uid = result.user.uid;
+        this.firestore.getUserById(uid).subscribe((data) => {
+        this.localStorage.set("user", JSON.stringify(data));
+        });
 
-
-        // garder la session
-        this.authService.setIsLoggedIn(true);
-
-        // garder  le user
-        this.authService.setUser(result.user);
-        
         // Redirigez l'utilisateur vers la page d'accueil ou une autre page privée
         this.router.navigate(['/tabs/tab1']);
 
@@ -57,13 +57,21 @@ export class LoginPage implements OnInit {
 
   onPasser() {
     this.authService.setIsLoggedIn(false);
+    const user = {
+      nom: 'unknow',
+      email: 'none',
+      admin: false,
+      prenom: 'unknow'
+    }
+    this.localStorage.set('user', JSON.stringify(user))
   }
 
   onGoogleSignIn() {
     this.authService.signInWithGoogle();
   }
 
-  ngOnInit() {
+   ngOnInit() {
+    this.localStorage.create();
+    
   }
-
 }

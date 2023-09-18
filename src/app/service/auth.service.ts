@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -15,13 +16,30 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private firestore: AngularFirestore
     ) {
     this.afAuth.authState.subscribe((user) => {
-      this.isLoggedInSubject.next(!!user); // Vérifie si l'utilisateur est connecté
-      this.userSubject.next(user);
+      // this.isLoggedInSubject.next(!!user); // Vérifie si l'utilisateur est connecté
+      // this.userSubject.next(user);
+      // const id = user?.uid;
+      // this.getUserById(id).subscribe((data) => {
+      //   this.userSubject.next(data);
+      //  // garder  le user
+      // // this.authService.setUser(this.currentUser);
+      // });
+      // this.userSubject.next(currentUser);
     });
   }
+
+  getUserById(id: any): Observable<any> {
+    return this.firestore.collection('utilisateurs').doc(id).valueChanges().pipe(
+      map((userData: any) => {
+        return userData;
+      })
+    );
+  }
+
 
   setIsLoggedIn(value: boolean) {
     this.isLoggedInSubject.next(value);
@@ -35,22 +53,19 @@ export class AuthService {
     this.userSubject.next(user);
   }
 
-  getUserById(id: string) {
-
-  }
-
   async signInWithGoogle() {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
+        // This gives us a Google Access Token. We can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential?.accessToken;
         // The signed-in user info.
         const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
+        this.getUserById(user.uid).subscribe((data) => {
+          localStorage.setItem('user', JSON.stringify(data))
+        });
         this.router.navigate(['/tabs/tab1'])
       }).catch((error) => {
         // Handle Errors here.

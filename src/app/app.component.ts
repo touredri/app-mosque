@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from './service/firestore.service';
-import { LocalDataService } from './service/localdata.service';
 
 @Component({
   selector: 'app-root',
@@ -13,19 +12,9 @@ export class AppComponent implements OnInit{
 
   constructor(
     private  firebase: FirestoreService,
-    private localData: LocalDataService,
     ) {}
 
   ngOnInit(): void {
-    // this.data = this.firebase.getAndSaveMosqueesLocally(),
-    // console.log(this.data);
-    
-    // this.localData.getLocalMosquees(),
-    // console.log(this.data);
-    
-  }
-
-  getAllMosquee(){
- 
+    this.firebase.init();
   }
 }

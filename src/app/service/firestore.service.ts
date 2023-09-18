@@ -2,21 +2,31 @@ import { Injectable } from '@angular/core';
 import { Mosque } from '../models/mosque.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Storage } from '@ionic/storage-angular';
-import { ImageService } from './image.service';
-import { Observable, firstValueFrom } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, FirestoreSettings } from 'firebase/firestore';
+import { initializeApp, FirebaseApp } from '@angular/fire/app';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
+  firestoreApp: FirebaseApp;
+  
   constructor(
     private firestore: AngularFirestore,
     private storage: AngularFireStorage,
-    private save: Storage,
-    private imageService: ImageService
     ) {}
 
+    async init() {
+      const app = initializeApp(environment.firebaseConfig);
+      initializeFirestore(app, {
+        localCache:
+          persistentLocalCache({tabManager: persistentMultipleTabManager()}),
+        experimentalForceLongPolling: true,
+      });
+    }
+            
   // Créer une mosquée
   ajouterMosquee(mosquee: Mosque, image: File) {
     // Télécharger l'image dans Firebase Storage et récupérer le chemin
@@ -36,31 +46,7 @@ export class FirestoreService {
   getMosquees():Observable<any[]>{
     return this.firestore.collection('mosquees').valueChanges();
   }
-
-  async getAndSaveMosqueesLocally() {
-    // Utilisez toPromise() pour attendre la résolution de l'Observable en une promesse
-    const firestoreMosquees = await firstValueFrom(
-      this.firestore.collection('mosquees').valueChanges()
-    ) as Mosque[];
-    
-
-    // Parcourez les données pour télécharger les images et mettre à jour les URLs
-    for (const mosque of firestoreMosquees) {
-      //console.log(mosque);
-      const imageUrl = mosque.image; // Obtenez l'URL distant de l'image
-      const localFileName = `mosque_image_${mosque.info.nom}.jpg`; // Générez un nom de fichier local unique
-
-      // Téléchargez l'image et enregistrez-la localement
-      await this.imageService.downloadAndSaveImageLocally(imageUrl, localFileName);
-
-      // Mettez à jour l'URL de l'image dans les données locales
-      mosque.image = localFileName;
-    }
-
-    // Enregistrez les données en local sous forme de chaîne JSON
-    await this.save.set('mosquees', JSON.stringify(firestoreMosquees));
-  }
-  // Récupérer une mosquée par ID
+  
   getMosqueeById(id: string) {
     this.firestore
     .collection('mosquees', (ref) => ref.where('info.id', '==', parseInt(id, 10)))
@@ -110,5 +96,13 @@ export class FirestoreService {
   
     // Ensuite, supprimez la mosquée de Firestore
     this.firestore.collection('mosquees').doc(id).delete();
+  }
+
+  getUserById(id: string): Observable<any> {
+    return this.firestore.collection('utilisateurs').doc(id).valueChanges().pipe(
+      map((userData) => {
+        return userData;
+      })
+    );
   }
 }

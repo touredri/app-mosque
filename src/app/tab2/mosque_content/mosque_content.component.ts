@@ -30,8 +30,7 @@ export class MosqueComponent  implements OnInit {
     // Utilisez la méthode getMosquees du service pour récupérer les données
     this.dataService.getMosquees().subscribe((data) => {
       this.mosquees = data;
-      console.log(this.mosquees);
-      
+      // console.log(this.mosquees);
     });
   }
 }
