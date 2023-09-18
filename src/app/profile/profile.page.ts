@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FirestoreService } from '../service/firestore.service';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -14,21 +15,20 @@ export class ProfilePage implements OnInit {
   constructor(
     private authService: AuthService,
     private afAuth: AngularFireAuth,
-    private firestore: FirestoreService
+    private localStorage: Storage,
+    private router: Router
   ) { }
 
-  ngOnInit() {
-    this.user = this.authService.getUser();
-    // this.user = this.fire
-    // this.isConnect = this.authService.getIsLoggedIn();
-    if(this.user) {
-      // console.log(this.user);
-    }
+  async ngOnInit() {
+    this.localStorage.create();
+    this.user = JSON.parse(await this.localStorage.get('user'));
+    this.authService.getUser()
   }
 
   async onLogout() {
+    this.localStorage.remove('user');
     this.authService.setIsLoggedIn(false);
     await this.afAuth.signOut();
+    this.router.navigate(['login'])
   }
-
 }

@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private firestore: FirestoreService,
     private localStorage: Storage,
-    ) {}
+  ) { }
 
   async login() {
     try {
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
         // La connexion s'est bien passée
         const uid = result.user.uid;
         this.firestore.getUserById(uid).subscribe((data) => {
-        this.localStorage.set("user", JSON.stringify(data));
+          this.localStorage.set("user", JSON.stringify(data));
         });
 
         // Redirigez l'utilisateur vers la page d'accueil ou une autre page privée
@@ -70,8 +70,14 @@ export class LoginPage implements OnInit {
     this.authService.signInWithGoogle();
   }
 
-   ngOnInit() {
+  async ngOnInit() {
     this.localStorage.create();
-    
+    const user = JSON.parse(await this.localStorage.get('user'));
+    if (user) {
+      this.router.navigate(['tabs/tab1']);
+    }
+    else {
+      this.router.navigateByUrl('/login');
+    }
   }
 }

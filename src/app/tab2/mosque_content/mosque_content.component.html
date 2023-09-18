@@ -14,7 +14,7 @@
       </div>
       <div class="trait"></div>
       <ion-label>Toutes les mosquees</ion-label>
-      <ion-icon name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
+      <ion-icon *ngIf="user?.admin === true" name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
     </div>
 
     <ion-card color="light" *ngFor="let mosque of mosquees" [routerLink]="['detail-mosque', mosque.info.id]">

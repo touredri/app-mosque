@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DetailService } from 'src/app/service/detail.service';
 import { FirestoreService } from 'src/app/service/firestore.service';
 import { Plugins } from '@capacitor/core';
+import { Storage } from '@ionic/storage';
 
 const { Browser } = Plugins;
 
@@ -18,11 +19,13 @@ export class DetailMosquePage implements OnInit {
     private detailService: DetailService,
     private route: ActivatedRoute,
     private firestore: FirestoreService,
-    private firestores: AngularFirestore
+    private firestores: AngularFirestore,
+    private localStorage: Storage
   ) { }
   id: any;
   mosques: any;
-  ngOnInit() {
+  user: any;
+  async ngOnInit() {
    this.id = this.route.snapshot.paramMap.get('id');
    if(this.id) {
     this.firestores
@@ -36,7 +39,8 @@ export class DetailMosquePage implements OnInit {
         } 
         });
    }
-  //  console.log(this.id)
+   this.localStorage.create();
+   this.user = JSON.parse(await this.localStorage.get('user'));
   }
 
   getData(){

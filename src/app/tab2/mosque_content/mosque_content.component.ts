@@ -8,6 +8,7 @@ import 'leaflet-routing-machine';
 import { HttpClient } from '@angular/common/http';
 import { Geolocation } from '@capacitor/geolocation';
 import { FirestoreService } from 'src/app/service/firestore.service';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -23,14 +24,18 @@ import { FirestoreService } from 'src/app/service/firestore.service';
 export class MosqueComponent  implements OnInit {
 
   mosquees: any[] = [];
+  user: any;
+  constructor(
+    private dataService: FirestoreService,
+    private localStorage: Storage
+    ) {}
 
-  constructor(private dataService: FirestoreService) {}
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.localStorage.create();
+    this.user = JSON.parse(await this.localStorage.get('user'));
     // Utilisez la méthode getMosquees du service pour récupérer les données
     this.dataService.getMosquees().subscribe((data) => {
       this.mosquees = data;
-      // console.log(this.mosquees);
     });
   }
 }

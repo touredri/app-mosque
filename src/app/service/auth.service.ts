@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { BehaviorSubject, Observable, map } from 'rxjs';
 
@@ -17,7 +18,8 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private localStorage: Storage
     ) {
     this.afAuth.authState.subscribe((user) => {
       // this.isLoggedInSubject.next(!!user); // Vérifie si l'utilisateur est connecté
@@ -45,8 +47,9 @@ export class AuthService {
     this.isLoggedInSubject.next(value);
   }
 
-  getUser() {
-    return this.userSubject.value;
+  async getUser() {
+    this.localStorage.create();
+    return JSON.parse(await this.localStorage.get('user'));
   }
 
   setUser(user: any) {

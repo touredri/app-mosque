@@ -22,7 +22,6 @@ export class Tab1Page  implements OnInit {
   ngOnInit(): void {
     this.firebase.getMosquees().subscribe((data: any) => {
       this.data = data;
-     // console.log(this.data)
       this.mosquee = [
         {
           id: this.data[1].info.id,
@@ -38,10 +37,7 @@ export class Tab1Page  implements OnInit {
           src: this.data[0].image,
           nom: this.data[0].info.nom 
         }
-      
       ]
-
-      console.log(this.authService.getUser());
     });
 }
 
@@ -55,6 +51,5 @@ export class Tab1Page  implements OnInit {
     {
       src: '../../assets/coran-braille.jpg'
     }
-];
-
+  ];
 }
