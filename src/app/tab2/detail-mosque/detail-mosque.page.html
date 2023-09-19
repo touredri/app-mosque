@@ -6,7 +6,7 @@
     <img [src]="mosques?.image" class="w-full h-[190px] " alt="">
     <div class="container">
       <div class="row">
-        <span class="mosque">{{mosques?.info.nom}} <a *ngIf="user?.admin === true" href="#" [routerLink]="['editer-mosque', mosques.info.id]">Editer</a> </span>
+        <span class="mosque">{{mosques?.info.nom}} <a *ngIf="user?.admin === true" href="#" [routerLink]="['editer-mosque', mosques?.info.id]">Editer</a> </span>
         <span class="iman">{{mosques?.info.imam}}</span>
         <span><i id="icon1" class="bi bi-telephone-fill"></i> {{mosques?.info.numero}} </span>
         <span><i id="icon1" class="bi bi-geo-alt-fill"></i>{{mosques?.info.quartier}}</span>
@@ -35,7 +35,7 @@
         <div class="text">
           <span>Dhuhr</span>
           <span>{{mosques?.prieres.dhuhr}}</span>
-          <span>{{mosques.prieres.dhuhr}}</span>
+          <span>{{mosques?.prieres.dhuhr}}</span>
         </div>
         <div class="text">
           <span>Asr</span>
@@ -63,31 +63,27 @@
           <span>Heure</span>
           <span>Alarme</span>
         </div>
-        <div class="text" *ngIf="mosques.tabsir.lundi !== ''">
+        <div class="text" *ngIf="mosques?.tabsir.lundi !== ''">
           <span>Lundi</span>
           <span>{{mosques?.tabsir.lundi}}</span>
           <span>15:00</span>
         </div>
-        <div class="text" *ngIf="mosques.tabsir.mercredi !== ''">
+        <div class="text" *ngIf="mosques?.tabsir.mercredi !== ''">
           <span>Mercredi</span>
           <span>{{mosques?.tabsir.mercredi}}</span>
           <span>12:30</span>
         </div>
-        <div class="text" *ngIf="mosques.tabsir.dimanche !== ''">
+        <div class="text" *ngIf="mosques?.tabsir.dimanche !== ''">
           <span>Vendredi</span>
           <span>{{mosques?.tabsir.vendredi}}</span>
           <span>15:30</span>
         </div>
-        <div class="text" *ngIf="mosques.tabsir.samedi !== ''" >
+        <div class="text" *ngIf="mosques?.tabsir.samedi !== ''" >
           <span>Samedi</span>
           <span>{{mosques?.tabsir.samedi}}</span>
           <span>18:30</span>
         </div>
       </div>
     </div>
-    <!-- <div class="btn">
-      <ion-button id="open-loading">FAIRE UN DON</ion-button>
-      <ion-loading trigger="open-loading" message="Enregistrement..." duration="2000"></ion-loading>
-    </div> -->
   </div>
 </ion-content>
