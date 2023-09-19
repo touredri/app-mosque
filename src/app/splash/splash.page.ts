@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { App } from '@capacitor/app';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-splash',
@@ -8,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class SplashPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private platform: Platform, private router: Router) { }
 
   ngOnInit() {
     setTimeout(() => {
       
-      this.router.navigateByUrl('/login'); 
+      this.router.navigate(['/login']);
     }, 3000);
-  }
 
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      App.exitApp();
+ });
+  }
 }
