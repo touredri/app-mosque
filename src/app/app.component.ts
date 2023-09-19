@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
     private  firebase: FirestoreService,
     ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.firebase.init();
   }
 }

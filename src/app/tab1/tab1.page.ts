@@ -20,6 +20,7 @@ export class Tab1Page  implements OnInit {
     private firebase: FirestoreService
   ) {}
   ngOnInit(): void {
+    this.firebase.init();
     this.firebase.getMosquees().subscribe((data: any) => {
       this.data = data;
       this.mosquee = [
