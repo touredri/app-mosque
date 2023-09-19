@@ -1,5 +1,11 @@
-.map{
-  border: 1px solid blue;
+ion-content{
+  border: 1px solid #7d8eef;
   width: 100%;
   height: 100%;
+}
+
+ion-title{
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }

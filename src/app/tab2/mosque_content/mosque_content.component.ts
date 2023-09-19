@@ -1,12 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, NavController } from '@ionic/angular';
-import { Tab2PageRoutingModule } from '../tab2-routing.module';
+import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
-import * as L from 'leaflet';
 import 'leaflet-routing-machine';
-import { HttpClient } from '@angular/common/http';
-import { Geolocation } from '@capacitor/geolocation';
+
 import { FirestoreService } from 'src/app/service/firestore.service';
 
 
@@ -34,6 +31,23 @@ export class MosqueComponent  implements OnInit {
       
     });
   }
+
+  searchMosquees(searchTerm: string) {
+    // Vérifiez si la chaîne de recherche est vide
+    // if (!searchTerm.trim()) {
+    //   this.mosquees = this.mosquees;
+    //   console.log(this.mosquees);
+    //   return;
+    // }
+  
+    // Utilisez la méthode getMosquees du service pour récupérer les données
+    // this.mosquees.getMosquees().subscribe((data) => {
+      // Filtrer les résultats en fonction de la chaîne de recherche
+      this.mosquees = this.mosquees.filter((mosquee) =>
+        mosquee.nom && mosquee.nom.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    };
+  // }
 }
 
 

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="head">
-    <ion-searchbar placeholder="Rechercher une mosquée"></ion-searchbar>
+    <ion-searchbar (change)="searchMosquees($event.value)" placeholder="Rechercher une mosquée"></ion-searchbar>
   </div>
   <div class="body">
     <div class="favories">
@@ -16,6 +16,16 @@
       <ion-label>Toutes les mosquees</ion-label>
       <ion-icon name="add-circle" type="button" [routerLink]="['ajouter-mosque']"></ion-icon>
     </div>
+
+    <!-- <ion-card *ngFor="let mosque of mosquees">
+      <ion-card-header>
+        <ion-card-title>{{ mosquee.info.nom }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ mosque.info.imam }}</p> -->
+        <!-- Ajoutez d'autres détails de la mosquée ici -->
+      <!-- </ion-card-content>
+    </ion-card> -->
 
     <ion-card color="light" *ngFor="let mosque of mosquees" [routerLink]="['detail-mosque', mosque.info.id]">
       <ion-card-header>

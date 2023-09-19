@@ -15,7 +15,7 @@ export class Tab2Page implements OnInit{
     ) {}
 
   ngOnInit(): void {
-    this.data = this.firebase.getAndSaveMosqueesLocally()
+    // this.data = this.firebase.getAndSaveMosqueesLocally()
   }
 
 }

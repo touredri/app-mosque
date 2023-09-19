@@ -1,63 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <app-header></app-header>
+    <app-header>test</app-header>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
-    <div class="prayer-list">
-      <button class="prayer-button">Fajr</button>
-      <button class="prayer-button">Sunrise</button>
-      <button class="prayer-button">Dhurh</button>
-      <button class="prayer-button">Asr</button>
-      <button class="prayer-button">Maghrib</button>
-      <button class="prayer-button">Isha</button>
-    </div>
-  
-  
-    <div class="card_container h-[160px] flex justify-center item-center w-full ">
-      <div class="w-full flex justify-center item-center">
-          <div class="card_content bg-black w-[95%] principal">
-            <div class="pap h-full pl-4 flex flex-col justify-around ">
-              <div class="text-white text-xl">
-              <h2>Dhuhr</h2>
-              <h3 class="text-3xl font-bold">13:00</h3>
-            </div>
-
-            <div class="flex w-full prochaine ">
-              <h1 class="text-white ">Prochaine priere: Asr  16:00</h1>
-            </div>
-            
-          
-          </div>
-          </div>
-      </div>
+  <div class="priere">
+    <ul>
+      <li><a routerLink="tab1.page.html" type="btn btn-primay">Fajr</a></li>
+      <li><a routerLink="tab1.page.html">Sunrise</a></li>
+      <li><a routerLink="tab1.page.html">Dhurh</a></li>
+      <li><a routerLink="tab1.page.html">Asr</a></li>
+      <li><a routerLink="tab1.page.html">Maghrib</a></li>
+      <li><a routerLink="tab1.page.html">Isha</a></li>
+    </ul>
   </div>
-  
-    <h2> Annonces</h2>
-      
-  
-    <div >
-      <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="5000">
-          <igx-slide style="height: 210px;" *ngFor="let slide of slides;">
-              <div class="image-container">
-                  <img [src]="slide.src">
-              </div>
-          </igx-slide>
-      </igx-carousel>
-    </div>
-
-    <h2> Mosquée à proximité</h2>
-    <div class="carousel-container">
-      <igx-carousel #carousel [navigation]="false" [pause]="true" animationType="slide"  [gesturesSupport]="true">
-          <igx-slide *ngFor="let slide of mosquee;">
-              <div class="image-container" class="relative" >
-                  <img [src]="slide.src" alt="mosque">
-                  <h1 class="absolute text-white left-2 bottom-2 font-bold border-blue-700 p-3 rounded-md ">{{slide.nom}}</h1>
-              </div>
-          </igx-slide>
-      </igx-carousel>
-    </div>
+  <div class="img">
+    <ul class="heure">
+      <li><span>Maghreb</span></li>
+      <li><span id="heure">18:45</span></li>
+    </ul>
+    <ul class="temps">
+      <li><span id="temps">Tepms restant</span></li>
+      <li><span class="log">-02:09:43</span></li>
+    </ul>
+    <img src="../../../assets/5.jpeg" alt="">
+    <ul class="position">
+      <li><ion-icon name="location"></ion-icon></li>
+      <li><span> Bamako, AMDALAYE ACI</span></li>
+    </ul>
+  </div>
+  <div class="annonce">
+    <h3>ANNONCES <ion-icon name="megaphone"></ion-icon></h3>
+    <div>
+      <swiper-container
+      [loop]="true"
+      [pagination]="{clickable: true, dynamicBullets: true}"
+      [autoplay]="{deplay:1000}"
+      effect="flip"
+      >
+        <swiper-slide *ngFor="let image of imagesAnnonces ">
+          <img [src]="image" alt=""/>
+        </swiper-slide>
+      </swiper-container>
+    </div> 
+  </div>
+  <div class="mosque">
+    <h3>MOSQUEE PROCHE  <ion-icon name="walk"></ion-icon></h3>
+    <div>
+      <swiper-container
+      [loop]="true"
+      [autoplay]="{deplay:1000}"
+      >
+        <swiper-slide *ngFor="let slide of mosquee ">
+          <img [src]="slide.src" alt="mosquee">
+          <h2>{{slide.nom}}</h2>
+        </swiper-slide>
+      </swiper-container>
+    </div> 
+  </div>
 </ion-content>

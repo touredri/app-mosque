@@ -19,6 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS, NgxAngularMaterialHijriAdapterService } from 'ngx-angular-material-hijri-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +36,10 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     FormsModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: '_mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql'],
+    }),
     HammerModule,
     BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },  {

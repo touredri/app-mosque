@@ -15,6 +15,7 @@ export class FirestoreService {
     private storage: AngularFireStorage,
     private save: Storage,
     private imageService: ImageService
+    
     ) {}
 
   // Créer une mosquée
@@ -37,29 +38,29 @@ export class FirestoreService {
     return this.firestore.collection('mosquees').valueChanges();
   }
 
-  async getAndSaveMosqueesLocally() {
-    // Utilisez toPromise() pour attendre la résolution de l'Observable en une promesse
-    const firestoreMosquees = await firstValueFrom(
-      this.firestore.collection('mosquees').valueChanges()
-    ) as Mosque[];
+  // async getAndSaveMosqueesLocally() {
+  //   // Utilisez toPromise() pour attendre la résolution de l'Observable en une promesse
+  //   const firestoreMosquees = await firstValueFrom(
+  //     this.firestore.collection('mosquees').valueChanges()
+  //   ) as Mosque[];
     
 
-    // Parcourez les données pour télécharger les images et mettre à jour les URLs
-    for (const mosque of firestoreMosquees) {
-      //console.log(mosque);
-      const imageUrl = mosque.image; // Obtenez l'URL distant de l'image
-      const localFileName = `mosque_image_${mosque.info.nom}.jpg`; // Générez un nom de fichier local unique
+  //   // Parcourez les données pour télécharger les images et mettre à jour les URLs
+  //   for (const mosque of firestoreMosquees) {
+  //     //console.log(mosque);
+  //     const imageUrl = mosque.image; // Obtenez l'URL distant de l'image
+  //     const localFileName = `mosque_image_${mosque.info.nom}.jpg`; // Générez un nom de fichier local unique
 
-      // Téléchargez l'image et enregistrez-la localement
-      await this.imageService.downloadAndSaveImageLocally(imageUrl, localFileName);
+  //     // Téléchargez l'image et enregistrez-la localement
+  //     await this.imageService.downloadAndSaveImageLocally(imageUrl, localFileName);
 
-      // Mettez à jour l'URL de l'image dans les données locales
-      mosque.image = localFileName;
-    }
+  //     // Mettez à jour l'URL de l'image dans les données locales
+  //     mosque.image = localFileName;
+  //   }
 
-    // Enregistrez les données en local sous forme de chaîne JSON
-    await this.save.set('mosquees', JSON.stringify(firestoreMosquees));
-  }
+  //   // Enregistrez les données en local sous forme de chaîne JSON
+  //   await this.save.set('mosquees', JSON.stringify(firestoreMosquees));
+  // }
   // Récupérer une mosquée par ID
   getMosqueeById(id: string) {
     this.firestore
