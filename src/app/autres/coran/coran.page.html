@@ -10,7 +10,6 @@
     Recitations Audio
   </button>
 </div>
-
 <div class="coranList overflow-y-scroll h-full">
   <ion-item *ngFor="let sourate of sourates" [routerLink]="['sourate', sourate.number]" (click)="onItemClick(sourate.number)" class="fex">
     <div class="flex w-full justify-between items-center px-2">

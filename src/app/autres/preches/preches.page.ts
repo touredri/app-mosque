@@ -14,36 +14,24 @@ export class PrechesPage implements OnInit {
             { id: 3, name: 'Koita', imam: 'Abdoulaye Koita', type: 'Tafsir', audioUrl: '../../../../assets/songs/Mahi Ouat.mp3', volume : 6, isPlaying : false },
             { id: 4, name: 'Haidara', imam: 'Ousmane C Haidara', type: 'Tafsir', audioUrl: '../../../../assets/songs/Haidara Bani.mp3', volume : 6, isPlaying : false },
           ];
-        
-          // Sélection de l'utilisateur
+      
           selectedImam: string = '';
-          selectedType: string = '';
         
           // Liste des prêches audio filtrés
           filteredPreches: PrecheAudio[] = [];
         
           constructor() {
-            this.filteredPreches = this.prechesAudio; // Initialisez la liste filtrée avec tous les prêches au début
+            this.filteredPreches = this.prechesAudio; 
           }
-        
-        
-          // Fonction pour filtrer les prêches audio en fonction de la sélection de l'utilisateur
           filterPreches() {
-            // Vérifiez si les options sélectionnées existent dans la liste des prêches
             const imamExists = this.selectedImam === '' || this.prechesAudio.some(preche => preche.imam === this.selectedImam);
-            //const typeExists = this.selectedType === '' || this.prechesAudio.some(preche => preche.type === this.selectedType);
-          
             if (imamExists) {
-              // Les options sélectionnées existent, filtrez les données
               this.filteredPreches = this.prechesAudio.filter(preche => {
                 return (
                   (this.selectedImam === '' || preche.imam === this.selectedImam) 
-                  //&&
-                  //(this.selectedType === '' || preche.type === this.selectedType)
                 );
               });
             } else {
-
               // Une ou les deux options sélectionnées n'existent pas, affichez toutes les données
               this.filteredPreches = [];
             }
@@ -52,29 +40,31 @@ export class PrechesPage implements OnInit {
           show() {
             document.getElementById('audio')?.classList.remove('hidden')
           }
-
-
   ngOnInit() {
   }
 
-  // Ajoutez ces méthodes à votre composant
-togglePlayback(audio: HTMLAudioElement, preche: PrecheAudio) {
-  if (this.isPlaying(preche)) {
-    audio.pause();
-  } else {
-    audio.play();
+  selectedPreche: PrecheAudio | null = null;
+
+togglePlayback(preche: PrecheAudio) {
+  // Si un préché était déjà sélectionné et que ce n'est pas le même que celui que vous venez de cliquer
+  if (this.selectedPreche && this.selectedPreche.id !== preche.id) {
+    const audioElement = document.getElementById('audio-main') as HTMLAudioElement;
+    audioElement.play();
   }
+
+  // Mettez à jour le préché sélectionné
+  this.selectedPreche = this.selectedPreche === preche ? null : preche;
 }
+
+  
 
 isPlaying(preche: PrecheAudio): boolean {
   return preche.isPlaying || false;
 }
-
 // Ajoutez cette méthode à votre composant
 changeVolume(audio: HTMLAudioElement, preche: PrecheAudio) {
   audio.volume = preche.volume;
 }
-
 }
 interface PrecheAudio {
   id: number;

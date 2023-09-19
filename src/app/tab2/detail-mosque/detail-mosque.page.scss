@@ -4,9 +4,6 @@
   height: auto;
   padding-bottom: 40px;
 }
-
-#back {}
-
 .container {
   height: 6%;
   width: 90%;
@@ -66,7 +63,6 @@ span {
 .icon {
   margin-top: 10%;
   display: flex;
-  /* Cette valeur peut être changée dans l'exemple */
   justify-content: space-between;
 }
 
@@ -108,5 +104,3 @@ ion-button {
   color: #3498DB;
   font-weight: bold;
 }
-
-ion-button {}

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Radio } from "../models/radios.model";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from "@angular/fire/compat/database";
 
 
@@ -25,54 +24,12 @@ export class RadioService{
         }
     ]
 
-
-
     getAllRadio() :Radio[]{
         return this.mesRadios
     }
-
-    // onAdd(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,emplacement?:string ,langue?:string, description?: string }) {
-    //     const radio: Radio = {
-    //         ...formValue,
-    //         id: this.mesRadios[this.mesRadios.length - 1].id + 1
-    //     }
-    //     this.mesRadios.push(radio)
-    // }
-
-    // onAddRadio(formValue: { nom: string,fluxAudio:string,frequence:number,logo:string,}) {
-    //     const radio:Radio={
-    //         ...formValue,
-    //         id: this.mesRadios[this.mesRadios.length -1].id + 1
-    //     }
-    //      this.listRadio.push(radio)
-    // }
-
-    // getRadio(id:number){
-    //     this.radio= this.firestore.object('/radio/' + id)
-    //     return this.radio
-    // }
 
     getAllRadios(){
         this.listRadio = this.firestore.list('/radio')
     }
 
-    // editRadios(id:any ,radio:Radio){
-    //     return this.radio.update({
-    //         id: radio.id,
-    //         nom: radio.nom,
-    //         frequence: radio.frequence,
-    //         fluxAudio: radio.fluxAudio,
-    //         logo:radio.logo,
-    //         description : radio.description,
-    //         emplacement : radio.emplacement,
-    //         langue : radio.langue
-        
-    //     })
-    // }
-
-
-    // deleteRadio(id:number){
-    //     this.radio = this.firestore.object('/radio/'+ id)
-    //     this.radio.remove()
-    // }
 }

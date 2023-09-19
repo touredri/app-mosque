@@ -9,38 +9,28 @@
   box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.25);
   z-index: 1;
 }
-
-img{
-  // height: 45%;
-}
 ion-card-title{
-  font-weight: 700;
-  // color: #C7903B;
+  font-weight: 600;
 }
 ion-button{
-  color: #3498db;
-  margin-left: 30%;
-  margin-top: 0px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    color: #3498db;
+    left: 55vw;
+    top: -2vh;
+    font-weight: 700;
+    position: absolute;
 }
 ion-card-subtitle{
-  display: inline-flex;
-  margin-top: -15px;
+  display: flex;
+  justify-content: space-between;
 }
 ion-card-content{
   font-weight: bolder;
   margin-top: -7%;
 }
-.selectMargin{
-  margin-left: 28%;
-}
 .firstCardSelect{
   margin-left: -4%;
 }
 .titleAudio{
- // position: absolute;
- // margin-top: 406px;
   margin-left: 4%;
   border-bottom: 1px solid;
   color: black;
@@ -51,23 +41,15 @@ ion-card-content{
   z-index: auto;
   background-color: #fff;
 }
-
 .audios{
-  //position: absolute;
-  //margin-top: 108%;
-  // margin-left: 4%;
-  // padding: 0px;
   padding-left: 10px;
 }
 .cardAudio{
   height: 130px;
-  // margin-bottom: 20%;
-   // opacity: 0.5;
-   background:#3498db;
-   position: absolute; 
-   //z-index: 1;
-   top: 80%;
-   width: 100%;
+  background:#3498db;
+  position: absolute; 
+  top: 80%;
+  width: 100%;
 }
 ion-range{
   padding: 0px 10px 0px;
@@ -76,19 +58,59 @@ ion-range{
 .audioButton{
   height: 86px;
   min-height: max-content;
-  margin: 0px 7px;
+  margin: 40px 7px;
   font-size: 21px;
+}
+.audioButton2{
+  height: 86px;
+  min-height: max-content;
+  margin: 40px 30px;
+  font-size: 21px;
+  margin-left: 88px;
+}
+.audioButton3{
+  height: 86px;
+  min-height: max-content;
+  margin: 40px 30px;
+  font-size: 21px;
+  margin-left: 170px;
 }
 h5{
   margin: 4px 60px
 }
 .flex-box{
-  margin-left: 10%;
-  /* padding: 0px; */
-  margin-top: -10%;
+  margin-left: 12%;
+  margin-top: -5%;
 }
 .return{
   position: absolute;
   top: 2px;
   color: white;
+}
+//====================================================== players div =====================================================
+#container {
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  color: white;
+  font-size: 16px;
+  margin: 2px 0px;
+}
+ion-range {
+  padding: 0px 10px;
+  --bar-height: 3px;
+}
+p {
+  color: #b7b6b6;
+  font-size: 13px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+#audio {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

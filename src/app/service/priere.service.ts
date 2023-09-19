@@ -16,8 +16,7 @@ export class PriereService {
   getPriereData(): Observable<any[]> {
     return this.http.get('assets/prayer_time.json').pipe(
       map((data: any) => {
-        // Assuming data is not an array and you need to convert it to an array
-        return Object.values(data.priere); // Converts data into an array
+        return Object.values(data.priere); 
       })
     );
   }

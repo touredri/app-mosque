@@ -3,10 +3,7 @@
     <app-header></app-header>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-
-
     <div class="prayer-list">
       <button class="prayer-button">Fajr</button>
       <button class="prayer-button">Sunrise</button>
@@ -15,8 +12,6 @@
       <button class="prayer-button">Maghrib</button>
       <button class="prayer-button">Isha</button>
     </div>
-  
-  
     <div class="card_container h-[160px] flex justify-center item-center w-full ">
       <div class="w-full flex justify-center item-center">
           <div class="card_content bg-black w-[95%] principal">
@@ -25,20 +20,14 @@
               <h2>Dhuhr</h2>
               <h3 class="text-3xl font-bold">13:00</h3>
             </div>
-
             <div class="flex w-full prochaine ">
               <h1 class="text-white ">Prochaine priere: Asr  16:00</h1>
             </div>
-            
-          
           </div>
           </div>
       </div>
   </div>
-  
     <h2> Annonces</h2>
-      
-  
     <div >
       <igx-carousel #carousel [navigation]="false" [pause]="false" animationType="slide" [interval]="5000">
           <igx-slide style="height: 210px;" *ngFor="let slide of slides;">
@@ -48,7 +37,6 @@
           </igx-slide>
       </igx-carousel>
     </div>
-
     <h2> Mosquée à proximité</h2>
     <div class="carousel-container">
       <igx-carousel #carousel [navigation]="false" [pause]="true" animationType="slide"  [gesturesSupport]="true">

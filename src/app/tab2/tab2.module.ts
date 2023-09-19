@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { HeaderComponent } from 'header/header.component';
-
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { MosqueComponent } from './mosque_content/mosque_content.component';
 

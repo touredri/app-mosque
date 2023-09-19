@@ -1,7 +1,6 @@
 .top .Dhuhr{
   font-weight: bold;
 }
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -12,41 +11,36 @@ body {
   align-items: center;
   height: 100vh;
 }
-
 .prayer-list {
   display: flex;
-  overflow: auto; /* Permet de faire défiler horizontalement */
-  gap: 10px; /* Espacement entre les boutons */
+  overflow: auto; 
+  gap: 10px;
 }
-
 .prayer-button {
-  // background-color: #007bff; /* Couleur de fond du bouton */
-  color: black; /* Couleur du texte */
-  border: none; /* Supprime la bordure du bouton */
-  border-radius: 5px; /* Coins arrondis */
-  padding: 5px 10px; /* Espacement intérieur */
+  color: black; 
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
   margin: 10px 0;
-  cursor: pointer; /* Curseur de la main au survol */
-  white-space: nowrap; /* Empêche le retour à la ligne */
-  font-size: 16px; /* Taille de la police */
-  transition: background-color 0.3s ease; /* Animation de transition de couleur de fond */
-
-  /* Style au survol */
+  cursor: pointer; 
+  white-space: nowrap; 
+  font-size: 16px;
+  transition: background-color 0.3s ease; 
   &:hover {
     background-color: #0056b3;
   }
 
   .prayer-list::after {
-      content: ''; /* Ajout d'un élément vide pour le pseudo-élément */
-      position: absolute; /* Position absolue par rapport à .prayer-list */
-      background-color: #007bff; /* Couleur de fond du cercle */
-      width: 10px; /* Largeur du cercle */
-      height: 10px; /* Hauteur du cercle */
-      border-radius: 50%; /* Transforme en cercle */
-      top: 50%; /* Position verticale au milieu */
-      transform: translateY(-50%); /* Déplace vers le milieu verticalement */
-      right: calc(50% - 5px); /* Position horizontale au milieu */
-      z-index: 1; /* Pour que le cercle soit au-dessus des boutons */
+      content: '';
+      position: absolute;
+      background-color: #007bff; 
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(50% - 5px);
+      z-index: 1;
     }
 }
 
@@ -65,15 +59,12 @@ body {
 .image{
   width: 100%;
   position: relative;
-
 }
 
 img{
   width: 100%;
   height: 210px;
   border-radius: 5%;
-  // margin-left: 20px;
-  // margin-top: 15px;
 }
 
 .texte{
@@ -82,14 +73,6 @@ img{
   left: 10%;
   color: #f1f1f1;
 }
-
-
-// .image-list-container {
-//   overflow-x: auto;
-//   max-width: 100%; 
-//   white-space: nowrap; 
-//}
-
 .image-list {
   padding: 0px;
   display: inline-block; 
@@ -162,9 +145,6 @@ img{
 }
 
 .carousel-container {
-  // width: 100vw;
-  // height: 20vh;
-  // margin: 16px auto;
   display: flex;
   padding: 0px;
 }
@@ -195,8 +175,6 @@ img{
       width: unset;
   }
 }
-
-
 h2{
   font-size: 20px;
   margin: 0px  15px;
@@ -221,7 +199,6 @@ p{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
-  color: rgb(12, 12, 12); /* Optional: Set the text color */
-  padding: 10px; /* Optional: Add padding to the text */
+  color: rgb(12, 12, 12);
+  padding: 10px;
 }

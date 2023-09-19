@@ -5,23 +5,19 @@
     background-color:#3498DB;
     color: #fefefe;
 }
-
 ion-card {
   margin: 10px ;
   transition: box-shadow 0.3s ease;
   gap: 20px;
 }
-
 ion-card-title {
   font-size: 1.3rem;
   color: #333;
 }
-
 ion-card-content {
   font-size: 1rem;
   color: #444;
 }
-
 ion-card-content ul {
   list-style-type: disc;
   margin-left: 20px;

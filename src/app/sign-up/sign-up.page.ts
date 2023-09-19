@@ -37,18 +37,12 @@ export class SignUpPage implements OnInit {
         this.user.password
       );
 
-      // Récupérez l'UID de l'utilisateur
-      // const uid = result.user.uid;
-
-
       if (result.user) {
-        // L'enregistrement s'est bien passé
         console.log('Utilisateur enregistré avec succès:', result.user);
         const isAdmin = this.route.snapshot.paramMap.get('id');
         if(isAdmin) {
           this.user.admin = true
         }
-        // Enregistrez également le nom et le prénom dans Firestore
         this.firestore.collection('utilisateurs').add({
           nom: this.user.nom,
           prenom: this.user.prenom,
@@ -56,13 +50,10 @@ export class SignUpPage implements OnInit {
           admin: this.user.admin,
         });
 
-        // garder la session
         this.authService.setIsLoggedIn(true);
 
-        // garder  le user
         this.authService.setUser(result.user);
         
-
         // Effacez les champs du formulaire après l'enregistrement
         this.user = {
           nom: '',

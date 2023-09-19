@@ -1,12 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule, NavController } from '@ionic/angular';
-import { Tab2PageRoutingModule } from '../tab2-routing.module';
 import { RouterLink } from '@angular/router';
-import * as L from 'leaflet';
 import 'leaflet-routing-machine';
-import { HttpClient } from '@angular/common/http';
-import { Geolocation } from '@capacitor/geolocation';
 import { FirestoreService } from 'src/app/service/firestore.service';
 
 
@@ -18,7 +14,6 @@ import { FirestoreService } from 'src/app/service/firestore.service';
   standalone : true,
   imports: [CommonModule, IonicModule, RouterLink]
 })
-
 
 export class MosqueComponent  implements OnInit {
 

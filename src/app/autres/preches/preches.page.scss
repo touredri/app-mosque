@@ -9,13 +9,8 @@
   box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.25);
   z-index: 1;
 }
-
-img{
-  // height: 45%;
-}
 ion-card-title{
   font-weight: 600;
-  // color: #C7903B;
 }
 ion-button{
   color: #3498db;
@@ -32,15 +27,10 @@ ion-card-content{
   font-weight: bolder;
   margin-top: -7%;
 }
-// .selectMargin{
-//   margin-left: 28%;
-// }
 .firstCardSelect{
   margin-left: -4%;
 }
 .titleAudio{
- //position: absolute;
- //top: -300px;
   margin-left: 4%;
   border-bottom: 1px solid;
   color: black;
@@ -51,21 +41,13 @@ ion-card-content{
   z-index: auto;
   background-color: #fff;
 }
-
 .audios{
-  //position: absolute;
-  //margin-top: 108%;
-  // margin-left: 4%;
-  // padding: 0px;
   padding-left: 10px;
 }
 .cardAudio{
   height: 130px;
- // margin-bottom: 20%;
-  // opacity: 0.5;
   background:#3498db;
   position: absolute; 
-  //z-index: 1;
   top: 80%;
   width: 100%;
 }
@@ -98,7 +80,6 @@ h5{
 }
 .flex-box{
   margin-left: 12%;
-  /* padding: 0px; */
   margin-top: -5%;
 }
 .return{
@@ -106,7 +87,6 @@ h5{
   top: 2px;
   color: white;
 }
-
 //====================================================== players div =====================================================
 #container {
   text-align: center;
@@ -133,5 +113,4 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  // display: block;
 }

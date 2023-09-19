@@ -22,7 +22,6 @@ export class Tab1Page  implements OnInit {
   ngOnInit(): void {
     this.firebase.getMosquees().subscribe((data: any) => {
       this.data = data;
-     // console.log(this.data)
       this.mosquee = [
         {
           id: this.data[1].info.id,

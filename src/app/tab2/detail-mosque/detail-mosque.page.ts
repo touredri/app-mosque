@@ -36,7 +36,6 @@ export class DetailMosquePage implements OnInit {
         } 
         });
    }
-  //  console.log(this.id)
   }
 
   getData(){

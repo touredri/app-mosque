@@ -17,7 +17,6 @@ export class FirestoreService {
     private imageService: ImageService
     ) {}
 
-  // Créer une mosquée
   ajouterMosquee(mosquee: Mosque, image: File) {
     // Télécharger l'image dans Firebase Storage et récupérer le chemin
     const imageRef = this.storage.ref(`mosquees/${mosquee.info.nom}_${image.name}`);
@@ -31,7 +30,6 @@ export class FirestoreService {
       });
     });
   }
-
   // Récupérer toutes les mosquées
   getMosquees():Observable<any[]>{
     return this.firestore.collection('mosquees').valueChanges();
@@ -49,14 +47,11 @@ export class FirestoreService {
       //console.log(mosque);
       const imageUrl = mosque.image; // Obtenez l'URL distant de l'image
       const localFileName = `mosque_image_${mosque.info.nom}.jpg`; // Générez un nom de fichier local unique
-
       // Téléchargez l'image et enregistrez-la localement
       await this.imageService.downloadAndSaveImageLocally(imageUrl, localFileName);
-
       // Mettez à jour l'URL de l'image dans les données locales
       mosque.image = localFileName;
     }
-
     // Enregistrez les données en local sous forme de chaîne JSON
     await this.save.set('mosquees', JSON.stringify(firestoreMosquees));
   }

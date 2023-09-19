@@ -3,18 +3,16 @@
     <ion-back-button defaultHref="/tabs/autres" text="retour"> Calendrier</ion-back-button>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <!-- <mat-calendar></mat-calendar> -->
   <ion-datetime></ion-datetime>
-
   <!-- Isac -->
   <ion-list>
     <ion-item *ngFor="let date of dateImportant ">
       <ion-label lines="none" style="margin-right: 50px; width: 100%;  " >
         {{date.nom}} <br>
       </ion-label>
-      <ion-label  class="font-size: 30px" style=" margin-right: 0%; padding-right: 0%; "> <!-- Ajoutez une marge à gauche -->
+      <ion-label  class="font-size: 30px" style=" margin-right: 0%; padding-right: 0%; ">
         {{date.date}}
       </ion-label>
     </ion-item>

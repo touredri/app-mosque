@@ -19,15 +19,7 @@ export class Tab3Page {
 
   constructor() {}
 
-  ngOnInit(): void {
-
-    // Geolocation.getCurrentPosition().then((result : any) =>{
-    // this.latitude = result.coords.latitude;
-    // this.longitude = result.coords.longitude;
-    // console.log(this.longitude+'  '+this.latitude);
-    // });
-
-  }
+  ngOnInit(): void {}
 
   ionViewDidEnter(){
 

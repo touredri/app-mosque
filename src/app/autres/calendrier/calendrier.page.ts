@@ -3,21 +3,16 @@ import { DateImportant } from 'src/app/models/dateImportant.model';
 
 @Component({
   selector: 'app-calendrier',
-  templateUrl: './calendrier.page.html',
+  templateUrl:'./calendrier.page.html',
   styleUrls: ['./calendrier.page.scss'],
 })
 export class CalendrierPage implements OnInit {
-
- 
   daysInMonth: number[] = [];
-
   dateImportant!:DateImportant[]
+  
   constructor() { }
-
   ngOnInit() {
-
     this.generateCalendar();
-
     this.dateImportant=[
       {
         nom:"Hégire (Nouvel An musulman)",
@@ -46,17 +41,13 @@ export class CalendrierPage implements OnInit {
       {
         nom:"Mawlid al-Nabi",
         date:"12 Rabi' al-Awwal"
-      }
-    ]
-
+      }]
   }
-
   generateCalendar() {
     const currentDate = new Date();
     const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-
-    for (let day = 1; day <= lastDayOfMonth; day++) {
-      this.daysInMonth.push(day);
-    }
+            for (let day = 1; day <= lastDayOfMonth; day++) {
+              this.daysInMonth.push(day);
+            }
   }
 }

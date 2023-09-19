@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { PrechesPage } from './preches.page';
 
 const routes: Routes = [
@@ -11,8 +10,7 @@ const routes: Routes = [
   {
     path: 'modifier-preche',
     loadChildren: () => import('./modifier-preche/modifier-preche.module').then( m => m.ModifierPrechePageModule)
-  },
-    
+  },   
 ];
 
 @NgModule({

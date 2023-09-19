@@ -6,7 +6,6 @@
     <ion-title class="title">Ajout de l'annonce</ion-title>
   </div>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <div class="bankai">
     <div class="container">
@@ -16,21 +15,17 @@
           <ion-item>
             <ion-input [(ngModel)]="annonce.titre" name="titre" label="Titre de l'annonce" labelPlacement="floating" placeholder="Entrer le titre"></ion-input>
           </ion-item>
-          
           <ion-item>
             <ion-input [(ngModel)]="annonce.description" name="description" label="Description" labelPlacement="floating" placeholder="Entrer la description"></ion-input>
           </ion-item>
-          
           <ion-item>
             <ion-input [(ngModel)]="annonce.date" name="date" label="Date" labelPlacement="floating" type="date" placeholder="Entrer la date"></ion-input>
           </ion-item>
         </ion-list>
-        <div class="bb">
-          <button class="bounce" type="submit">Ajouter l'annonce</button>
-        </div> 
+          <div class="bb">
+            <button class="bounce" type="submit">Ajouter l'annonce</button>
+          </div> 
       </form>
      </div> 
   </div>
-  
-   
 </ion-content>
