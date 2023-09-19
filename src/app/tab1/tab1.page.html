@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
   <div class="priere">
     <ul>
-      <li><a routerLink="tab1.page.html" type="btn btn-primay">Fajr</a></li>
+      <li><a type="btn btn-primary" routerLink="tab1.page.html">Fajr</a></li>
       <li><a routerLink="tab1.page.html">Sunrise</a></li>
       <li><a routerLink="tab1.page.html">Dhurh</a></li>
       <li><a routerLink="tab1.page.html">Asr</a></li>
@@ -37,7 +37,7 @@
       [loop]="true"
       [pagination]="{clickable: true, dynamicBullets: true}"
       [autoplay]="{deplay:1000}"
-      effect="flip"
+      
       >
         <swiper-slide *ngFor="let image of imagesAnnonces ">
           <img [src]="image" alt=""/>
