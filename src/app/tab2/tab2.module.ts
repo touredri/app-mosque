@@ -14,7 +14,8 @@ import { MosqueComponent } from './mosque_content/mosque_content.component';
     FormsModule,
     Tab2PageRoutingModule,
     MosqueComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormsModule,
   ],
   declarations: [Tab2Page]
 })

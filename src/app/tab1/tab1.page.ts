@@ -14,16 +14,24 @@ export class Tab1Page  implements OnInit {
   data: any;
   public mosquee: any[] = [];
 
+  imagesAnnonces: string[] = [
+    '../../../assets/1.jpeg',
+    '../../../assets/3.jpeg',
+    '../../../assets/4.jpeg',
+    '../../../assets/mosque.jpg',
+  ];
+
   constructor(
     private priereService: PriereService,
     private authService: AuthService,
     private firebase: FirestoreService
   ) {}
+
   ngOnInit(): void {
     this.firebase.init();
     this.firebase.getMosquees().subscribe((data: any) => {
-      this.data = data;
-      this.mosquee = [
+    this.data = data;
+    this.mosquee = [
         {
           id: this.data[1].info.id,
           src: this.data[1].image,
@@ -37,20 +45,8 @@ export class Tab1Page  implements OnInit {
           id: this.data[0].info.id,
           src: this.data[0].image,
           nom: this.data[0].info.nom 
-        }
+        }      
       ]
     });
-}
-
-  public slides = [
-    {
-      src: '../../assets/mosque.jpg'
-    },
-    {
-      src: '../../assets/Mosquee_mmm.jpg'
-    },
-    {
-      src: '../../assets/coran-braille.jpg'
-    }
-  ];
+  }
 }

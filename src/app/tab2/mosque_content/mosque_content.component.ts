@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, NavController } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import 'leaflet-routing-machine';
+
 import { FirestoreService } from 'src/app/service/firestore.service';
 import { Storage } from '@ionic/storage';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,13 +15,14 @@ import { Storage } from '@ionic/storage';
   templateUrl: './mosque_content.component.html',
   styleUrls: ['./mosque_content.component.scss'],
   standalone : true,
-  imports: [CommonModule, IonicModule, RouterLink]
+  imports: [CommonModule, IonicModule,FormsModule, RouterLink]
 })
 
 export class MosqueComponent  implements OnInit {
 
   mosquees: any[] = [];
-  user: any;
+  user: any;  rechercher: '';
+
   constructor(
     private dataService: FirestoreService,
     private localStorage: Storage
@@ -32,6 +35,26 @@ export class MosqueComponent  implements OnInit {
     this.dataService.getMosquees().subscribe((data) => {
       this.mosquees = data;
     });
+  }
+
+  filterItems() {
+    if (!this.rechercher.trim()) {
+      return;
+    }
+  
+    this.mosquees = this.mosquees.filter((rechercher) =>
+    rechercher.toLowerCase().includes(this.rechercher.toLowerCase())
+    );
+  }
+
+  filterItems() {
+    if (!this.rechercher.trim()) {
+      return;
+    }
+  
+    this.mosquees = this.mosquees.filter((rechercher) =>
+    rechercher.toLowerCase().includes(this.rechercher.toLowerCase())
+    );
   }
 }
 

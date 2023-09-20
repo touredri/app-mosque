@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import 'moment-hijri';
-import 'moment/locale/fr';
-import { Geolocation } from '@capacitor/geolocation';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
 
@@ -10,7 +7,7 @@ import 'leaflet-routing-machine';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page{
 
   map: L.Map | undefined;
   
@@ -19,12 +16,10 @@ export class Tab3Page {
 
   constructor() {}
 
-  ngOnInit(): void {}
-
   ionViewDidEnter(){
 
     // COORDONNE DE LA MOSQUEE A RECHERCHER
-    this.map = L.map('mapID').setView([12.6307143, -8.0270483],80)
+    this.map = L.map('mapID').setView([12.6313593,-8.0273106],50)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     }).addTo(this.map);
 
@@ -51,7 +46,7 @@ export class Tab3Page {
     // AJOUTER UN MARKET A this.latitudetude
     const markPoint4 = L.marker([12.6307143, -8.0270724]);
     markPoint4.bindPopup('<p>Mosquee ABDOULAYE KOITA </p>')
-    this.map.addLayer(markPoint4);
+    this.map.addLayer(markPoint4); 
     
     // AJOUTER UN MARKET A this.latitudetude
     const markPoint5 = L.marker([12.6308313,-8.0268987]);
