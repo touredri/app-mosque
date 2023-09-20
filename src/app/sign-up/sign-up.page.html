@@ -1,5 +1,3 @@
-
-
 <ion-content class="wallpaper">
   <div class="entete">
     <ion-buttons slot="start">
@@ -20,28 +18,24 @@
             </div>
             <input type="text" placeholder="Nom" name="nom" [(ngModel)]="user.nom" minlength="4" maxlength="50" required>
           </div>
-
           <div class="input1">
             <div class="icon-container">
               <ion-icon class="i1" name="person-outline"></ion-icon>
             </div>
             <input type="text" placeholder="Prenom" name="prenom" [(ngModel)]="user.prenom"  minlength="4" maxlength="50" required>
           </div>
-
           <div class="input1">
             <div class="icon-container">
               <ion-icon class="i1" name="mail-outline"></ion-icon>
             </div>
             <input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required>
           </div>
-
           <div class="input2">
             <div class="icon-container">
               <ion-icon class="i1" name="lock-closed-outline"></ion-icon>
             </div>
             <input type="password" placeholder="Mot de passe" name="password" [(ngModel)]="user.password" minlength="6" required>
           </div>
-
           <button type="submit">S'inscrire</button>
         </div>
       </form>

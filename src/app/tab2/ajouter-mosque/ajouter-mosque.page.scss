@@ -4,12 +4,10 @@
   height: auto;
   padding-bottom: 40px;
 }
-
 .menu{
   display: flex;
   justify-content: space-between;
 }
-
 .menu a{
   font-size: 15px;
   color: #3498DB; 
@@ -28,15 +26,11 @@ ion-icon{
 
 img{
   width: 100%;
-  // border-radius: 3px;
-  // margin-left: 5%;
 }
-
 .container{
   position: absolute;
   top: 70px;
-  left: 20px;
-  
+  left: 20px; 
 }
 
 button{
@@ -50,56 +44,44 @@ button{
   background: none;
   margin-top: -40px;
 }
-
-
-
 .row{
   margin-top: 5%;
   margin-left: 5px;
   margin-right: 5px;
 }
-
 .mosque{
   color: #000;
   font-size: 15px;
   font-weight: bold;
   margin-top: 8%;
 }
-
 .mosque > a{
   color:#3498DB ;
   font-size: 12px;
   margin-left: 40%;
   text-decoration: none;
 }
-
 span{
   font-size: 12px;
   color: #000;
   font-weight: 55%;
 }
-
 .iman{
   margin-bottom: 15px;
 }
-
 .icon1{
   margin-top: 10%;
 }
-
 #icon{
   font-size: 30px;
   color: #353535;
   margin-top: 8%;
 }
-
 .icon{
   margin-top: 10%;
   display: flex;
-  /* Cette valeur peut être changée dans l'exemple */
   justify-content: space-between;
 }
-
 .container2{
   height: 10%;
   width: 90%;
@@ -112,19 +94,16 @@ span{
   padding-bottom: 20px;
   padding-top: 10px;
 }
-
 .row2{
    margin-top: 10%;
    margin-left: 1%;
 }
-
 .priere{
   margin-top: 40px;
   margin-left: 28%;
   font-size: 15px;
   font-weight: bold;
 }
-
 .text{
   margin: 10% 10% ;
   display: flex;
@@ -132,20 +111,16 @@ span{
   align-items: center;
   font-weight: bold;
 }
-
 .btn{
   width: 100%;
   margin-top: 20px;
-  // background: #C7903B;
 }
-
 ion-input{
   width: 100%;
   margin: 10px 0;
   background: none;
   color: #000;
 }
-
 #appt{
   color: #fff;
   background: #D9D9D9;

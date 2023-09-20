@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { RadioService } from '../service/radio.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -31,7 +30,6 @@ export class ModalPopupRadioPage implements OnInit {
   }
 
   async closeModel() {
-    // const close: string = "Modal Removed";
     await this.modalController.dismiss(close);
   }
 

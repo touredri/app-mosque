@@ -6,9 +6,8 @@
 <ion-card class="cardSelect">
   <ion-card-header>
     <ion-card-title>Prêches
-      <ion-button [routerLink]="['prechesMod']" size="small" fill="solid" style="margin-bottom: 10px;">Modifier</ion-button></ion-card-title>
+      <ion-button [routerLink]="['modifier-preche']" size="small" fill="solid" style="margin-bottom: 10px;">Modifier</ion-button></ion-card-title>
     <ion-card-subtitle>
-      
       <ion-list class="firstCardSelect">
       <ion-item>
         <ion-select [(ngModel)]="selectedImam" (ionChange)="filterPreches()" aria-label="Imams" interface="popover" placeholder="Choisir Imam">
@@ -18,27 +17,24 @@
         </ion-select>
       </ion-item>
     </ion-list>
-
   </ion-card-subtitle>
   </ion-card-header>
-
-  
 </ion-card>
 
-<!-- <hr>  -->
-<div style="top: 40%; position: fixed; width: 100%; ">
-
-<ion-list *ngIf="filteredPreches.length > 0"  class="audios h-screen relative">
+<ion-list *ngIf="filteredPreches.length > 0" class="audios h-screen relative">
   <div class="titleAudio"><span><ion-icon name="musical-note"></ion-icon> Audios</span></div>
-  <div *ngFor="let preche of filteredPreches" class="relative" style="display: flex;">
-  <ion-label (click)="show()">{{ preche.id }} - Prêche de {{ preche.name }}</ion-label>
-    <div  style="z-index: 1; position: absolute;     top: 46vh; width: 100vw;"> <audio controls class="hidden" id="audio" >
-      <source [src]="preche.audioUrl" type="audio/mpeg">
-      Votre navigateur ne prend pas en charge l'élément audio.
-    </audio></div>
-    </div>
+  <div *ngFor="let preche of filteredPreches" class="relative" style="margin-left: 2%; margin-bottom: 3px;">
+    <ion-label (click)="togglePlayback(preche)">{{ preche.id }} - Prêche de {{ preche.name }}</ion-label>
+  </div>
 </ion-list>
+<div style="z-index: 1; position: absolute; top: 82vh; width: 100vw; padding-left: 20px;">
+  <audio controls [id]="'audio-main'" *ngIf="selectedPreche" style="width: 90%;">
+    <source [src]="selectedPreche.audioUrl" type="audio/mpeg">
+    Votre navigateur ne prend pas en charge l'élément audio.
+  </audio>
 </div>
+
+
 
 
 

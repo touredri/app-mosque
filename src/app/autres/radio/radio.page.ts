@@ -12,17 +12,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./radio.page.scss'],
 })
 export class RadioPage implements OnInit {
-  
   modelData: any; 
   radios: Observable<any[]>;
-  // formRadios!: FormGroup
   listeRadio: any;
   constructor(private formBuilder:FormBuilder, 
     private modalController:ModalController,
     private service:RadioService,
-    private firestore: AngularFirestore) {
-    
-   }
+    private firestore: AngularFirestore) {}
 
   ngOnInit() {
     this.radios = this.getRadios();
@@ -31,7 +27,7 @@ export class RadioPage implements OnInit {
 
     })
   }
-  
+
   getRadios(): Observable<any[]> {
     return this.firestore.collection('radios').valueChanges();
   }
@@ -39,9 +35,7 @@ export class RadioPage implements OnInit {
   async openIonModal() {
     const modal = await this.modalController.create({
       component: ModalPopupRadioPage,
-      componentProps: {
-        // "rempli":"rrr"
-      }
+      componentProps: {}
     });
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
@@ -51,13 +45,4 @@ export class RadioPage implements OnInit {
     });
     return await modal.present();
   }
-
-    
-  
-
-
-// function openIonModal() {
-//   throw new Error('Function not implemented.');
-// }
-
 }

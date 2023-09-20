@@ -41,7 +41,6 @@ export class FirestoreService {
       });
     });
   }
-
   // Récupérer toutes les mosquées
   getMosquees():Observable<any[]>{
     return this.firestore.collection('mosquees').valueChanges();

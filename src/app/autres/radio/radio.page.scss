@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-
 }
 ion-back-button{
     color: black;
@@ -14,28 +13,17 @@ ion-back-button{
 .header h1{
   text-align: left;
   color: black;
-    
-}
-
-.header h1{
-    font-size: 50px;
-    font-weight: bold;
-    color: black;
-    padding-left: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  padding-left: 10px;
 }
 .header img{
-    // position: relative;
-    // left: 75%;
-    margin-left: auto;
-
-    
+    margin-left: auto;   
 }
 .list-radios img{
     margin-top: auto;
 }
-// .icone{
-//     position: absolute;
-// }
 .flex flex-col{
     display: flex;
     flex-wrap: wrap;

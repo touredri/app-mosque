@@ -35,7 +35,6 @@ export class AjouterMosquePage implements OnInit {
   ajoutMosque() {
     if (!this.selectedImage) {
       console.error("Aucune image sélectionnée.");
-      // return;
     };
     this.firestoreService.getMosquees().subscribe((data) => {
       this.id = data.length + 1

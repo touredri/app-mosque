@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Geolocation } from '@capacitor/geolocation';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
 

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { SplashPage } from './splash.page';
 
 const routes: Routes = [

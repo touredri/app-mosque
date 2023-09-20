@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DetailMosquePage } from './detail-mosque.page';
-import { MapPage } from './map/map.page';
 
 const routes: Routes = [
   {

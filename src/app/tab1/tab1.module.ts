@@ -19,9 +19,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     Tab1PageRoutingModule,
     HeaderComponent,
     IgxCarouselModule,
-	  IgxSliderModule
-    
-   
+	  IgxSliderModule 
   ],
   declarations: [Tab1Page,],
 })

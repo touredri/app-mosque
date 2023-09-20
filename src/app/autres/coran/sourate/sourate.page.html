@@ -2,10 +2,8 @@
   <div [routerLink]="['../../']" class="border border-blue-500 p-2 ">
   <ion-icon name="arrow-back-outline"></ion-icon>
 </div>
-
   <div class="">{{sourate?.englishName}}</div>
 </ion-header>
-
 <ion-content >
     <ion-item *ngFor="let ayah of sourate?.ayahs" class="flex flex-wrap justify-end pt-2">
       <div class="flex flex-row gap-1 justify-between items-center">
