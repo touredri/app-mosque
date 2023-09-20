@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute } from '@angular/router';
-import { DetailService } from 'src/app/service/detail.service';
-import { FirestoreService } from 'src/app/service/firestore.service';
 import { Plugins } from '@capacitor/core';
 import { Storage } from '@ionic/storage';
 
@@ -16,9 +14,7 @@ const { Browser } = Plugins;
 export class DetailMosquePage implements OnInit {
 
   constructor(
-    private detailService: DetailService,
     private route: ActivatedRoute,
-    private firestore: FirestoreService,
     private firestores: AngularFirestore,
     private localStorage: Storage
   ) { }

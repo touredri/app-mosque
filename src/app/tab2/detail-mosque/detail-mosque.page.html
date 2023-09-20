@@ -6,7 +6,7 @@
     <img [src]="mosques?.image" class="w-full h-[190px] " alt="">
     <div class="container">
       <div class="row">
-        <span class="mosque">{{mosques?.info.nom}} <a *ngIf="user?.admin === true" href="#" [routerLink]="['editer-mosque', mosques?.info.id]">Editer</a> </span>
+        <span class="mosque flex justify-between">{{mosques?.info.nom}} <a *ngIf="user?.admin === true" href="#" [routerLink]="['editer-mosque', mosques?.info.id]">Editer</a> </span>
         <span class="iman">{{mosques?.info.imam}}</span>
         <span><i id="icon1" class="bi bi-telephone-fill"></i> {{mosques?.info.numero}} </span>
         <span><i id="icon1" class="bi bi-geo-alt-fill"></i>{{mosques?.info.quartier}}</span>

@@ -11,7 +11,7 @@ import { CoranService } from 'src/app/service/coran.service';
 export class SouratePage implements OnInit {
 
   sourate: any;
-  audioUrl!: string;
+  // audioUrl!: string;
   ayahs: any[] = [];
 
   currentAudioIndex: number = 0;

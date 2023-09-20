@@ -22,8 +22,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     HeaderComponent,
     IgxCarouselModule,
 	  IgxSliderModule,
-    
-   
   ],
   declarations: [Tab1Page],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

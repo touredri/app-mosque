@@ -47,15 +47,15 @@ export class MosqueComponent  implements OnInit {
     );
   }
 
-  filterItems() {
-    if (!this.rechercher.trim()) {
-      return;
-    }
+  // filterItems() {
+  //   if (!this.rechercher.trim()) {
+  //     return;
+  //   }
   
-    this.mosquees = this.mosquees.filter((rechercher) =>
-    rechercher.toLowerCase().includes(this.rechercher.toLowerCase())
-    );
-  }
+    // this.mosquees = this.mosquees.filter((rechercher) =>
+    // rechercher.toLowerCase().includes(this.rechercher.toLowerCase())
+    // );
+  // }
 }
 
 
