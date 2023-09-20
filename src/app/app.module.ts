@@ -36,6 +36,7 @@ register();
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     FormsModule,
+    IonicModule,
     IonicStorageModule.forRoot({
       name: '_mydb',
       driverOrder: ['indexeddb', 'sqlite', 'websql'],

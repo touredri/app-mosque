@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import 'leaflet-routing-machine';
 
 import { FirestoreService } from 'src/app/service/firestore.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,13 +14,14 @@ import { FirestoreService } from 'src/app/service/firestore.service';
   templateUrl: './mosque_content.component.html',
   styleUrls: ['./mosque_content.component.scss'],
   standalone : true,
-  imports: [CommonModule, IonicModule, RouterLink]
+  imports: [CommonModule, IonicModule,FormsModule, RouterLink]
 })
 
 
 export class MosqueComponent  implements OnInit {
 
   mosquees: any[] = [];
+  rechercher: '';
 
   constructor(private dataService: FirestoreService) {}
 
@@ -32,22 +34,15 @@ export class MosqueComponent  implements OnInit {
     });
   }
 
-  searchMosquees(searchTerm: string) {
-    // Vérifiez si la chaîne de recherche est vide
-    // if (!searchTerm.trim()) {
-    //   this.mosquees = this.mosquees;
-    //   console.log(this.mosquees);
-    //   return;
-    // }
+  filterItems() {
+    if (!this.rechercher.trim()) {
+      return;
+    }
   
-    // Utilisez la méthode getMosquees du service pour récupérer les données
-    // this.mosquees.getMosquees().subscribe((data) => {
-      // Filtrer les résultats en fonction de la chaîne de recherche
-      this.mosquees = this.mosquees.filter((mosquee) =>
-        mosquee.nom && mosquee.nom.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    };
-  // }
+    this.mosquees = this.mosquees.filter((rechercher) =>
+    rechercher.toLowerCase().includes(this.rechercher.toLowerCase())
+    );
+  }
 }
 
 
