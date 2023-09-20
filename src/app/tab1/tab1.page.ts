@@ -48,5 +48,11 @@ export class Tab1Page  implements OnInit {
         }      
       ]
     });
+    // priere data part
+    this.priereService.getPriereData().subscribe((data: any) => {
+      this.priere = data.priere;
+      console.log(this.priere)
+    });
+    
   }
 }
