@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirestoreService } from '../service/firestore.service';
+import { PriereService } from '../service/priere.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,14 +8,15 @@ import { FirestoreService } from '../service/firestore.service';
 })
 export class Tab2Page implements OnInit{
 
-  data: any;
-
+  // data: any;
+  currentTime: any;
   constructor(
-    private firebase: FirestoreService
+    private priereService: PriereService
     ) {}
 
   ngOnInit(): void {
-    // this.data = this.firebase.getAndSaveMosqueesLocally()
+    this.priereService.getPriereData().subscribe((data: any) => {
+      this.currentTime = this.priereService.dataPrier(data.data);
+    });
   }
-
 }

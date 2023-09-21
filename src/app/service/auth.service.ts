@@ -22,15 +22,6 @@ export class AuthService {
     private localStorage: Storage
     ) {
     this.afAuth.authState.subscribe((user) => {
-      // this.isLoggedInSubject.next(!!user); // Vérifie si l'utilisateur est connecté
-      // this.userSubject.next(user);
-      // const id = user?.uid;
-      // this.getUserById(id).subscribe((data) => {
-      //   this.userSubject.next(data);
-      //  // garder  le user
-      // // this.authService.setUser(this.currentUser);
-      // });
-      // this.userSubject.next(currentUser);
     });
   }
 

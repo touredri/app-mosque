@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from './service/firestore.service';
+import  Network  from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,5 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.firebase.init();
-  }
+  } 
 }

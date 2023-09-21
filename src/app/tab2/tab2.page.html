@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <app-header></app-header>
+    <app-header [currentDate]="currentTime?.date.hijri.day + ' ' + currentTime?.date.hijri.month.en + ' ' + currentTime?.date.hijri.year "></app-header>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">

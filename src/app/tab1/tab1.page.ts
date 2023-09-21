@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PriereService } from '../service/priere.service';
-import { AuthService } from '../service/auth.service';
 import { FirestoreService } from '../service/firestore.service';
 
 @Component({
@@ -29,6 +28,7 @@ export class Tab1Page  implements OnInit {
 
   ngOnInit(): void {
     // this.firebase.init();
+    this.priereService.checkNetworkConnection();
     this.firebase.getMosquees().subscribe((data: any) => {
     this.data = data;
     this.mosquee = [
@@ -50,16 +50,7 @@ export class Tab1Page  implements OnInit {
     });
     // priere data part
     this.priereService.getPriereData().subscribe((data: any) => {
-      this.dataPrier(data.priere);
+      this.currentTime = this.priereService.dataPrier(data.data);
     });
   }
-
-  dataPrier(data: any) {
-    const date = new Date();
-      this.priere = data.find((t: any) => {
-        t.date.readable == date; 
-        
-      });
-      console.log(this.priere)
-}
 }

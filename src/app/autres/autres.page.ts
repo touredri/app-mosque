@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PriereService } from '../service/priere.service';
 
 @Component({
   selector: 'app-autres',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./autres.page.scss'],
 })
 export class AutresPage implements OnInit {
-
-  constructor() { }
+  currentTime: any;
+  constructor(
+    private priereService: PriereService
+  ) { }
 
   ngOnInit() {
+    this.priereService.getPriereData().subscribe((data: any) => {
+      this.currentTime = this.priereService.dataPrier(data.data);
+    });
   }
 
 }
