@@ -11,6 +11,7 @@ import { FirestoreService } from '../service/firestore.service';
 export class Tab1Page  implements OnInit {
   priere: any;
   time: any;
+  currentTime: any;
   data: any;
   public mosquee: any[] = [];
 
@@ -23,7 +24,6 @@ export class Tab1Page  implements OnInit {
 
   constructor(
     private priereService: PriereService,
-    private authService: AuthService,
     private firebase: FirestoreService
   ) {}
 
@@ -50,9 +50,16 @@ export class Tab1Page  implements OnInit {
     });
     // priere data part
     this.priereService.getPriereData().subscribe((data: any) => {
-      this.priere = data.priere;
-      console.log(this.priere)
+      this.dataPrier(data.priere);
     });
-    
   }
+
+  dataPrier(data: any) {
+    const date = new Date();
+      this.priere = data.find((t: any) => {
+        t.date.readable == date; 
+        
+      });
+      console.log(this.priere)
+}
 }
