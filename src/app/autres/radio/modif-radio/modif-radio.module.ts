@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RadioPageRoutingModule } from './radio-routing.module';
+import { ModifRadioPageRoutingModule } from './modif-radio-routing.module';
 
-import { RadioPage } from './radio.page';
+import { ModifRadioPage } from './modif-radio.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RadioPageRoutingModule,
+    ModifRadioPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [RadioPage]
+  declarations: [ModifRadioPage]
 })
-export class RadioPageModule {}
+export class ModifRadioPageModule {}

@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'modal-popup-radio',
-    loadChildren: () => import('./modal-popup-radio/modal-popup-radio.module').then( m => m.ModalPopupRadioPageModule)
+    loadChildren: () => import('./autres/radio/modal-popup-radio/modal-popup-radio.module').then( m => m.ModalPopupRadioPageModule)
   },
   {
     path: 'annonce',
@@ -48,6 +48,23 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   },
+  {
+    path: 'chapelet',
+    loadChildren: () => import('./autres/chapelet/chapelet.module').then( m => m.ChapeletPageModule)
+  },
+  {
+    path: 'boussole',
+    loadChildren: () => import('./autres/boussole/boussole.module').then( m => m.BoussolePageModule)
+  },
+  {
+    path: 'modif-radio',
+    loadChildren: () => import('./autres/radio/modif-radio/modif-radio.module').then( m => m.ModifRadioPageModule)
+  },
+  {
+    path: 'radio',
+    loadChildren: () => import('./autres/radio/radio.module').then( m => m.RadioPageModule)
+  }
+
 ];
 
 @NgModule({

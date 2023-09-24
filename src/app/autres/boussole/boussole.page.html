@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Boussole
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="compass-container">
+    <h2>Compass Heading</h2>
+    <p *ngIf="heading !== undefined">Heading: {{ heading }}°</p>
+    <p *ngIf="heading === undefined">Waiting for compass data...</p>
+  </div>
+</ion-content>

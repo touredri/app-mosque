@@ -1,0 +1,99 @@
+button{
+    width: 100%;
+}
+.div1{
+    width: 45%;
+    text-align: center;
+    padding: 5%;
+    border-radius: 35px;
+    background-color: red;
+    box-shadow: rgb(158, 158, 158) 3px 3px 30px;
+    &:active {
+        transform: translate(1px, 1px);
+        box-shadow: lightgray 0 0 5px;
+      }
+      button{
+        width: 100%;
+        font-size: 150px;
+        color: #fff;
+}
+
+}
+    
+.div2{
+    width: 45%;
+    text-align: center;
+    padding: 2%;
+    border-radius: 35px;
+    background-color: orange;
+    margin-bottom: 5%;
+    box-shadow: rgb(158, 158, 158) 3px 3px 30px;
+        &:active {
+            transform: translate(1px, 1px);
+            box-shadow: lightgray 0 0 5px;
+          }
+    button{
+        width: 100%;
+        font-size: 150px;
+        color: #fff;
+    }
+}
+.div3{
+    width: 45%;
+    text-align: center;
+    background-color: green;
+    border-radius: 35px;
+    padding: 2%;
+    margin-bottom: 5%;
+    box-shadow: rgb(158, 158, 158) 3px 3px 30px;
+    &:active {
+        transform: translate(1px, 1px);
+        box-shadow: lightgray 0 0 5px;
+      }
+    button{
+        width: 100%;
+        font-size: 150px;
+        color: #fff;
+    }
+}
+
+
+
+.height{
+  width: 100%;
+  background-color: black;
+  height: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 10;
+  border-radius: 50px;
+  
+  
+
+}
+
+.conteneur{
+    margin-top: 3%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.compteur{
+    font-size: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.limite{
+    font-size: 50px;
+}

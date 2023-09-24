@@ -1,0 +1,47 @@
+form{
+    width: 100%;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 20px ;
+    background-color: rgb(209, 208, 230);
+    border-radius: 15px;
+
+    input{
+        width: 95%;
+        border: solid 1px;
+        border-radius: 15px;
+        padding: 2%;
+    }
+    label{
+        margin-top: 2%;
+        padding-left: 2%;
+    }
+}
+
+.Fermer{
+    border-radius: 10px;
+    background-color: rgb(120, 117, 177);
+    width: 70px;
+    margin-right: 60px;
+    margin-top: 8px;
+    &:hover{
+        background-color: rgb(197, 33, 123);
+        }
+}
+
+.sub{
+    border-radius: 10px;
+    background-color: rgb(120, 117, 177);
+    width: 70px;
+    margin-top: 8px;
+
+    &:hover{
+    background-color: rgb(197, 33, 123);
+    }
+}
+
+.text-center{
+    display: flex;
+}

@@ -14,17 +14,23 @@
     </div>
   </ion-content>
 
-  <ion-list>
-    <ion-item *ngFor="let radio of listeRadio">
+  <ion-list class="content">
+    <ion-item *ngFor="let radio of radios">
       <ion-avatar slot="start">
-        <img alt="radio info" src="../../assets/icon _radio_.png" />
+        <img alt="radio info" src="../../../assets/rond.jpg" />
       </ion-avatar>
-      <ion-label lines="none">
+      <ion-label >
         {{radio.nom}} <br>
         {{radio.emplacement}}
       </ion-label>
       <ion-label  class="font-size: 30px" style="margin-left: 10px; "> <!-- Ajoutez une marge à gauche -->
+        <div  style="background-color:rgb(124, 185, 109); border-radius: 20px; width: 50px; justify-content: flex-start; color: #fff;">
         {{radio.frequence}}
+      </div>
+      </ion-label>
+      <ion-label>
+        <ion-icon name="create" style="margin-right: 5%;"  routerLink="update/{{radio.id}}" ></ion-icon> <!-- Icône de modification -->
+        <ion-icon name="trash" style="color: red;" (click)="supprimer(radio)"></ion-icon> <!-- Icône de suppression -->
       </ion-label>
     </ion-item>
   </ion-list>

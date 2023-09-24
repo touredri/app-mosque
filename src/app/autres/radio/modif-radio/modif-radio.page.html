@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Modification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content>
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col text-center> 
+         Model Title : {{ model_title }} -->
+       <!-- </ion-col>
+    </ion-row> -->
+       <form  [formGroup]="modifierform" >
+
+      <label for="nom" >Nom</label>
+      <input type="text" name="nom" id="nom"  formControlName="nom" [value]="radioRef.nom">
+      <label for="frequence" >Frequence</label>
+      <input type="number" name="frequence" id="frequence"  formControlName="frequence" [value]="radioRef.frequence">
+      <label for="fluxAudio" >Flux Audio</label>
+      <input type="text" name="fluxAudio" id="fluxAudio" formControlName="fluxAudio" [value]="radioRef.fluxAudio">
+      <label for="emplacement">Emplacement</label>
+      <input type="text"  name="emplacement" id="emplacement" formControlName="emplacement"  [value]="radioRef.emplacement">
+      
+      <ion-row>
+        <ion-col text-center>
+          <button class="Fermer" routerLink="/radio">Fermer</button>
+          <button class="sub" type="submit" (click)="onEnregistrer()" routerLink="/radio">Enregistrer</button>
+        </ion-col>
+      </ion-row>
+  </form> 
+    
+  </ion-grid>
+</ion-content> 

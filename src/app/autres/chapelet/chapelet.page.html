@@ -1,0 +1,36 @@
+<ion-buttons slot="start" class="return">
+  <ion-back-button defaultHref="tabs/autres"></ion-back-button>
+  <p>Chapelet</p>
+</ion-buttons>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content style="align-items: center; display: flex; justify-content: center;">
+      <h1>nombre de tour : {{ tour }} </h1>
+    </ion-card-content>
+  </ion-card>
+  <div class="height">
+    <div class="compteur">{{compteur}}<p class="limite">/{{limite}}</p>
+    </div>
+  </div>
+  <div class="conteneur">
+
+    <div class="div2">
+      <button class="button" (click)="decrementerCompteur()">-</button>
+    </div>
+    <div class="div3">
+      <button class="button" (click)="incrementerCompteur()">+</button>
+    </div>
+    <div class="div1">
+      <button class="button" (click)="renitialiseCompteur()"><img src="../../../assets/reset.png" alt="reset"></button>
+    </div>
+
+  </div>
+</ion-content>
+
+
+
+
+
+
+

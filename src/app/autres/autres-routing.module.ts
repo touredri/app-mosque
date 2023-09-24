@@ -24,6 +24,18 @@ const routes: Routes = [
     path: 'calendrier',
     loadChildren: () => import('./calendrier/calendrier.module').then( m => m.CalendrierPageModule)
   },
+  {
+    path: 'chapelet',
+    loadChildren: () => import('./chapelet/chapelet.module').then( m => m.ChapeletPageModule)
+  },
+  {
+    path: 'boussole',
+    loadChildren: () => import('./boussole/boussole.module').then( m => m.BoussolePageModule)
+  },
+  {
+    path: 'qibla',
+    loadChildren: () => import('./qibla/qibla.module').then( m => m.QiblaModule)
+  }
 ];
 
 @NgModule({

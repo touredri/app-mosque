@@ -63,11 +63,11 @@ ion-back-button{
   }
   .Ajouter{
     border-radius: 10px;
-    background-color: rgb(120, 117, 177);
+    background-color: rgb(124, 185, 109);
     width: 80px;
     height: 35px;
     &:hover{
-    background-color: rgb(197, 33, 123);
+    background-color: green;
     }
   }
   #container{
@@ -75,4 +75,9 @@ ion-back-button{
   }
   ion-content{
     height: 45px;
+  }
+
+  ion-label{
+    justify-content: space-around;
+    text-align: center;
   }

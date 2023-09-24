@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from 'header/header.component';
 
 import { IonicModule } from '@ionic/angular';
@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { AutresPageRoutingModule } from './autres-routing.module';
 
 import { AutresPage } from './autres.page';
+import { BoussoleService } from '../service/boussole.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AutresPage } from './autres.page';
     FormsModule,
     IonicModule,
     AutresPageRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    ReactiveFormsModule
   ],
   declarations: [AutresPage]
 })

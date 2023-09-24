@@ -15,21 +15,21 @@
         <!-- Model Title : {{ model_title }} -->
       </ion-col>
     </ion-row>
-    <form (ngSubmit)="onSubmit()">
+    <form  [formGroup]="formRadios" (ngSubmit)="onSubmitt()">
 
       <label for="nom" >Nom</label>
-      <input type="text" name="nom" id="nom"  [(ngModel)]="radio.nom" required>
+      <input type="text"  id="nom"  formControlName="nom" >
       <label for="frequence" >Frequence</label>
-      <input type="number" name="frequence" id="frequence"  [(ngModel)]="radio.frequence" required>
+      <input type="number"  id="frequence"  formControlName="frequence" >
       <label for="fluxAudio" >Flux Audio</label>
-      <input type="text" name="fluxAudio" id="fluxAudio"  [(ngModel)]="radio.fluxAudio" required>
-      <label for="logo">Emplacement</label>
-      <input type="text"   id="emplacement" [(ngModel)]="radio.emplacement" name="emplacement" >
+      <input type="text" id="fluxAudio" formControlName="fluxAudio" >
+      <label for="emplacement">Emplacement</label>
+      <input type="text"   id="emplacement" formControlName="emplacement"  >
       
       <ion-row>
         <ion-col text-center>
           <button class="Fermer" (click)="closeModel()">Fermer</button>
-          <button class="sub" type="submit">Submit</button>
+          <button class="sub" type="submit" >Ajouter</button>
         </ion-col>
       </ion-row>
   </form>
