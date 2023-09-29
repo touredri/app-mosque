@@ -17,7 +17,7 @@
   <div class="img">
     <ul class="heure">
       <li><span>Maghreb</span></li>
-      <li><span id="heure">18:45</span></li>
+      <li><span id="heure">{{priereTime}}</span></li>
     </ul>
     <ul class="temps">
       <li><span id="temps">Tepms restant</span></li>
@@ -30,7 +30,7 @@
     </ul>
   </div>
   <div class="annonce">
-    <h3>ANNONCES <ion-icon name="megaphone"></ion-icon></h3>
+    <h2 class="mb-1">ANNONCES <ion-icon name="megaphone"></ion-icon></h2>
     <div>
       <swiper-container
       [loop]="true"
@@ -45,15 +45,15 @@
     </div> 
   </div>
   <div class="mosque">
-    <h3>MOSQUEE PROCHE  <ion-icon name="walk"></ion-icon></h3>
+    <h2 class="mb-1">MOSQUEE PROCHE  <ion-icon name="walk"></ion-icon></h2>
     <div>
       <swiper-container
       [loop]="true"
       [autoplay]="{deplay:1000}"
       >
-        <swiper-slide *ngFor="let slide of mosquee ">
-          <img [src]="slide.src" alt="mosquee">
-          <h2>{{slide.nom}}</h2>
+        <swiper-slide *ngFor="let slide of mosquee " class="relative" >
+          <img [src]="slide.src" alt="mosquee" [routerLink]="['detail-mosque', slide.id]">
+          <div class="absolute bottom-1 left-1 p-1 flex items-center bg-gray-500 rounded-md text-white"><h2 class="text-white">{{slide.nom}}</h2></div>
         </swiper-slide>
       </swiper-container>
     </div> 

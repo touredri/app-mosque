@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
-  }
+  },
+  {
+    path: 'detail-mosque/:id',
+    loadChildren: () => import('../tab2/detail-mosque/detail-mosque.module').then( m => m.DetailMosquePageModule)
+  },
 ];
 
 @NgModule({

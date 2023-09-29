@@ -8,7 +8,7 @@ import { FirestoreService } from '../service/firestore.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page  implements OnInit {
-  priere: any;
+  priereTime: any;
   time: any;
   currentTime: any;
   data: any;
@@ -51,6 +51,23 @@ export class Tab1Page  implements OnInit {
     // priere data part
     this.priereService.getPriereData().subscribe((data: any) => {
       this.currentTime = this.priereService.dataPrier(data.data);
+      this.setCurrentTime(this.currentTime.timings)
     });
+  }
+
+  setCurrentTime(data: any) {
+    const time = new Date().getHours();
+    console.log(time);
+    if(0 < time && time < 6) {
+      this.priereTime = data.Fajr
+    } else if (6 < time && time <= 14) {
+      this.priereTime = data.Dhuhr
+    } else if (14 < time && time <= 16) {
+      this.priereTime = data.Asr
+    } else if (16 < time && time < 19) {
+      this.priereTime = data.Maghrib
+    } else {
+      this.priereTime = data.Isha
+    }
   }
 }
