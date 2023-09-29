@@ -85,6 +85,5 @@ export class Tab1Page implements OnInit {
       }
     }
     console.log("L'heure la plus proche est :", heureLaPlusProche);
-    
   }
 }
